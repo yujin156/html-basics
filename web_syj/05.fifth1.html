@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5일차 text2</title>
+    <style>
+    /*
+        1) white-space: 공백처리
+                        normal: 기본값
+                        *nowrap: 여러개의 공백을 한칸으로 표시
+                                영역을 넘치더라도 줄바꿈 없이 한줄로 표시
+                        pre: 공백을 그대로 표시
+                            영역을 넘치더라도 줄바꿈 없이 한줄로 표시
+
+                        pre-line: 공백은 한칸으로 표시, 엔터값은 그대로 표시
+                                영역을 넘어가는 경우 자동 줄바꿈
+                                  
+                        pre-wrap: 공백을 그대로 표시(엔터도 그대로 표시)
+                                 영역을 넘어가는 경우 자동 줄바꿈
+
+        2) letter-spacing: 글자 하나하나 간격 조정
+                            px
+        3) word-spacing: 단어 하나하나 간격 조정
+                            px  
+        4) word-break: 글자 하나하나씩을 분리
+                        break-all;
+                        normal/keep-all;
+
+        **5) line-height: 줄간격(세로)
+                        px, 정수
+
+    */
+        .p1 {
+            /* white-space: pre-wrap; */
+            /* letter-spacing: 20px; */
+            /* word-spacing: 20px; */
+            /* word-break: break-all; */
+
+            line-height: 50px;
+
+            width: 300px;
+            height: 100px;
+            background: pink;
+        }
+        .box {
+            
+            width: 300px;
+            height: 25px;
+            background: skyblue;
+
+            /* 말줄임표 만들기 */
+            white-space: nowrap; /* 문장을 한줄로 나열 */
+            overflow: hidden; /* 넘치는 부분을 화면에서 안보이게 */
+            text-overflow: ellipsis; /* 안보이게 한 부분중에 글자 있으면 ... 으로 변경 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos aliquid numquam ipsam aut! Vel reiciendis maiores a exercitationem odio officiis totam qui dolore? Modi ipsa ipsum corporis velit doloremque ad?</div>
+
+
+    <p class="p1">Lorem ipsum 
+        
+        
+        dolor sit amet consectetur
+        
+        adipisicing elit. Necessitatibus qui asperiores quos eaque! Provident corrupti ipsam repellendus soluta placeat fuga est illo odit, asperiores quaerat doloribus aperiam? Laborum, necessitatibus temporibus?</p>
+
+</body>
+</html>

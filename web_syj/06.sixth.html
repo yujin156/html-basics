@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6일차 display</title>
+    <style>
+    /*
+        display: 요소의 레벨을 바꿔주거나 화면에서 사라지게 하는 속성
+                특이점 - 상속 안됨
+
+            1) inline: 기본값
+                       사이즈 적용 안됨
+                       필요한 컨턴츠 영역 만큼만 먹는다.
+            2) block: 기본값
+                       사이즈 적용 됨
+                       가능한한 끝에서부터 끝까지 먹는다.
+            3) inline-block: inline 의 필요한 만큼만 영역을 잡는 속성과
+                             block 의 사이즈 주면 적용되는 속성이 합쳐진것
+                             (단, 카테고리상 inline)
+
+            *4) none: 화면에 그려지지 않음
+                      (물리적인 px도 없음)
+
+           * 화면에 그려지지 않는 속성
+          * 1) display: none;
+                    px 없음
+           2)visited:요소를 투명하게 하는 속성
+                    px 살아있음
+                    visible - 기본값,보임
+                    hidden - 투명
+           3)opacity:요소를 투명하게 하는 속성
+                    px 살아 있음
+                    1-기본 값, 보임
+                    0- 투명
+                    (자손들까지 다 투면햊;ㅁ)
+                    
+    */
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+
+            /* display: inline; */
+            /* display: block; */
+            /* display: inline-block; */
+        }
+        .green {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box red">1</div>
+    <div class="box green">2</div>
+    <div class="box blue">3</div>
+
+    <br>
+    
+    <span class="box red">1</span>
+    <span class="box green">2</span>
+    <span class="box blue">3</span>
+</body>
+</html>

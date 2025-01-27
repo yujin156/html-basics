@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5일차 float</title>
+    <style>
+    /* 
+        float: 요소의 레벨과 상관 없이 정렬
+                left, right, none
+            *자식요소에 float 속성이 적용되어 있으면 부모는 그 사이즈를 구할수 없다.
+
+        - 부모가 높이값 잡는 방법 -
+            1) 부모에 높이값 직접 적용 - 자식들의 높이가 바뀌면 부모도 일일히 수정해줘야함
+            2) overflow: hidden 적용 - 자식들의 높이값을 자동으로 잡음
+            3) 부모에도 float 적용 - (최대한 안쓰는걸 추천. 개미지옥)
+
+            
+        - clear: 상위요소(부모 또는 화면상 마지막 float 다음 요소)의 float 위치를 알아내서 다음줄에 그려짐
+                left, right, none
+        
+    
+    */
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+        .tmp {
+            width: 100%;
+            /* height: 100px; */
+
+            background-color: aqua;
+        }
+        .red {
+            background: red;
+            float: left;
+        }
+        .green {
+            background: green;
+            float: left;
+        }
+        .blue {
+            background: blue;
+            float: left;
+        }
+        .orange {
+            width: 100%;
+            height: 150px;
+            background: orange;
+
+            clear: both;
+        }
+        .purple {
+            background-color: purple;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="tmp">
+            <div class="box red"></div>
+            <div class="box green"></div>
+            <div class="box blue"></div>
+        </div>
+        
+        <div class="box orange"></div>
+        <div class="box purple"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5일차 텍스트1</title>
+    <!-- 
+        1) color: 글자색/(테두리색)
+        2) text-align: inline요소의 가로방향 정렬
+                       *컨텐츠 영역보다 넓은 조상에게 적용해야함
+                       left, right, center
+        3) text-decoration: 선 위치/모양
+                            line-through: 중앙선
+                            underline: 밑줄
+                            overline: 윗줄
+                            none: 줄 없앰
+
+        4) text-transform: 대소문자 변경
+                        capitalize: 각 단어의 첫번째 문자만 대문자로 변경
+                        uppercase: 다 대문자로 변경
+                        lowercase: 다 소문자로 변경
+
+        5) text-shadow: 글자 그림자
+                        물리적인 px 없음
+                        사용법: x축 y축 번짐도 색상
+                                *x,y 축 단위 음수,양수 다 가능
+                                 번짐도는 양수로만 가능
+                        *그림자 여러 방향으로 쓸때는 , 로 추가하면 됨
+                            ex) text-shadow: 1px 1px 1px red, -1px -1px 1px blue;
+    -->
+<style>
+    .txt1{
+        text-align: center;
+    }
+    .txt2{
+        color: black;
+        text-decoration: overline;
+    }
+    .txt3{
+
+    }
+</style>
+</head>
+<body>
+    <div class="txt1">정보교육</div>
+    <div class="txt2">정보교육</div>
+    <div class="txt3">정보교육</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5일차 폰트</title>
+    <style>
+    /*
+        폰트: 저작권 주의(HY, 윤 폰트는 쓰지마세요)
+              상업용 폰트: https://fonts.google.com/ (구글폰트)
+                          https://noonnu.cc/font_page/pick (눈누)
+
+        1) font-style: 글자 기울이기
+                        normal, italic
+
+        2) font-variant: 글꼴 변형(소문자를 대문자로 바꾸고 크기 작게 변환)
+                        small-caps
+        
+        *3) font-weight: 두께
+                        단위: 100~900
+                              기본400. 작을수록 얇게, 클수록 두껍게 표시
+                            bold-두껍게, lighter-얇게 표시
+
+        *4) font-size: 크기
+
+        5) font-family: 글씨체 
+                        , 로 우선순위 결정
+                ex) font-family: 'Courier New', Courier, monospace, serif;
+
+        font: style variant weight size family
+        *한방 사용시 size family 는 필수
+
+    */
+        .txt2 {
+            font-family: 'Courier New', Courier, monospace;
+            font-variant: small-caps ;
+        }
+        .txt3 {
+            font-weight: 900;
+            font-size: 32px;
+
+            font-style: italic
+        }
+        .txt4 {
+            font: italic bold 30px 'Courier New', Courier, monospace, serif;
+        }
+    </style>
+</head>
+<body>
+    <p class="txt1">Lorem ipsum dolor sit amet consectetur</p>
+    <p class="txt2">Lorem ipsum dolor sit amet consectetur</p>
+    <p class="txt3">Lorem ipsum dolor sit amet consectetur</p>
+    <h1 >Lorem ipsum dolor sit amet consectetur</h1>
+    <p class="txt4">Lorem ipsum dolor sit amet consectetur</p>
+</body>
+</html>

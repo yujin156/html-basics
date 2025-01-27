@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3일차 색상</title>
+    <style>
+    /*
+        = 색관련 css =
+            기본색: 글자-검정, 나머지 투명(transparent)
+
+
+        -속성-
+            1) background-color: 배경색
+            2) color: 배경색을 제외한 모든 파트 관련 색(글자색, 테두리색)
+                        *테두리 사용시 테두리 색을 별도로 건드려줘야함
+            3) border-color: 테두리색
+                            *테두리가 별도로 들어가 있어야 색 적용됨
+
+        -속성값-
+            *1)16진수: # 0~f
+                       6자리 : 두자리씩 끊어서 빨초팔
+                            
+                       3자리 : 한자리씩 끊어서 빨초팔
+            2)rgb :0~255
+            *3)rgba 0~255 + 알파값(투명도)
+                                    - 기본값: 1 , 단의 0~1사이의 실수값
+            4)색이름
+
+    */ 
+        h1 {
+            background-color: pink;
+
+            /* color: red;*/
+
+
+            border-color: black; 
+            /* 테두리가 별도로 들어가 있어야 색 적용됨 */
+            border-width: 1px;
+            border-style: solid;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>헬로</h1>
+    
+</body>
+</html>

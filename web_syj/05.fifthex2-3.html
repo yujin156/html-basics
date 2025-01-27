@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        } 
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* ----------------------------- */
+
+        .header {
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+
+            background: pink;
+        }
+        .logo {
+            width: 250px;
+            height: 100%;
+            float: left;
+
+            background: skyblue;
+            text-align: center;
+        }
+        .menu_ul { 
+            float: right;
+            background-color: aquamarine;
+        }
+        .menu_li {
+            float: left;
+            padding: 0 20px;
+        } 
+        /* /////////////////////////// */
+        /* 본문 */
+        .main {}
+        .main_banner {
+            width: 100%;
+            height: 600px;
+            background-color: aqua;
+        }
+        .container {
+
+        }
+        .sec {
+            width: 1100px;
+            margin: 30px auto;
+        }
+        .sec_header {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+
+        }
+        .sec_title {
+            font-size: 22px;
+            font-weight: 900;
+        }
+        /* .sec_body { overflow: hidden;} */
+
+        .item {
+            
+            height: 300px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+
+            background: pink;
+            border: 2px solid;
+            box-sizing: border-box;
+
+            float: left;
+        }
+
+        .item_by_4 {width: calc((100% - (10px * 3)) / 4);}
+        .item_by_3 {width: calc((100% - (10px * 2)) / 3);}
+
+        .long_banner {
+            width: 100%;
+            height: 300px;
+            background-color: darkolivegreen;
+        }
+
+
+        /* 웹2 때 css 선택자 추가로 배우면 이런거 필요 없음 */
+        .mr_0 { margin-right: 0;}
+        .ml_0 { margin-left: 0;}
+        .clearfix { clear: both;}
+
+        .footer {
+            width: 100%;
+            height: 400px;
+            background-color: #222;
+        }
+
+
+        .search {
+            width: 300px;
+            height: 40px;
+            float: left;
+            margin: 10px;
+
+            border: 2px solid red;
+            box-sizing: border-box;
+            border-radius: 20px;
+
+            line-height: 1;
+            overflow: hidden;
+        }
+        .keyword {
+            width: calc(100% - 50px);
+            height: 100%;
+            border: none;
+            padding: 0 10px;
+            box-sizing: border-box;
+            outline: none;
+            /* float: left; */
+        }
+        button {
+            width: 50px;
+            height: 36px;
+            background: #fff;
+            border: none;
+            float: right;
+        }
+        img {width: 18px;}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div class="header">
+        <div class="logo">로고</div>
+
+        <form class="search">
+            <input type="text" class="keyword">
+            <button><img src="./img/google_search.png" alt=""></button>
+        </form>
+
+        <ul class="menu_ul">
+            <li class="menu_li"><a href="#best">menu1</a></li>
+            <li class="menu_li"><a href="#new">menu2</a></li>
+            <li class="menu_li"><a href="#adv">menu3</a></li>
+            <li class="menu_li"><a href="#">menu4</a></li>
+            <li class="menu_li"><a href="#">menu5</a></li> 
+        </ul>
+    </div>
+    <div class="main">
+        <div class="main_banner"></div>
+        <div class="container">
+            <div class="sec" id="best">
+                <div class="sec_header">
+                    <div class="sec_title">Best</div>
+                    <!-- <div class="btn_show_more">더보기</div> -->
+                </div>
+                <ul class="sec_body">
+                    <li class="item item_by_4"></li>
+                    <li class="item item_by_4"></li>
+                    <li class="item item_by_4"></li>
+                    <li class="item item_by_4 mr_0"></li>
+                    <li class="item item_by_4"></li>
+                    <li class="item item_by_4"></li>
+                    <li class="item item_by_4"></li>
+                    <li class="item item_by_4 mr_0"></li>
+                    <li class="clearfix"></li>
+                </ul>
+            </div>
+
+            <div class="long_banner"></div>
+
+            <div class="sec">
+                <div class="sec_header">
+                    <div class="sec_title">New Arrival</div>
+                </div>
+                <ul class="sec_body">
+                    <li class="item item_by_3"></li>
+                    <li class="item item_by_3"></li>
+                    <li class="item item_by_3 mr_0"></li>
+                    <li class="item item_by_3"></li>
+                    <li class="item item_by_3"></li>
+                    <li class="item item_by_3 mr_0"></li>
+                    <li class="item item_by_3"></li>
+                    <li class="item item_by_3"></li>
+                    <li class="item item_by_3 mr_0"></li>
+                    <li class="clearfix"></li>
+                </ul>
+            </div>
+
+            <div class="long_banner"></div>
+
+            <div class="sec">
+                <div class="sec_header">
+                    <div class="sec_title">광고배너</div>
+                </div>
+                <ul class="sec_body">
+                    <li class="item item_by_3"></li>
+                    <li class="item item_by_3"></li>
+                    <li class="item item_by_3 mr_0"></li> 
+                    <li class="clearfix"></li>
+                </ul>
+            </div>
+        </div>
+        
+
+    </div>
+    <div class="footer"></div>
+</div>
+</body>
+</html>

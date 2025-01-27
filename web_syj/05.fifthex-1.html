@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5일차 에제1 강사님 버전</title>
+    <style>
+        .border_r_7 {border-radius: 7px;}
+
+
+        body { margin: 0;}
+        #wrap {
+            width: 300px;
+            margin: 100px auto 0;
+
+            /* background: pink;  */
+        }
+        .logo_box { font-size: 0;}
+        .logo { width: 100%;}
+
+        form {
+            /* background: skyblue; */
+
+            padding: 5px 0;
+            border-bottom: 1px solid ;
+        }
+        input {
+            width: 100%;
+            height: 40px;
+            padding: 0 10px;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+
+            border: 1px solid #acacac;
+            outline: none; /* input 텍스트 필드 클릭했을때 테두리 검은거 생기는거 없애기 */
+        }
+        button {
+            width: 100%;
+            height: 50px; 
+            background: #3794ff;
+            color: #fff;
+            border: none
+        }
+        .link_box { 
+            color: #151515;
+            margin-top: 5px;
+        }
+        a {
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="logo_box">
+            <a href="#">
+                <img src="./img/lezhin_logo.png" alt="" class="logo border_r_7">
+            </a>
+        </div>
+        <form action="#">
+            <input type="text" placeholder="아이디를 입력하시오" name="uid" class="border_r_7">
+            <input type="password" placeholder="비밀번호를 입력하시오" name="upw" class="border_r_7">
+            <!-- <input type="submit" value="로그인" id="btn_submit"> -->
+            <button id="btn_submit" class="border_r_7">로그인</button>
+        </form>
+        <div class="link_box">
+            <a href="#">회원가입</a>
+            <a href="#">아이디/비밀번호 찾기</a>
+        </div>
+    </div>
+</body>
+</html>

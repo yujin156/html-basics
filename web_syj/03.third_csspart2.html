@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3일차 목록</title>
+
+    <style>
+    /* 
+        list-style: 목록(ul,ol,li)에 점 부분 관련 속성
+                    선택자가 ul이던 li이더 상관없이 적용 가능
+
+        *1) list-style-type: ul, ol의 모양
+                            disc, cicle, square, none
+                            decimal, 
+
+        2) list-style-image: type 대신 이미지로 대체
+                            url(이미지 경로);
+                            *list-style-type 속성과 같이 사용 못함(같이 사용하면 image 가 이김)
+
+        3) list-style-position: 목록 들여쓰기(점의 위치)
+                                inside: li 영역 내부(왼쪽)
+                                outside: 기본값, li영역 밖
+
+        *한방 표현
+            list-style: type  image  position
+
+    */
+        ul {
+            /* list-style-type: disc; */
+            /* list-style-image: url(./img/tick.png); */
+            /* list-style-position: inside; */
+
+            list-style: circle inside;
+
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+    </ul>
+</body>
+</html>

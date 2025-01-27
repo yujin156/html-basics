@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4일차 calc()</title>
+    <style>
+    /*  
+        *중요 5대장*
+        calc(): 계산기
+                px, % 가 들어가는 모든 속성에서 사용 가능
+                **사칙연산 중에서 - 의 앞 뒤에는 무조건 빈칸 필요
+
+                calc(사용할 전체 영역 크기/ 한 줄에 넣을 칸수)
+                calc(사용할 전체 영역 크기-(뺄거)/ 한 줄에 넣을 칸수)
+                calc(사용할 전체 영역 크기-(뺄거 공식)/ 한 줄에 넣을 칸수)
+
+        
+    */
+        body { margin: 0;}
+        .nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav_li {
+            width: calc(100% / 4);
+            /* height: 50px; */
+            padding: 20px 0;
+            float: left;
+            text-align: center; /* 가로 가운데 */
+
+            background: pink;
+            margin-bottom: 5px;   
+        }
+
+        .box {
+            width: calc((100% - (10px*2)) / 3);
+            height: 200px;
+            background-color: skyblue;
+
+            float: left;
+            margin-right: 10px;
+        }
+        img{width: 100%;}
+        .no{margin-right: 0;}
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="nav_li">menu</li>
+        <li class="nav_li">menu</li>
+        <li class="nav_li">menu</li>
+        <li class="nav_li">menu</li>
+    </ul>
+
+<div class="main">
+    <div class="box">
+        <img src="./img/ann_house/item1.jpg">
+    </div>
+    <div class="box">
+        <img src="./img/ann_house/item2.jpg">
+    </div>
+    <div class="box no">
+        <img src="./img/ann_house/item3.jpg">
+    </div>
+</div>
+
+</body>
+</html>

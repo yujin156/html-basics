@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4일차 background</title>
+    <style>
+    /* 
+        *background는 별도의 물리적인 px을 가지고 있지 않음
+
+        *1) background-color: 배경색(24번 파일에 상세설명 있음)
+
+        *2) background-image: 배경 이미지
+                            url(이미지 경로)
+                            *img태그와는 달리 요소의 영역만큼만 그려짐
+                            *(img태그는 영역과 상관 없이 원본크기대로 다 나옴)
+                            *원본이미지의 크기가 요소의 영역보다 작으면 반복해서 그려짐
+        *3) background-repeat: 배경 이미지 반복여부
+                            repeat: 기본값, 반복(x,y축)
+                            repeat-x: x 축 방향으로만 반복
+                            repeat-y: y 축 방향으로만 반복
+                            *no-repeat: 반복 안함
+        4) background-attachment: 배경 이미지를 특정 위치에 고정;
+                            fixed - 브라우저 왼쪽 상단 기준으로 위치를 잡음
+
+        5) background-position: 배경 이미지 위치(x축 y축 두개 다 명시해야함)
+                                top, left, bottom, right, center
+                                px, % 
+
+
+        *6) background-size: 배경 이미지 크기 
+                            px, %: x축 y축 두개 다 명시해야함
+                            cover: 요소의 영역에 빈틈이 없도록 이미지 크기를 조절
+                                    (이미지가 짤리는 한이 있어도 크기 조절)
+                            contain: 요소의 영역에 빈틈이 생기던 말던 상관 없이
+                                     원본 이미지를 가로 또는 세로 한쪽만 꽉 차게 맞춰줌
+
+         *한방
+            background: color  image  repeat  attachment  position  size
+
+
+    */  
+        body { height: 5000px;}
+        .box {
+            width: 1000px;
+            height: 500px;
+
+            border: 5px solid red;
+            background-color: pink;
+            background-image: url(./img/1.jpg);
+            /* background-repeat: repeat-y; */
+            background-repeat: no-repeat;
+            /* background-attachment: fixed; */
+            /* background-size: contain; */
+            background-size: 20%;
+
+            background-position: 20px bottom ;
+        }
+ 
+        .box2 {
+            width: 300px;
+            height: 300px;
+
+            border: 5px solid red;
+            background-color: pink;
+            /* background-image: url(./img/1.jpg); */
+        } 
+    </style>
+</head>
+<body>
+    <div class="box">
+        글자
+    </div> 
+
+    <div class="box2">
+        <img src="./img/1.jpg" alt="">
+        글자
+    </div> 
+</body>
+</html>

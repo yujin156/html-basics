@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5일차 overflow</title>
+    <style>
+    /*
+        overflow: 영역을 넘치는 부분을 관리
+                visible: 기본값
+                         넘치면 넘치는대로 다 보여줌
+                *hidden: 넘치는 부분 숨김 (float 속성과 같이 쓰일때 중요)
+                scroll: 넘치던 말던 x,y축에 스크롤바 트랙을 달아줌
+                       overflow-x
+                       overflow-y 
+                auto: 알아서 넘치는 부분쪽에만 스크롤바 달아줌
+    */
+        div {
+            width: 300px;
+            height: 80px;
+            background-color: pink;
+            margin-bottom: 100px;
+        }
+        .visible { overflow: visible; }
+        .hidden { overflow: hidden; }
+        .scroll {
+            overflow: scroll;
+            /* overflow-y: scroll; */
+
+            /* y축 방향으로 넘칠때 x축만 scroll 을 건드려도 알아서 y축 자동 생성됨
+              (그래서 별도로 없애고 싶을땐 hidden으로 세팅해야함) */
+            /* overflow-x: scroll;
+            overflow-y: hidden; */
+         }
+        .auto { overflow: auto }
+    </style>
+</head>
+<body>
+    <div class="visible">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae sint fugit sapiente, ex facilis iusto, voluptatem esse vel quas ea quisquam nulla, architecto repellat explicabo suscipit. Dolorum error tempore incidunt?</div>
+    
+    <div class="hidden">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae sint fugit sapiente, ex facilis iusto, voluptatem esse vel quas ea quisquam nulla, architecto repellat explicabo suscipit. Dolorum error tempore incidunt?</div>
+    
+    <div class="scroll">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae sint fugit sapiente, ex facilis iusto, voluptatem esse vel quas ea quisquam nulla, architecto repellat explicabo suscipit. Dolorum error tempore incidunt?</div>
+    
+    <div class="auto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae sint fugit sapiente, ex facilis iusto, voluptatem esse vel quas ea quisquam nulla, architecto repellat explicabo suscipit. Dolorum error tempore incidunt?</div>
+</body>
+</html>

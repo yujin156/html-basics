@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5일차 예제1</title>
+    <style>
+        body { margin: 0;}
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .outer_ul {
+            width: 100%;
+
+            /* 방법1 - 부모에 높이 대놓고 줘서 자식들이 100%로 따라오게 하기 */
+            /* height: 100px; */
+            
+            /* 방법2: 자식들이 직점 100px 가지고 있고 부모가 overflow 로 알아서 잡게 하기 */
+            overflow: hidden;
+
+
+            background-color: bisque;
+        }
+        .outer_li {
+            border: 1px solid;
+            box-sizing: border-box;
+
+            width: calc((100% - (10px * 5)) / 6);
+            /* 방법1 */
+            height: 100%;
+
+            /* 방법2 */
+            height: 100px;
+            margin-right: 10px;
+            float: left;
+            text-align: center;
+            line-height: 100px;
+        }
+        .inner_ul {
+            background-color: skyblue;
+            line-height: 50px;
+            /* display: none; */
+        }
+
+        .box{
+            width: 100%;
+            height: 400px;
+            background-color: aqua;
+        }
+
+        .mr_0 {margin-right: 0px;}
+    </style>
+</head>
+<body>
+    <ul class="outer_ul">
+        <li class="outer_li">menu1</li>
+        <li class="outer_li">menu2
+            <!-- <ul class="inner_ul">
+                <li class="inner_li">sec1</li>
+                <li class="inner_li">sec2</li>
+            </ul> -->
+        </li>
+        <li class="outer_li">menu3</li>
+        <li class="outer_li">menu4</li>
+        <li class="outer_li">menu5</li>
+        <li class="outer_li mr_0">menu6</li>
+    </ul>
+    <div class="box"></div>
+</body>
+</html>

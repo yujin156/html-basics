@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4일차 border</title>
+    <style>
+        /* 
+        border: 테두리 관련 속성
+
+            1) border-width: 테두리 선 두께
+                             단위 - px
+                             *선 종류(스타일) 속성이 있을때만 동작
+
+                border-top-width
+                border-right-width
+                border-bottom-width
+                border-left-width
+
+            2) border-style: 선 종류(스타일)
+                            *solid: 실선
+                            dashed: 절취선
+                            dotted: 점선
+                            double: 이중선
+                            *none: 선 없앰
+                            
+                border-top-style
+                border-right-style
+                border-bottom-style
+                border-left-style
+
+
+            3) border-color: 색 관련(24번 파일에 자세한 설명 있음)
+                
+                border-top-color
+                border-right-color
+                border-bottom-color
+                border-left-color
+
+        *한방
+            border: width style color
+    
+            4) border-radius: 테두리 깎기(둥글게)
+                            px, %
+                            가로,세로 각 방향의 절반 이상 주는건 소용 없음
+                            한방에 포함 안됨
+    */  
+    .box2 {
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+            margin-top: 50px;
+
+            /* border-radius: 50%; */
+        }
+
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+
+            /* border-width: 10px;
+            border-style: solid; */
+
+            border: 10px solid red;
+            
+            border-top-width: 3px;
+            border-right-width: 5px;
+            border-bottom-width: 10px;
+            border-left-width: 20px; 
+            border-top-style: dashed;
+            border-left-color: blue
+        }
+        */
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+
+            /* border-width: 10px;
+            border-style: solid; */
+
+            border: 10px solid red;
+            
+            border-top-width: 3px;
+            border-right-width: 5px;
+            border-bottom-width: 10px;
+            border-left-width: 20px; 
+            border-top-style: dashed;
+            border-left-color: blue
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+            margin-top: 50px;
+            /* border-radius: 50%; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

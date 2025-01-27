@@ -1,0 +1,357 @@
+    <!-- 잡담 - 검색 포탈 위로 올리는 법? 유명 사이트에 백링크 or 자주 검색  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2일차 테이블, a태그,이미지</title>
+</head>
+<body>
+    <!-- 표 태그
+    table -(카테고리상)블록레벨
+            부모로만 사용가능
+            알아서 가로 사이즈 조정
+    
+    thead, tbody, tfoot - tabl의 직속 자식 
+    
+    안써도 상관이 없는데 구역이 안나뉨
+    나중에 자바를 사용했을때 구역이 안 나누어져 있으면 전체를 tbody로 생각하기 때문에 구조가 안 나누어져 있어 디자인 쓸때에 디자인이 안될 수 있음
+    쓰는 습관을 갖는게 좋다.
+
+    tr - table의 자식 또는 thead, tbody, tfoot 자식으로 사용
+    th - tr의 자식으로만 사용 가능
+         한 칸을 의미
+         제목
+         글자 두껍게, 가운데 정렬
+
+    td - tr의 자식으로만 사용 가능
+         한 칸을 의미
+         일반 두께, 왼쪽 정렬
+
+    - 옵셔널 요소(써도 그만 안써도 그만)
+        1) caption: 표 제목
+                    table 태그의 자식으로사용 가능
+                    실제 코드의 위치와 상관 없이 표 위의 가운데 출력
+
+        2) colgroup: 여러 열들을 묶어서 css 적용
+                col: 각 열
+
+---------------------------------------------------------
+    - 속성
+        1) border: (table꺼)테두리 두께, 
+                    단위-정수. 기본값=0
+        2) cellspacing: (table꺼) 컨텐츠의 외부영역 여백
+                        단위-정수, 기본값=2
+        3) cellpadding: (table꺼) 컨텐츠의 내부영역 여백
+                        단위-정수, 기본값=2
+        4) span: 칸을 늘린다
+                단위-정수
+                colspan: 옆으로 늘림 
+                         같은 tr상의 칸을 없애줘야함
+                rowspan: 아래줄로 늘림
+                         아래줄에 있는 th/td 를 없애줘야함
+    -->
+    <table border="1" cellspacing="1" cellpadding="">
+        <tr>
+            <th>1행1열</th>
+            <td>1행2열</td>
+            <td>1행3열</td>
+            <td>1행4열</td>
+        </tr>
+        <tr>
+            <td>2행1열</td>
+            <td>2행2열</td>
+            <td>2행3열</td>
+            <td>2행4열</td>
+        </tr>
+        <tr>
+            <td>3행1열</td>
+            <td>3행2열</td>
+            <td>3행3열</td>
+            <td>3행4열</td>
+        </tr>
+        <tr>
+            <td>4행1열</td>
+            <td>4행2열</td>
+            <td>4행3열</td>
+            <td>4행4열</td>
+        </tr>
+    </table>
+-----------------------------------------------------------------
+<!-- thead, tbody, tfoot 사용  확인은 웹레서 f12 로 확인-->
+<table border="2">
+    <thead>
+    <tr>
+        <th>1행1열</th>
+        <td>1행2열</td>
+        <td>1행3열</td>
+        <td>1행4열</td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2행1열</td>
+            <td>2행2열</td>
+            <td>2행3열</td>
+            <td>2행4열</td>
+        </tr>
+        <tr>
+            <td>3행1열</td>
+            <td>3행2열</td>
+            <td>3행3열</td>
+            <td>3행4열</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>4행1열</td>
+            <td>4행2열</td>
+            <td>4행3열</td>
+            <td>4행4열</td>
+        </tr>
+    </tfoot>
+</table>
+------------------------------------------------------------------
+<!-- 예제1 -->
+ <h2>내 답</h2>
+ <table border="1">
+    <caption>요안도라 객실</caption>
+    <thead>
+        <tr>
+          <th>방이름</th> 
+          <th>대상</th>
+          <th>크기</th>
+          <th>가격</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>유채방</th>
+            <td>여성도미토리</td>
+            <td rowspan="3">4인실</td>
+            <td rowspan="4">1인 20,000원</td>
+        </tr>
+        <tr>
+            <th rowspan="2">동백방</th>
+            <td>동성도미토리</td>
+            
+        </tr>
+        <tr>
+            <td>가족팀</td>
+        </tr>
+        <tr>
+            <th rowspan="2">천혜향방</th>
+            <td>-</td>
+            <td>2인실</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="4">바깥체 전체를 렌트합니다.</td>
+        </tr>
+    </tfoot>
+</table>
+<h2>강사님 답</h2>
+<table border="1" cellspacing="0">
+    <caption>요안도라 객실</caption>
+    <colgroup>
+        <col style="width: 100px;">
+        <col style="width: 150px;">
+        <col style="width: 100px;">
+        <col style="width: 200px;">
+    </colgroup>
+    <thead>
+        <tr>
+          <th>방이름</th> 
+          <th>대상</th>
+          <th>크기</th>
+          <th>가격</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>유채방</th>
+            <td>여성도미토리</td>
+            <td rowspan="3">4인실</td>
+            <td rowspan="4">1인 20,000원</td>
+        </tr>
+        <tr>
+            <th rowspan="2">동백방</th>
+            <td>동성도미토리</td>
+            
+        </tr>
+        <tr>
+            <td>가족팀</td>
+        </tr>
+        <tr>
+            <th rowspan="2">천혜향방</th>
+            <td>-</td>
+            <td>2인실</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="4">바깥체 전체를 렌트합니다.</td>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<!-- 
+    figure : blockqute 처럼 좌우에 여백이 있아 들여쓰기가 됨
+             블록레벨
+
+    figcaption : figure의 제목
+                 caption 과의 차이점 -  실제 코드 위치에 배치
+                 왼쪽 정렬
+
+
+-->
+
+    <figure>
+        <figcaption>제목</figcaption>
+    </figure>
+
+<hr>
+<!-- 이미지 태그 -->
+<!-- 
+    img : inline-block레벨(카테고리상 inline 레벨에 속함)
+                        *inline-block- 필요한 만큼만(인라인) + 사이즈 주는데로(블록)
+
+          닫는 태그 없다.
+          사이즈 적용 가능( 설정 없으면 원본 그대로 출력)
+          가로/세로 한쪽 사이즈만 건들이면 반대쪽도 알아서 변경
+          <img src="이미지 경로" alt ="이미지 설명"
+
+          *1) src : 필수 속성
+                    이미지 경로
+
+                    -경로 잡는 법-
+                    1) 같은 레벨상에 있을때 -파일명 == ./파일명
+                        하위 레벨상에 있을때 - 폴더명/ 파일명 == ./폴더명/파일명
+
+                    2) 상위 레벨에 있을때 - ../
+                    3) 웹상의 경로로 잡을때 - http 또는 http
+
+          2) alt : 옵션 속성
+                   이미지 설명
+                   이미지를 불러올수 없는 경우에 이미지 대신 화면 출력
+                   *웹 접근성 - 시각장애인용 기기에서 읽어줌
+        
+          3)
+  -->
+    <img src="1.jpg" alt="같은 위치 사진"> <!--같은-->
+    <img src="./img/1.jpg" alt="하위 위치 사진"> <!--하위-->
+    <img src="../img/1.jpg" alt="상위 위치 사진"> <!--상위-->
+
+
+<hr>
+<!-- 예제2 -->
+ <h2>내 답</h2>
+ --------------------------------------------------------------------------
+<figure>
+    <img src="./img/pf.png" alt="귀여운 곰돌쓰">
+    <figcaption>귀여운 곰돌이 인형</figcaption>
+</figure>
+<h1>홍길동</h1>
+<table>
+    <tr>
+        <td>연락처:</td>
+        <td>010-1111-2222</td>
+    </tr>
+        <td>나이:</td>
+        <td>999</td>
+    </tr>
+    <tr>
+        <td>성별:</td>
+        <td>남</td>
+    </tr>
+</table>
+-----------------------------------------------------------------------------
+<h2>강사님 답</h2>
+<figure>
+    <img src="./img/pf.png" alt="귀여운 곰돌쓰">
+    <figcaption>귀여운 곰돌이 인형</figcaption>
+</figure>
+<!--
+    <ul type="none">
+        <li>
+            <img src="./img/pf.png" alt="귀여운 곰돌쓰">
+        </li>
+        <li>
+            귀여운 곰돌쓰
+        </li>
+    </ul>
+ -->
+<h1>홍길동</h1>
+<table>
+    <tbody> <!--tbody제발 까먹지마-->
+        <tr>
+            <td>연락처:</td>
+            <td>010-1111-2222</td>
+        </tr>
+            <td>나이:</td>
+            <td>999</td>
+        </tr>
+        <tr>
+            <td>성별:</td>
+            <td>남</td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<!-- 링크 -->
+ <!-- 
+    a 태그 -링크태그
+            페이지끼리 연결해는 태그
+            inline레벨
+            기본 폰트 파랑, 밑줄
+            히스토리가 있는 경우 보라
+            a 태그용 css 만듦, 색 밑줄 등 관리
+            마우스 오버시 마우스커서 손가락으로 변경
+
+            a태그 안에 블록레벨이 존재할경우 끝에서 끝까지 영역을 잡을거고 a는 inline이라서 그 블록레벨의 만큼을 주려고 해서 빈공간까지 다 잡아줌
+
+    -속성-
+        1) 필수 속성
+            href: 클릭했을때
+                 - 서버상의 경로: ./ , ../
+                 - 웹상의 경로: http , https
+                 - 이동할 경로가 정해지지않은경우 임시링크(#)를 걸어둔다
+                 - 현재 페이지 내부 경로(이때도 #으로 시작 예제- 02.1secondtext.html)
+
+        2) 옵션 속성
+            target: 페이지 이동시 현재탭에서 이동할지 새탭에서 이동할지 결정
+                _self: 기본값,현재창
+                _blank: 새탭으로
+ -->
+<!--input 태그-->
+<!-- 
+    input 태그 - 사용자로부터 입력을 받을 수 있는 태그 
+                inline 레벨
+                닫는 테그 없음(기본사이즈 정해져 있음)
+        <input type="유형" 속성="속성값"...../> -> / 셀프클로징
+
+    -속성-
+    1) value : 실제값
+        *필수처럼 사용하는 type : button
+        *checkbox, radio 에서는 실제로 화면에 나타나지 않고 정보를 넘길때 사용됨(from태그)
+    2) name : 요소에 이름 달아줄때
+              요소들을 그룹핑 할때 사용
+              *필수처럼 사용하는 type : radio
+-->
+    <input type="text"><br>
+    <input type="password"><br>
+    <input type="button"><br><!--다시 해제 가능-->
+    <input type="radio"><br><!--그룹핑일때만 다른 요소를 누르면 원래 있건 요소 해제-->
+
+    <input type="radio" value="yes" name="radio"> 에 <br>
+    <input type="radio"value="no" name="radio"> 아니요
+
+    <input type="button"value="웹1" name="chk"> 웹1 <br>
+    <input type="button"value="웹2" name="chk"> 웹2
+or
+    <input type="button" name="chk1"> 웹1 <br>
+    <input type="button" name="chk"> 웹2
+    <!-- <textarea type="text"></textarea> -->
+</body>
+</html>

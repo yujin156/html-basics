@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3일차 input, from</title>
+    <style>body {height: 5000px;}</style>
+</head>
+<body>
+<!-- 
+    input 태그 - 사용자로부터 입력을 받을수 있는 태그
+                inline-block레벨(카테고리상 inline레벨)
+                닫는태그 없음(기본 사이즈가 정해져 있음)
+
+        <input type="유형" 속성="속성값" 속성="속성값"....>
+
+        - 속성 - 
+        1) type: (필수)유형.
+
+        2) value: (옵션) 실제값
+                *필수처럼 사용하는 type: button
+                *checkbox나 radio 에서는 실제 화면에 나타나지 않고 정보를 넘길때 사용됨(form태그)
+                
+        3) name: (옵션)요소에 이름 달아줄때 사용
+                 요소들을 그룹핑 할때 사용
+                *필수처럼 사용하는 type: radio
+
+--> 
+
+    <p>== 많이 사용 ==</p>
+    <input type="text" value="abcd"> <br>
+    <input type="password" value="1234"> <br>
+    <input type="button" value="버튼1"> 
+    <input type="button" value="로그인"> 
+    <input type="button" value="회원가입">  <br>
+
+    <button>확인</button>
+    <!-- input type="button" 과 같지만 닫는태그가 있음
+        form태그 밖에서 명시되면 그냥 type="button" 으로 인식하고
+        form태그 안에서 명시되면 type="submit" 으로 인식됨 -->
+    <br>
+    <!-- 라디오 버튼은 한번 체크가 되면 사용자가 체크 해제를 할 수 없다.
+        (유일하게 해제 할 수 있는 방법은 같은 그룹중에 다른거 체크해야함) -->
+    <input type="radio" value="예" name="rd">예 
+    <input type="radio" value="아니오" name="rd">아니오 <br>
+    
+    <input type="checkbox" value="웹1" name="chk">웹1
+    <input type="checkbox" value="웹2" name="chk">웹2
+    <input type="checkbox" value="웹3" name="chk">웹3 <br>
+    
+
+    <hr>
+
+    <input type="radio" value="강남" name="rd2" id="rd_강남">
+    <label for="rd_강남">강남점</label>
+
+    <label for="rd_당산">
+        <input type="radio" value="당산" name="rd2" id="rd_당산">
+        당산점
+    </label> 
+
+    <hr>
+    <!-- <textarea name="" id=""></textarea> -->
+
+    <form action="#"> 
+        <input type="radio" value="예" name="rd">예 
+        <input type="radio" value="아니오" name="rd">아니오 <br>
+        
+        <input type="checkbox" name="chk1">웹1
+        <input type="checkbox" name="chk2">웹2
+        <input type="checkbox" name="chk3">웹3 <br>
+        
+        <input type="checkbox" name="tmp" value="tmp1">웹1
+        <input type="checkbox" name="tmp" value="tmp2">웹2
+        <input type="checkbox" name="tmp" value="tmp3">웹3 <br>
+
+        <input type="email"><br>
+
+        <input type="submit">
+        <input type="reset">
+    </form>  
+
+    <hr>
+    <p>== 중간빈도 ==</p>
+    <input type="submit" value="확인"> <br>
+    <input type="reset"> <br>
+    <!-- submit, reset 은 form 태그 안에서만 사용 가능
+            (type="button"과 같은거임)
+     submit은 정보를 넘김
+     reset은 input 요소들을 초기화함 -->
+    
+    <input type="hidden"> <!-- text와 동일하지만 화면에 출력 안됨 --> <br>
+    <input type="search"> <!-- text와 동일하지만 글자 입력시 X 표시 나옴 --> <br>
+    <input type="file"> <!-- 파일 업로드시 사용 --> <br>
+    <input type="range"> <br>
+    
+    <hr>
+    <input type="number"> <br>
+    <input type="tel"> <!-- 웹페이지에서는 일반 text 필드처럼 나타나지만 스마트기기에서는 숫자패드로 나옴 --> <br>
+    <input type="email"> <!-- form태그 안에서만 동작. 필드에 @ 있어야만 통과 --> <br>
+    <input type="date"> <br>
+    <input type="datetime-local"> <br>
+
+    <hr>
+    <!-- 
+    - 속성 -
+    *1) placeholder: 필드에 힌트표시
+                    password 에서도 글씨로 표시됨
+                    (한 글자라도 넣으면 힌트 사라짐)
+                    (value 와는 다름. value는 기존 글자들이 다 살아있음)
+
+    *2) autofocus: 자동으로 커서 표시
+                  (여러 요소에 들어가면 코드상 제일 위에 있는 요소에 포커스 됨)
+    
+    3) readonly: 해당 필드을 읽기전용 으로 표시
+                 (해당 필드 수정 불가)
+                 form으로 값을 보낼때 전송 됨
+        
+    4) disabled: 해당 필드를 비활성화
+                 (해당 필드 수정 불가)
+                 form으로 값을 보낼때 전송 안됨
+
+    5) required: form 태그 안에서 필수 요소로 지정
+                (빈칸 불가)
+
+    6) maxlength: 해당 필드의 최대 글자 수 지정
+                    단위 - 정수
+    7) minlength: 해당 필드의 최소 글자 수 지정
+                    단위 - 정수
+                    form 태그 안에서만 동작(submit 버튼 클릭시 글자수 체크함)
+    
+    *8) checked: radio, checkbox 용도의 속성
+--> 
+<input type="text" placeholder="아이디를 입력하시오" autofocus> <br>
+<input type="text" value="아이디를 입력하시오" autofocus> <br>
+<input type="password" placeholder="비번을 입력하시오" autofocus> <br>
+
+<input type="text" value="홍길동" readonly> <br>
+<input type="text" value="홍길동" disabled> <br>
+
+<form action="#">
+    <input type="text" required> <br>
+    <input type="text" maxlength="8" minlength="4"> <br>
+    <input type="submit">
+</form>
+
+<input type="radio" value="예" name="rd" checked>예 
+<input type="radio" value="아니오" name="rd">아니오 <br>
+
+<input type="checkbox" value="웹1" name="chk" checked>웹1
+<input type="checkbox" value="웹2" name="chk">웹2
+<input type="checkbox" value="웹3" name="chk">웹3 <br>
+<!--  예제1 -->
+  <!-- 방법1 -->
+    <!-- <table border="1">
+        <tbody>
+            <tr>
+                <th>링크이동</th>
+                <td>아래 링크를 클릭하시오</td>
+            </tr>
+            <tr>
+                <th>네이버</th>
+                <td>아래 링크를 클릭하시오</td>
+            </tr>
+            <tr></tr>
+        </tbody>
+    </table> -->
+
+<hr>
+<ul>
+    <li>
+        <!-- 방법2 -->
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>링크이동</th>
+                    <td>아래 링크를 클릭하시오</td>
+                </tr>
+                <tr>
+                    <!-- th는 가운데 정렬 되는거지만 table 위에 다른 조상이 있는 경우 왼쪽 정렬 될때도 있음 -->
+                    <th>네이버</th>
+                    <td>
+                        <a href="https://www.naver.com/">www.naver.com</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>다음</th>
+                    <td>
+                        <a href="https://www.daum.net/" target="_blank">www.daum.net</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </li>
+    <li>
+        <b>KH정보교육원 지점 소개</b>
+        <ul type="square">
+            <li>강남점
+                <ol>
+                    <li>웹퍼블리셔</li>
+                    <li>프론트엔드</li>
+                    <li>백엔드</li>
+                </ol>
+            </li>
+
+            <li>일산점</li>
+            <li>종로점</li>
+        </ul>
+    </li>
+    <li>
+        <table>
+            <tr>
+                <th>이름</th>
+                <td><input type="text" value="이름을 입력하시오"></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="password" placeholder="비밀번호를 입력하시오"></td>
+            </tr>
+            <tr>
+                <th>수강과목</th>
+                <td>
+                    <label for="rd1">
+                        <input type="radio" name="rd" id="rd1">
+                        웹1
+                    </label>
+                    <label for="rd2">
+                        <input type="radio" name="rd" id="rd2">
+                        웹2
+                    </label>
+                    <label for="rd3">
+                        <input type="radio" name="rd" id="rd3">
+                        웹3
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="button" value="저장">
+                    <button>저장</button>
+                </td>
+
+            </tr>
+        </table>
+    </li>
+</ul>
+<hr>
+<!-- 
+    select: 여러개의 옵션을 리스트 처럼 나열하고 그 중에서 선택할 수 있게 하는 태그
+            부모로만 사용 가능
+            inline-block레벨(카테고리상 inline 레벨)
+    
+    option: select의 자식/자손 으로만 사용 가능
+            (select 의 실제 리스트 알맹이)
+
+    - 속성 -
+        *1) selected: option에 적용
+                      checked나 autofocus 처럼 처음부터 선택되서 나타남
+
+        2) multiple: select 에 적용
+                    여러개 선택 가능하게 되지만 디자인상 예쁘지 않아서 잘 안씀
+
+        3) name: select에 적용
+        4) value: option에 적용                    
+
+-->
+<select name="sel">
+    <option value="웹1">웹1</option>
+    <option value="웹2" selected>웹2</option>
+    <option value="웹3">웹3</option> 
+</select>
+
+<br>
+
+<!-- optgroup: option들을 그룹핑 해주는거
+            lable 속성: 해당 optgroup 에 이름표 달아줌 
+-->
+<select name="sel">
+    <optgroup label="웹학과">
+        <option value="웹1">웹1</option>
+        <option value="웹2">웹2</option>
+        <option value="웹3">웹3</option> 
+    </optgroup>
+
+    <optgroup label="디자인학과">
+        <option value="포토샵">포토샵</option> 
+        <option value="일러스트">일러스트</option> 
+        <option value="피그마">피그마</option> 
+    </optgroup>
+</select>
+
+<br>
+<input type="text" list="d_list">
+<datalist id="d_list">
+    <option value="웹1">웹1</option>
+    <option value="웹2">웹2</option>
+    <option value="웹3">웹3</option> 
+    <option value="포토샵">포토샵</option> 
+    <option value="일러스트">일러스트</option> 
+    <option value="피그마">피그마</option> 
+</datalist>
+<!-- 
+    fieldset - 구역을 표시해줌  
+              부모로만 가능
+              block레벨
+
+    legend - fieldset 의 자식으로 만 사용 가능
+            구역의 타이틀
+-->
+<fieldset>
+    <legend>로그인</legend>
+    <form action="#">
+
+        <input type="text">
+        <input type="password">
+        <input type="button" value="확인"> 
+    </form>
+</fieldset>
+
+<fieldset>
+    <legend>회원가입</legend>
+    <input type="text">
+    <input type="password">
+    <input type="button" value="확인"> 
+</fieldset>
+<!-- 
+    textarea: 메모/게시글본문
+              엔터, 빈칸 다 가능 (input type="text"는 엔터 안됨)
+              기본으로 사이즈가 정해져 있지만 왠만하면 css로 처리할것
+              사이즈 조정이 가능하지만 그것도 css로 막기
+              inline-block(inline레벨에 속함)
+
+    - 기본으로 나오는 속성
+        1) cols: 30칸 
+        2) rows: 10줄
+-->
+<textarea name="" id=""></textarea>
+<textarea name="" id="" cols="10" rows="10"></textarea>
+<!-- 
+    form: 정보를 전달하는 태그
+          block 레벨
+            *form 안에 있는 요소들(정보들)중에서 name을 가지고 있는 요소들의 실제값을 넘겨줌
+            *정보를 넘길때는 무조건 submit 버튼 사용해야함
+    
+
+    - 속성
+        *1) action: 정보를 보낼 페이지 경로(a, img 태그떄와 동일)
+                    submit 버튼을 누르는 순간 동작
+        *2) method: 정보를 보내는 방식
+                    GET - 기본값, URL을 통해서 정보 전달
+                    POST - 숨겨서 전달. URL에 표시 안됨
+        3) target: 정보 전달시 현재탭에서 이동할건지 새탭에서 이동할건지 결정
+                    _self: 기본값
+                    _blank: 새탭
+        4) autocomplete: 기록이 있는 경우 자동완성
+                    on: 기본값, 이전 히스토리 이용해서 리스트 보여줌
+                    off: 자도완성 리스트 안보여줌
+-->
+<form action="http://www.naver.com" name="frm" method="get" target="_blank" autocomplete="off"> 
+    <input type="text" name="uid"><br>
+    <input type="password" name="upw"><br>
+
+    <input type="radio" value="예" name="rd">예 
+    <input type="radio" value="아니오" name="rd">아니오 <br>
+    
+    <input type="checkbox" name="chk1">웹1
+    <input type="checkbox" name="chk2">웹2
+    <input type="checkbox" name="chk3">웹3 <br>
+    
+    <input type="submit">
+    <input type="reset">
+</form>
+<!-- 
+    form: 정보를 전달하는 태그
+          block 레벨
+            *form 안에 있는 요소들(정보들)중에서 name을 가지고 있는 요소들의 실제값을 넘겨줌
+            *정보를 넘길때는 무조건 submit 버튼 사용해야함
+    
+
+    - 속성
+        *1) action: 정보를 보낼 페이지 경로(a, img 태그떄와 동일)
+                    submit 버튼을 누르는 순간 동작
+        *2) method: 정보를 보내는 방식
+                    GET - 기본값, URL을 통해서 정보 전달
+                    POST - 숨겨서 전달. URL에 표시 안됨
+        3) target: 정보 전달시 현재탭에서 이동할건지 새탭에서 이동할건지 결정
+                    _self: 기본값
+                    _blank: 새탭
+        4) autocomplete: 기록이 있는 경우 자동완성
+                    on: 기본값, 이전 히스토리 이용해서 리스트 보여줌
+                    off: 자도완성 리스트 안보여줌
+-->
+<form action="http://www.naver.com" name="frm" method="get" target="_blank" autocomplete="off"> 
+    <input type="text" name="uid"><br>
+    <input type="password" name="upw"><br>
+
+    <input type="radio" value="예" name="rd">예 
+    <input type="radio" value="아니오" name="rd">아니오 <br>
+    
+    <input type="checkbox" name="chk1">웹1
+    <input type="checkbox" name="chk2">웹2
+    <input type="checkbox" name="chk3">웹3 <br>
+    
+    <input type="submit">
+    <input type="reset">
+</form>
+    <!-- 예제2 -->
+<h1>상품주문서</h1>
+
+<form action="#">
+    <fieldset>
+        <legend>개인 정보</legend>
+        <ul>
+            <li>
+                <span>이름</span>
+                <input type="text" name="uName" placeholder="여백없이 입력">
+            </li>
+            <li>
+                <span>연락처</span>
+                <input type="text" name="uPhone" placeholder="연락 가능한 번호">
+            </li>
+        </ul>
+    </fieldset>
+
+    <fieldset>
+        <legend>배송지 정보</legend>
+        <ul>
+            <li>
+                <span>주소</span>
+                <input type="text" name="addr" placeholder="여백없이 입력">
+            </li>
+            <li>
+                <span>전화번호</span>
+                <input type="text" name="uHp" placeholder="연락 가능한 번호">
+            </li>
+            <li>
+                <span>메모</span>
+                <textarea name="memo" rows="10" cols="30"></textarea>
+            </li>
+        </ul>
+    </fieldset>
+
+    <fieldset>
+        <legend>주문정보</legend>
+        <ul>
+            <li>
+                <input type="checkbox" name="chk1" id="chk1">
+                <label for="chk1">칠레산 까르보나라 쇼비뇽</label>
+
+                <input type="number" value="0" name="chk1_qty"> 개
+            </li>
+            <li>
+                <input type="checkbox" name="chk2" id="chk2">
+                <label for="chk2">프랑스산 피노 그리지오</label>
+
+                <input type="number" value="0" name="chk2_qty"> 개
+            </li>
+            <li>
+                <label for="chk3">
+                    <input type="checkbox" name="chk3" id="chk3">
+                    한국산 평창막걸리
+                </label>
+
+                <input type="number" value="0" name="chk3_qty"> 개
+            </li>
+        </ul>
+    </fieldset>
+    
+    <div>
+        <!-- <input type="submit" value="확인"> -->
+        <button>확인</button>
+        <input type="reset" value="초기화">
+    </div>
+</form>
+
+</body>
+</html>

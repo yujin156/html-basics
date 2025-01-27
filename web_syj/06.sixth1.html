@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+
+    /*
+        flex: 요소의 정렬(상,하,좌,우)을 쉽게 할 수 있게 해주는 속성
+              무조건 부모 자식 관계로 구조 짜야함
+                부모: container
+                자식: item
+            *주의: flex를 쓰게 되면 사이즈를 내 마음대로 할 수 없는 경우가 생김
+
+        
+
+        = 부모 속성 =
+            0) display: flex;
+            1) flex-direction: 메인축 방향 결정
+                               기본 자식들의 사이즈가 조정되면서 한줄에 배치됨
+
+                            row: 기본, x축 방향, 왼쪽에서 오른쪽 방향으로 표시
+                            row-reverse: x축 방향, 오른쪽에서 왼쪽 방향으로 표시
+                            column: y축 방향, 위에서 아래로
+                            column-reverse: y축 방향, 아래에서 위로
+            2) flex-wrap: 
+                    nowrap: 기본. 자식들을 한줄에 배치
+                    *wrap: 필요하면 여러줄로 줄바꿈 하면서 배치함
+                          (inline-block 이랑 비슷)
+                          (부모에 충분한 공간이 있으면 한줄로도 표시)
+                    wrap-reverse: 자식을 wrap의 역방향으로 배치
+
+            *한방
+                flex-flow: direction  wrap;
+
+            3) justify-content: 메인축에서의 자식들의 정렬 결정하는 속성
+                        flex-start: 메인축 시작위치부터 배치(메인축인 x축인 경우 왼쪽)
+                        flex-end: 메인축 끝나는 위치
+                                (float:right 처럼 역순으로 나오는게 아닌, 우측에 붙지만 코드 순서대로 배치됨)
+                        center: 가운데 정렬( 자식들 사이에 여백 없음)
+                        space-between: 자식 요소들 사이에만 여백 생김. 
+                                       부모영역 양 끝에 붙는 부분에는 여백 없음
+                        space-around: 각 자식들의 좌우에 균등하게 여백 배치
+                                    (자식들 사이사이는 많이 먹고, 양 끝부분꺼는 적게 보임)
+                        space-evenly: 모든 자식들의 사이사이에 동일한 여백을 배치
+
+
+            4) align-items: 보조축 방향의 정렬
+                            stretch: 자식 요소에 height 가 없으면 알아서 부모 세로의 100% 처럼 적용
+                                    (자식요소에 높이값이 있으면 그거 유지하고 flex-start 위치에 붙음)
+                            flex-start: 보조축 시작위치부터 배치(보조축이 y축인 경우 위쪽)
+                            flex-end: 보조축 끝나는 위치
+                            center: 자식 요소 가운데 정렬
+                            baseline: 자식요소들을 문자 기준선에 맞춤
+
+
+            5) align-content: 보조축 방향의 정렬
+                              자식이 여러줄일때만 동작(flex-wrap 이 wrap 일때만 동작)
+
+                              stretch: 자식 요소에 height 가 없으면 알아서 부모 세로의 100% 처럼 적용
+                                      (자식요소에 높이값이 있으면 그거 유지하고 flex-start 위치에 붙음)
+                              flex-start: 보조축 시작위치부터 배치(보조축이 y축인 경우 위쪽)
+                              flex-end: 보조축 끝나는 위치
+                              center: 자식 요소 가운데 정렬
+                              space-between: 자식들 (세로)사이에만 여백 배치
+                              space-around: 각 자식들의 좌우에 균등하게 여백 배치
+                       
+                              
+        = 자식 속성 =
+
+    */
+        .flex_container {
+            /* width: 100%; */
+            height: 800px;
+            background-color: pink;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /* flex-flow: row wrap; */
+            justify-content: space-between;
+        }
+        .item {
+            width: calc(100% / 4);
+            height: 300px;
+            border: 3px solid;
+            box-sizing: border-box;
+
+            /* float: left; */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="flex_container">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div> 
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div> 
+        <div class="item">item1</div>
+        <div class="item">item2</div> 
+    </div>
+</body>
+</html>
