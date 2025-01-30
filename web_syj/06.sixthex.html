@@ -1,51 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6일차 과제</title>
+    <title>메뉴 스타일 조정</title>
     <style>
-        body{margin: 0;}
-        ul{
-            list-style: none;
+        body {
+            margin: 0; /* 기본 마진 제거 */
+            display: flex; /* 중앙 정렬을 위한 flex 적용 */
+            flex-direction: column; /* 세로 방향 정렬 */
+            align-items: center; /* 가로 중앙 정렬 */
+        }
+
+        ul {
+            list-style: none; /* 리스트 기본 스타일 제거 */
             margin: 0;
             padding: 0;
+        }
 
-        }
-        .manu1{
+        /* 첫 번째 메뉴 (분홍색, 가운데 정렬) */
+        .manu1 {
             background-color: pink;
-            display: inline-block;
-            overflow: hidden;
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            width: fit-content; /* 내용 크기만큼만 너비 설정 */
+            padding: 10px 20px; /* 내부 여백 추가 */
+            margin-bottom: 30px; /* 아래 메뉴와 간격 조정 */
         }
-        .manu2{
-            background-color: skyblue;
-            
+
+        /* 두 번째 메뉴 (하늘색, 전체 너비 + 중앙 정렬) */
+        .header2 {
+            width: 100vw; /* 화면 전체 너비 */
+            background-color: skyblue; /* 배경색 */
+            display: flex;
+            justify-content: center; /* 내부 요소 중앙 정렬 */
+            padding: 15px 0; /* 위아래 여백 추가 */
         }
-        .nav_1{
-            line-height: 50px;
-            padding: 0 20px;
-            float: left;
+
+        .manu2 {
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            padding: 0;
         }
-        
+
+        /* 메뉴 항목 스타일 */
+        .nav_1, .nav_2 {
+            padding: 10px 15px; /* 내부 여백 */
+            font-size: 16px; /* 글자 크기 */
+            font-weight: bold; /* 글자 굵기 */
+            text-align: center; /* 텍스트 중앙 정렬 */
+        }
+
+        /* 링크 기본 스타일 제거 및 색상 지정 */
+        a {
+            text-decoration: none; /* 밑줄 제거 */
+            color: black; /* 기본 글자색 */
+        }
+
     </style>
 </head>
 <body>
-    <div class="header1" >
+    <div class="header1">
         <ul class="manu1">
-            <li class="nav_1">manu1</li>
-            <li class="nav_1">manu2</li>
-            <li class="nav_1">manu3</li>
-            <li class="nav_1">manu4</li>
-            <li class="nav_1">manu5</li>
+            <li class="nav_1"><a href="#">menu1</a></li>
+            <li class="nav_1"><a href="#">menu2</a></li>
+            <li class="nav_1"><a href="#">menu3</a></li>
+            <li class="nav_1"><a href="#">menu4</a></li>
+            <li class="nav_1"><a href="#">menu5</a></li>
         </ul>
     </div>
+
     <div class="header2">
         <ul class="manu2">
-            <li class="nav_2">manu1</li>
-            <li class="nav_2">manu2</li>
-            <li class="nav_2">manu3</li>
-            <li class="nav_2">manu4</li>
-            <li class="nav_2">manu5</li>
+            <li class="nav_2"><a href="#">menu1</a></li>
+            <li class="nav_2"><a href="#">menu2</a></li>
+            <li class="nav_2"><a href="#">menu3</a></li>
+            <li class="nav_2"><a href="#">menu4</a></li>
+            <li class="nav_2"><a href="#">menu5</a></li>
         </ul>
     </div>
 </body>
