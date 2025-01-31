@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7일차 사방값 예제</title>
+    <style>
+        body { margin: 0;}
+        .outer {
+            width: 500px;
+            height: 500px;
+            border: 1px black solid;
+            position: relative;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        .inner_1 {
+            background-color: red;
+            left:0;
+            top: 0;
+
+        }.inner_2{
+            background-color: green;
+            left: calc(30% - (100px / 2));
+            top: calc(30% - (100px / 2));
+
+        }.inner_3 {
+            background-color: blue;
+            left: calc(50% - (100px / 2));
+            top: calc(50% - (100px / 2));
+
+        }.inner_4 {
+            background-color: yellow;
+            right: calc(30% - (100px / 2));
+            bottom: calc(30% - (100px / 2));
+
+        }
+        .inner_5 {
+            background-color: olivedrab;
+            right: 0;
+            bottom: 0;
+
+        }
+        .inner_6 {
+            background-color: orange;
+            right: 0;
+            top: 0;
+
+        }.inner_7 {
+            background-color: aquamarine;
+            right: calc(30% - (100px / 2));
+            top: calc(30% - (100px / 2));
+
+        }.inner_8 {
+            background-color: brown;
+            left: calc(30% - (100px / 2));
+            bottom: calc(30% - (100px / 2));
+
+        }.inner_9 {
+            background-color: indianred;
+            left: 0;
+            bottom: 0;;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="outer">
+        <div class="inner inner_1"></div>
+        <div class="inner inner_2"></div>
+        <div class="inner inner_3"></div>
+        <div class="inner inner_4"></div>
+        <div class="inner inner_5"></div>
+        <div class="inner inner_6"></div>
+        <div class="inner inner_7"></div>
+        <div class="inner inner_8"></div>
+        <div class="inner inner_9"></div>
+    </div>
+
+</body>
+</html>

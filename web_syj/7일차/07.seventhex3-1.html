@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7일차 예제2 강사님 답</title>
+    <style>
+        body { margin: 0;}
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header {
+            height: 50px;
+            line-height: 50px; 
+
+            position: relative;
+        }
+        .menu_ul_L {
+            background-color: pink;
+            /* height: 50px;
+            line-height: 50px; */
+            height: 100%;
+
+            /* 방법1 - 가운데 로고를 position으로 떼고 좌우 메뉴는 float으로 배치 */
+            /* float: left; */
+
+            /* 방법2 - 로고를 margin으로 가운데정렬 하고 좌우는 absolute 으로 배치 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+        }
+        .menu_L_li { 
+            float: left;
+            padding: 0 20px;
+        }
+
+        .logo {
+            background-color: green;
+            width: 200px;
+            /* height: 50px;
+            line-height: 50px; */
+            height: 100%;
+
+            
+            /* 방법1 - 가운데 로고를 position으로 떼고 좌우 메뉴는 float으로 배치 */
+            /* position: absolute;
+            top: 0;
+            left: calc(50% - (200px / 2)); */
+
+            /* 방법2 - 로고를 margin으로 가운데정렬 하고 좌우는 absolute 으로 배치 */
+            margin: 0 auto;
+        }
+
+        .menu_ul_R {
+            background-color: hotpink;
+            /* height: 50px;
+            line-height: 50px; */
+            height: 100%;
+
+            
+            /* 방법1 - 가운데 로고를 position으로 떼고 좌우 메뉴는 float으로 배치 */
+            /* float: right; */
+            
+            /* 방법2 - 로고를 margin으로 가운데정렬 하고 좌우는 absolute 으로 배치 */
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .menu_R_li { 
+            float: left;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="header">
+            <ul class="menu_ul_L">
+                <li class="menu_L_li">menu1</li>
+                <li class="menu_L_li">menu2</li>
+                <li class="menu_L_li">menu3</li>
+                <li class="menu_L_li">menu4</li>
+            </ul>
+
+            <div class="logo">logo</div>
+
+            
+            <ul class="menu_ul_R">
+                <li class="menu_R_li">menu1</li>
+                <li class="menu_R_li">menu2</li>
+                <li class="menu_R_li">menu3</li>
+                <li class="menu_R_li">menu4</li>
+                <li class="menu_R_li">menu5</li> 
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
