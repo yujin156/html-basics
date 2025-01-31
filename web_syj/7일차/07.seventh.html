@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7일차 hover</title>
+    <style>
+        .pink {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+        .red {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .blue {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        /* 선택자 사이의 빈칸은 자손을 뜻함 */
+        /* 클래스가 pink 인 요소에 마우스오버 되면, 그 자손중에 클래스가 blue 인 요소를 잡아라 */
+        .pink:hover .blue {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="pink">
+        <div class="red"></div>
+        <div class="blue"></div>
+    </div>
+    <div class="blue"></div>
+</body>
+</html>

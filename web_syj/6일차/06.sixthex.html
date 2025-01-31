@@ -17,6 +17,20 @@
             margin: 0;
             padding: 0;
         }
+        li{
+            padding: 10px 15px; /* 내부 여백 */
+            font-size: 16px; /* 글자 크기 */
+            font-weight: bold; /* 글자 굵기 */
+            text-align: center; /* 텍스트 중앙 정렬 */
+        }
+        /* 두 번째 메뉴 (하늘색, 전체 너비 + 중앙 정렬) */
+        .header2 {
+            width: 100vw; /* 화면 전체 너비 */
+            background-color: skyblue; /* 배경색 */
+            display: flex;
+            justify-content: center; /* 내부 요소 중앙 정렬 */
+            padding: 15px 0; /* 위아래 여백 추가 */
+        }
 
         /* 첫 번째 메뉴 (분홍색, 가운데 정렬) */
         .manu1 {
@@ -28,29 +42,11 @@
             margin-bottom: 30px; /* 아래 메뉴와 간격 조정 */
         }
 
-        /* 두 번째 메뉴 (하늘색, 전체 너비 + 중앙 정렬) */
-        .header2 {
-            width: 100vw; /* 화면 전체 너비 */
-            background-color: skyblue; /* 배경색 */
-            display: flex;
-            justify-content: center; /* 내부 요소 중앙 정렬 */
-            padding: 15px 0; /* 위아래 여백 추가 */
-        }
-
         .manu2 {
             display: flex;
             justify-content: center; /* 가로 중앙 정렬 */
             padding: 0;
         }
-
-        /* 메뉴 항목 스타일 */
-        .nav_1, .nav_2 {
-            padding: 10px 15px; /* 내부 여백 */
-            font-size: 16px; /* 글자 크기 */
-            font-weight: bold; /* 글자 굵기 */
-            text-align: center; /* 텍스트 중앙 정렬 */
-        }
-
         /* 링크 기본 스타일 제거 및 색상 지정 */
         a {
             text-decoration: none; /* 밑줄 제거 */

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6일차 과제 강사</title>
+    <style>
+        body { margin: 0;}
+
+        /* 
+            1. ul 점 없애기
+            2. 여백 없애기
+            3. 옆으로 나열
+                display:inline-block <= (카테고리상 inline 이기 때문에) 사이사이 빈칸 생김
+                                        빈칸 싫으면 부모에 font-size 건드리고 본인한테도 건드려야함
+                float:left  <= 부모가 높이 못잡음
+                                부모에 높이를 직접 주거나, overflow 로 알아서 잡게 해야함
+                display: flex
+        */
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        } 
+        .header {
+            text-align: center;
+        }
+        .nav_1_ul {
+            background-color: pink;
+            
+            /* 방법1 */
+            /* font-size: 0; */
+
+            /* 방법2 */
+            /* overflow: hidden; */
+            height: 50px;
+            line-height: 50px;
+
+            display: inline-block; 
+        }
+        .nav_1_li {
+            border: 1px solid;
+            box-sizing: border-box;
+            
+            padding: 0 20px;
+
+            /* 방법1 */
+            /* display: inline-block; */
+            /* font-size: 16px; */
+            
+            /* 방법2 */
+            float: left;
+            /* height: 100%;
+            line-height: 50px; */
+        }
+
+        .nav_2_ul {
+            background-color: skyblue;
+
+            height: 50px;
+            line-height: 50px;
+
+            font-size: 0;
+            text-align: center;
+        }
+
+        .nav_2_li {
+            border: 1px solid;
+            box-sizing: border-box;
+
+            padding: 0 20px;
+            /* float: left; */
+            display: inline-block;
+            font-size: 16px;
+        }
+        
+        .nav_3_ul {
+            background-color: orange;
+            height: 50px;
+            line-height: 50px;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav_3_li {
+            border: 1px solid;
+            box-sizing: border-box;
+
+            padding: 0 20px; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul class="nav_1_ul">
+            <li class="nav_1_li">menu1</li>
+            <li class="nav_1_li">menu2</li>
+            <li class="nav_1_li">menu3</li>
+            <li class="nav_1_li">menu4</li>
+            <li class="nav_1_li">menu5</li>
+        </ul>
+    </div>
+    
+    <hr>
+    
+    <ul class="nav_2_ul">
+        <li class="nav_2_li">menu1</li>
+        <li class="nav_2_li">menu2</li>
+        <li class="nav_2_li">menu3</li>
+        <li class="nav_2_li">menu4</li>
+        <li class="nav_2_li">menu5</li>
+    </ul>
+
+    <hr>
+    
+    <ul class="nav_3_ul">
+        <li class="nav_3_li">menu1</li>
+        <li class="nav_3_li">menu2</li>
+        <li class="nav_3_li">menu3</li>
+        <li class="nav_3_li">menu4</li>
+        <li class="nav_3_li">menu5</li>
+    </ul>
+    
+    
+    
+    
+
+</body>
+</html>

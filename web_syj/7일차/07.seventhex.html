@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7일차 hover 예제</title>
+    <style>
+        body { margin: 0;}
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        } 
+
+        .nav_1_ul {
+            background-color: pink;
+
+            height: 50px;
+            line-height: 50px;
+
+            font-size: 0;
+        }
+
+        .nav_1_li {
+            border: 1px solid;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 0 20px;
+            display: block;
+            font-size: 16px;
+        }
+        .nav_2_ul {
+            display: none;
+        }
+        .nav_1_li:hover .nav_2_ul{
+            display: block;
+        }
+
+    </style>
+</head>
+
+    <ul class="nav_1_ul">
+        <li class="nav_1_li">menu1
+            <ul class="nav_2_ul">
+                <li class="nav_2_li">sec</li>
+                <li class="nav_2_li">sec</li>
+            </ul>
+        </li>
+
+        <li class="nav_1_li">menu2
+            <ul class="nav_2_ul">
+                <li class="nav_2_li">sec</li>
+                <li class="nav_2_li">sec</li>
+            </ul>
+        </li>
+    </ul>
+
+    
+    
+    
+
+</body>
+</html>
