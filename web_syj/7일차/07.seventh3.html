@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7일차 구조</title>
+    <!-- 
+        구조 : 대부분 3단 4단
+            헤더 - 제일 먼저 보여줘야 하는 정보들( 로고, 서치바, 로그인등)
+            메뉴 - 3단 구조 짤때 헤더 안에 포함
+            메인 - 실제필요힌 정보들
+            푸터 - 회사, 사이트, 서비스 정보
+
+        시멘틱태그
+            HTNL5에서 추가된 태그
+            div 와 같은 css 를 가지고 있음
+            사람, 컴퓨터에게 태그 이름으로만 현재 박스가 어딘지 구분하기 쉽게 해준다
+
+        종류
+            header 화면 상단, 색션들의 최상단 영역을 뜻함
+            nav 메뉴바(네비게이션 바)
+                    -GNB : 글로벌 네비게이션
+                            모든 페이지에서 똑같이 나오는 메뉴바
+                    -LNB : 로컬 네비게이션
+                            페이지마다 다르게 나타나는 메뉴바
+            main 본문, 중요부분 
+            section 본문 안에서 영역을 나워주는 본문
+            aside 화면의 좌우
+            artcle section 안에서의 본문
+            footer 화면 하단
+            -------------------------
+            details
+            progress
+            meter
+    
+
+     -->
+</head>
+<body>
+    <div class="wrap">
+        <header class="header"></header>
+        <main class="main">
+
+            <details>
+                <summary>KH정보교육원</summary>
+                <ul>
+                    <li>웹1</li>
+                    <li>웹2</li>
+                    <li>웹3</li>
+                </ul>
+            </details>
+
+            <progress max="100" value="50"></progress>
+
+            <meter min="0" max="100" value="50"></meter>
+
+
+        </main>
+        <footer class="footer"></footer>
+    </div>
+    
+</body>
+</html>

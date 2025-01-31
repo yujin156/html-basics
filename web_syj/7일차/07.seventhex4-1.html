@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pink {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+        .box {
+            width: 50%;
+            height: 50%;
+            border: 1px solid;
+            box-sizing: border-box;
+
+            float: left;
+            position: relative;
+        }
+        .blue {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+
+            position: absolute;
+            display: none;
+        }
+        .blue1 { left: 0; top: 0;}
+        .blue2 { right: 0; top: 0;}
+        .blue3 { left: 0; bottom: 0;}
+        .blue4 { right: 0; bottom: 0;}
+
+        /* .box에 hover 하면 그 자손중의 .blue 화면에 나타나게 하기 */
+        .box:hover .blue {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="pink">
+        <div class="box">
+            <div class="blue blue1"></div>
+        </div>
+        <div class="box">
+            <div class="blue blue2"></div>
+        </div>
+        <div class="box">
+            <div class="blue blue3"></div>
+        </div>
+        <div class="box">
+            <div class="blue blue4"></div>
+        </div>
+    </div>
+</body>
+</html>
