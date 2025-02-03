@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        .header {
+            width: 100%;
+            height: 100px;
+            background-color: pink;
+        }
+        .main_banner {
+            width: 100%;
+            height: 400px;
+            background-color: aquamarine;
+            position: relative;
+        }
+        .btn_banner {
+            width: 100px;
+            height: 100%;
+            background-color: red;
+            color: #fff;
+            font-size: 80px;
+            line-height: 400px;
+            text-align: center;
+
+            position: absolute;
+            top: 0;
+        }
+        .btn_banner_L {left: 0;}
+        .btn_banner_R {right: 0;}
+
+        .banner {
+            font-size: 100px;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 100%;
+        }
+        .banner1 { left: 0;}
+
+
+        .sec1 {
+            width: 100%;
+            max-width: 1100px; 
+            margin: 0 auto;
+
+            background-color: yellowgreen;
+        }
+        .sec_title {
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .item_box {
+            display: flex;
+            flex-wrap: wrap;
+            /* column-gap: 10px; */
+            /* row-gap: 10px; */
+            gap: 10px ;
+            background-color: orange;
+        }
+        .item {
+            border: 1px solid;
+            box-sizing: border-box;
+            width: calc((100% - (10px* 3)) / 4);
+            height: 300px; 
+        }
+        
+        .footer {
+            width: 100%;
+            height: 400px;
+            background-color: #333;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap"> 
+    <header class="header"></header>
+    <main class="main">
+        <div class="main_banner">
+            <div class="btn_banner btn_banner_L">《</div>
+            <div class="btn_banner btn_banner_R">》</div>
+
+            <div class="banner banner1">
+                <a href="#">1</a>
+            </div>
+            <div class="banner banner2">
+                <a href="#">2</a>
+            </div>
+            <div class="banner banner3">
+                <a href="#">3</a>
+            </div>
+        </div>
+        
+        <section class="sec1">
+            <h2 class="sec_title">Best</h2>
+            <ul class="item_box">
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item mr_0"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item"></li>
+                <li class="item mr_0"></li>
+            </ul> 
+        </section>
+    </main>
+    <footer class="footer"></footer>
+</div>
+</body>
+</html>

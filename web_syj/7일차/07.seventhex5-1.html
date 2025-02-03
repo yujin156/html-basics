@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7일차 예제 강사님 답</title>
+    <style>
+        /* body { margin: 0;} */
+        #wrap {
+            width: 1024px;
+            margin: 0 auto; 
+            
+        }
+        #wrap * {
+            /* border: 1px solid;
+            box-sizing: border-box; */
+        }
+        header {
+            width: 100%;
+            height: 150px;
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+        nav {
+            width: 100%;
+            height: 50px;
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+        main {
+            width: 100%; 
+
+            /* 방법1 - flex로 자식들 옆으로 나열*/
+            /* display: flex; */
+
+            /* 방법2 - float 으로 자식 옆으로 나열(부모가 높이 못잡으니깐 overflow 사용) */
+            overflow: hidden; 
+        }
+
+        aside {
+            width: 20%;
+            height: 400px;
+            /* 방법2 - float 으로 자식 옆으로 나열 */
+            float: left;
+
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+        section {
+            width: 60%;
+            height: 400px;
+            /* 방법2 - float 으로 자식 옆으로 나열 */
+            float: left;
+            
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+        article {
+            width: calc((100% - (10px * 2 * 3)) / 3);
+            height: 378px;
+            margin: 10px;
+            float: left;
+
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+        footer {
+            width: 100%;
+            height: 100px;
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>header</header>
+        <nav>nav</nav>
+        <main>
+            <aside>aside</aside>
+            <section>
+                <article>article</article>
+                <article>article</article>
+                <article>article</article>
+            </section>
+            <aside>aside</aside>
+        </main>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

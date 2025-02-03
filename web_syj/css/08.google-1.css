@@ -1,0 +1,124 @@
+/* 공통 */
+body { margin: 0;}
+ul { 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ********************** */
+#wrap {
+    width: 560px;
+    margin: 150px auto 0; 
+}
+.logo {
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+    background:  url(../img/google_logo.svg) no-repeat center;
+}
+
+
+/* 검색 */
+.search {
+    width: 560px;
+    height: 45px;
+    margin: 60px 0 30px;
+    box-shadow: 0 0 10px 0 #bcbcbc;
+    /* border: 1px solid; */
+    box-sizing: border-box;
+    border-radius: 23px;
+    
+
+    /* 방법1 - flex 주면 끝 */
+    /* display: flex; */
+
+    /* 방법2 - 자식에 float 적용 */
+    overflow: hidden;
+}
+.keyword {
+    /* width: 100%; */
+    width: calc(100% - 45px);
+    height: 100%;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+
+    padding-left: 20px;
+}
+.search_icon {
+    width: 45px;
+    height: 45px;
+    background: #fff url(../img/google_search.svg) no-repeat center;
+    cursor: pointer;
+
+    
+    /* 방법2 - 자식에 float 적용 */
+    float: right;
+}
+
+
+/* 즐겨찾기 */
+.thumbnail { 
+    /* 방법1 - 자식에 float 적용 */
+    overflow: hidden;
+}
+.item:hover{
+    background-color: #d8d8d8;
+}
+.item {
+    box-sizing: border-box;
+    width: calc(100% / 5);
+    height: 130px;
+    border-radius: 5px;
+
+    /* 방법1 - 자식에 float 적용 */
+    float: left;
+
+    
+    position: relative;
+}
+.thumb {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #dddddd;
+    margin: 20px auto;
+
+}
+.title {
+    text-align: center; 
+    font-size: 14px;
+    padding: 0 8px;
+
+    /* 말줄임표 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.circle_box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 27px;
+    border-radius: 50%;
+    display: none;
+}
+.circle_box:hover{
+    background-color: #a7a7a7;
+}
+.circle {
+    width: 5px;
+    height: 5px;
+    background: #000;
+    margin: 3px auto;
+    border-radius: 50%;
+    
+}
+.item:hover .circle_box{
+    display: block;
+}
