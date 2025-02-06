@@ -67,20 +67,21 @@ a {
     /* 방법1 - 자식에 float 적용 */
     overflow: hidden;
 }
-.item:hover{
-    background-color: #d8d8d8;
-}
 .item {
-    box-sizing: border-box;
+    /* border: 1px solid;
+    box-sizing: border-box; */
     width: calc(100% / 5);
     height: 130px;
-    border-radius: 5px;
 
     /* 방법1 - 자식에 float 적용 */
     float: left;
-
     
     position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.item:hover {
+    background: #c1c1c1;
 }
 .thumb {
     width: 50px;
@@ -100,7 +101,7 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.circle_box {
+.circle_box { 
     position: absolute;
     top: 0;
     right: 0;
@@ -108,17 +109,16 @@ a {
     border-radius: 50%;
     display: none;
 }
-.circle_box:hover{
-    background-color: #a7a7a7;
+.item:hover .circle_box {
+    display: block;
+}
+.circle_box:hover {
+    background-color: #787878; 
 }
 .circle {
     width: 5px;
     height: 5px;
     background: #000;
     margin: 3px auto;
-    border-radius: 50%;
-    
-}
-.item:hover .circle_box{
-    display: block;
-}
+    border-radius: 50%; 
+} 
