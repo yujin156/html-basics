@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.content_box{ 
+    margin: 0 auto;
+    left: calc(1140px/2);
+
+    height: 100%;
+    position: relative;
+}
+/* --------------------------------------------- */
+.topbanner{
+    width: 1140px;
+    height: 40px;
+    border: 1px solid black;
+}
+li{
+    border: 1px solid black;
+
+}
+.header1  li{
+float: left;
+
+}
+.logo{
+float: left;
+}
+.header2  ul{
+    float: right;
+}
+.header2  li>a{
+    
+
+}

@@ -1,0 +1,380 @@
+body { margin: 0;}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.blind {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+}
+.content_box {
+    width: 1140px;
+    margin: 0 auto;
+
+    height: 100%;
+    position: relative; 
+}
+/* ********************* */
+/* 이미지 테그여서 하나하나 사이에 띄어져 있음
+font-size: 0; 하면 되는데 만약 text를 사용할 경우 없어질 위험이 있음
+-> 가운데 정렬하려면 text-align canter
+2. display: flex 주든 -> justify-content: center;  
+*justify-content: center; 대신 text-align : canter;가 안먹히는 이유  display: flex이기 때문에
+float: left; 를 줄 수 있는데 가운데 정렬이 안된다 */
+
+/* 하나는 그냥 다 주고 다른고 위에다가 반절 하나 더 줌 position: absolute;를 주는 이유는 뒤에가 플렉스여서
+근데 그럼 뒤에 이미지 가려지는데 그럴땐 z-indea 줘서 뒤로 보냄
+원래는 z-index만 줄 수 없어서 리레이티브 줬어야 하는데 되더라 */
+/* ********************* */
+
+/* 상단 이벤트 배너 */
+.top_banner {
+    width: 100%;
+    height: 40px;
+    background-color: #ed024c;
+
+    /* 방법1 */
+    /* font-size: 0;
+    text-align: center; */
+
+    /* 방법2 */
+    display: flex;
+    justify-content: center;
+
+    
+    position: relative;
+}
+.tb_bg {
+    width: 50%;
+    height: 100%;
+    background-color: #fc0075;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9;
+}
+.top_banner img {
+    z-index: 99;
+}
+
+/*****************************/
+/* 본문 */
+/* 헤더 */
+.header {
+    width: 100%;
+    height: 127px;
+    background-color: antiquewhite;
+}
+.h_top {
+    height: 87px;
+    background-color: aquamarine;
+
+    display: flex;
+}
+.h_L {
+    width: 160px;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 100%;
+    height: 30px;
+
+    background: url(../img/텐바이텐/logo.png) no-repeat left center;
+}
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+}
+/* 방법1 의 css  display:flex 로 한거 */
+/* display : flex; 축 안바꾸고 위 아래로 주고 싶으면 width :100% 를 주고 줄 바꿈(flex-wrap: wrap) 시킴  높이만 주면 사이가 벌어지는게 아니라서 align-content 건들어서 함
+아니면 축을 바꾸게 된다면 justify-content space-between*/
+.h_R {
+    width: calc(100% - 160px);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.h_menu_top {
+    background-color: skyblue;
+
+    display: flex;
+    justify-content: flex-end;    align-items: center;
+
+    width: 100%;
+    height: 20px;
+}
+.h_menu_top li {
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 13px;
+    color: #595959;
+    
+    position: relative;
+}
+.v_line {
+    width: 1px;
+    height: 10px;
+    background: #595959;
+    /* margin: 5px 0; */
+    /* flex를 주고 있어 마음대로 px을 못 주기 때문에 div로 묶음 그리고 마진으로 중앙 내려
+    혹은 position :absolute; 하고 사방값을 주면 됨 / 패딩값이 있음 그자리에서 뜨는 경우가 있음 하니만 그냥 사방값 주는게 좋음 */
+    position: absolute;
+    left: calc(50% - .5px);
+    top: calc(50% - 5px);
+}
+
+.h_menu_bot_box{
+    background-color: salmon;
+
+    display: flex;
+    justify-content: flex-end;    align-items: center;
+
+    width: 100%;
+    height: 30px;
+}
+.h_menu_bot { 
+    display: flex;
+    
+}
+.h_menu_bot li {
+    border: 1px solid;
+    box-sizing: border-box;
+
+    padding: 0px 15px;/* 거리가 맘에 안들면 padding 값으로 조절 */
+    font-weight: 900;
+}
+.tmp { color: #fa0073;}
+.search {
+
+}
+/* -------------------------------------------------------------------------------- */
+
+
+
+/* 방법2 - position 으로 한거 */
+.h_R2 {
+    position: relative;
+    width: calc(100% - 160px);
+    height: 100%;
+}
+.h_menu_top2 {
+    display: flex;
+
+    position: absolute;
+    right: 0;
+    top: 5px; 
+}
+
+.h_menu_top2 li {
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 13px;
+    color: #595959;
+    
+    position: relative;
+}
+
+.h_menu_bot2 {
+    display: flex;
+
+    position: absolute;
+    right: 320px;
+    bottom: 10px;
+    
+    line-height: 30px;
+}
+.h_menu_bot2 li {
+    cursor: pointer;
+    padding: 0 10px;
+    font-weight: 900;
+}
+
+.search2 {
+    width: 300px;
+
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    background:  url(../img/텐바이텐/sp_icon.png) no-repeat;
+    /* 진짜 작업 할때는 작은 box 만들어서 거기에 이미지 넣기(클릭할 수 있게) */
+    background-position: 169px 7px;
+
+    border: 2px solid orange;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.keyword2 {
+    width: calc(100% - 30px);
+    height: 30px; /* height:30px주던지 line-height : 30px; 해서 줄 맞추기 */
+    box-sizing: border-box;
+
+    outline: none;
+    border: none;
+    padding: 0 10px;
+}
+
+/* -------------------------------------- */
+.nav {
+    width: 100%;
+    height: 40px;
+    border-top: 1px solid #d9d9d9;
+}
+.nav_menu {
+    display: flex;
+    align-items: center;
+}
+.nav_menu li {
+    font-size: 12px;
+    font-weight: 900;
+    display: flex;
+}
+.nav_menu li span {}
+.v_line2 {
+    width: 2px;
+    height: 10px;
+    margin: 3px 12px;
+}
+.v_line2_bg_color {
+    background-color: #848484;
+}
+
+/********************/
+.main_banner {
+    width: 100%;
+    height: 600px;
+
+    position: relative;
+    overflow: hidden;
+
+    background-color: pink;
+}
+.banner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.banner1 {
+    left: 0;
+    background: skyblue url(../img/텐바이텐/메인배너1.jpg) no-repeat center / cover;
+}
+.banner2 {
+    left: 100%;
+    background: orange url(../img/텐바이텐/메인배너2.jpg) no-repeat center / cover;
+}
+.bn_main_slogan {
+    font-size: 45px;
+    margin-top: 150px;
+}
+.bn_slogan {font-size: 24px;}
+
+/* 원래 센터 줬는데 div크기를 정해주면서 센터가 달라짐 margin : 0 auto;을 주면서 센터 만들어줌  */
+/* 이미지가 크면 width :100% 주면됨 */
+/* span으로 잡아서  */
+
+/****************************/
+/* just1day */
+.just1day {
+    width: 100%;
+    /* height: 440px; */
+    padding: 60px 0;
+    box-sizing: border-box;
+    background: skyblue url(../img/텐바이텐/JUST1Day_패턴.png);
+}
+.just_ul {
+    display: flex;
+}
+.just_li {
+    width: calc(100% / 4);
+    position: relative;
+}
+.txt_center {
+    text-align: center;
+}
+.remain_time {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+}
+
+.just_li_thumb {
+    width: 240px;
+    height: 240px;
+    background: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid #fff;
+    margin: 0 auto;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+}
+.just_li_thumb img {
+
+}
+.just_li_desc {
+
+}
+.title {
+    font-size: 14px;
+    font-weight: 900;
+    color: #595959;
+}
+.discount {color: red}
+.price { font-weight: 900;}
+
+
+/***********************/
+/* list_card */
+.list_card {
+    padding: 60px 0;
+}
+.list_card_box {
+    display: flex;
+    gap: 30px;
+}
+.list_card_item {
+    width: calc((100% - (30px * 2)) / 3);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+
+    position: relative;
+    left: 0;
+    top: 0;
+    /* transition: all 0.3s; */
+}
+.list_card_img {
+
+}
+.list_card_img img {
+    width: 100%;
+}
+.list_card_desc {
+    font-size: 14px;
+    padding: 0 10px;
+} 
+.list_card_desc span { color: red;}
+
+.list_card_item:hover { 
+    left: -10px;
+    top: -10px;
+    box-shadow: 10px 10px 10px 0 #555;
+}
+
+
+.s_banner { font-size: 0;}
+
+
