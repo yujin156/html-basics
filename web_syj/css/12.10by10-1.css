@@ -377,4 +377,92 @@ float: left; 를 줄 수 있는데 가운데 정렬이 안된다 */
 
 .s_banner { font-size: 0;}
 
+/************************/
+/* md_pick */
+.md_pick_box {
+    display: flex;
+}
+.md_pick_L {
+    width: 280px;
+}
+.md_pick_title{font-size: 32px;}
+.md_pick_desc{
+    font-size: 14px;
+    margin: 50px 0 100px;
+}
+.hashtag_box{}
+.hashtag{
+    background: #a9a9a9;
+    margin: 3px 0;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #424242;
+}
 
+
+
+.md_pick {
+    padding: 60px 0;
+}
+.md_pick_R {
+    width: calc(100% - 280px); 
+}
+.md_pick_R_ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.md_pick_R_ul li {
+    width: calc((100% - (40px * 2)) / 3);
+}
+.mdpick_img {}
+.mdpick_img img {
+    width: 100%;
+}
+.mdpick_desc {font-size: 13px;}
+.item_title {
+    font-weight: 900;
+    margin: 5px 0 10px;
+}
+.item_price {}
+
+/**********************/
+/* adv */
+.adv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 60px 0;
+}
+.adv_item {
+    width: calc((100% - (40px * 1)) / 2);
+
+}
+.adv_img {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.adv_img img {
+    width: 100%;
+}
+
+.adv_desc{
+    height: 100px;
+}
+.adv_desc h3 {
+    margin: 5px 0;
+}
+.adv_desc p {
+    margin: 0;
+}
+
+
+/****************/
+.footer {
+    width: 100%;
+    height: 300px;
+    background-color: #333;
+}
