@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭 예제</title>
+    <style>
+        #wrap {
+            width: 500px;
+            border: 1px solid;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .btn_box {
+            width: 100%;
+            height: 50px;
+            background: pink; 
+        }
+        .btn_box ul {
+            display: flex;
+        }
+        .btn_box li {
+            width: calc(100% / 4);
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+        .pan_box {
+            width: 100%;
+            height: 400px;
+            background: skyblue;
+        }
+        .pan {
+            width: 100%;
+            height: 100%;
+        }
+        .red { background: red;}
+        .green { background: green;}
+        .blue { background: blue;}
+        .gray { background: gray;}
+
+        /* 보더 줬을떄 마지막 나가면 마지막꺼에는 따로 해서 안보이게 하거낰
+        그림자를 이용해 줄 수 있다 */
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="btn_box">
+            <ul>
+                <li>빨</li>
+                <li>초</li>
+                <li>파</li>
+                <li>회</li>
+            </ul>
+        </div>
+        <div class="pan_box">
+            <div class="pan red"></div>
+            <div class="pan green"></div>
+            <div class="pan blue"></div>
+            <div class="pan gray"></div>
+        </div>
+    </div>
+</body>
+</html>

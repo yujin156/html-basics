@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스</title>
+    <style>
+        /*
+            - 가상클래스 (가상선택자 라고 하는 사람들도 있다.)
+                별도의 클래스를 지정하지 않아도 지정한것처럼 요소를 선택할 수 있게 해주는것
+    
+                선택자:가상클래스 {}
+    
+                -종류-
+                    ***1) 선택자:hover => 선택자 요소에 마우스가 올갔는지 감지
+                    *2) 선택자:checked => 선택자 요소가 체크 됐는지 감지
+                                        input 의 type이 radio 거나 checkbox 인 요소에 사용
+                                        (실제 css적용은 동생들 요소에 줘야함)
+                                        
+                    3) 선택자:focus => 선택자 요소에 커서 들어갔는지 감지
+                    4) 선택자1:not(선택자2) => 선택자1번 중에 선택자2 아닌것
+                    
+                    5) 선택자:first-child => 선택자와 매칭 되면서 첫번째 요소인것
+                    6) 선택자:last-child => 선택자와 매칭 되면서 마지막 요소인것
+    
+                    ***7) 선택자:nth-child(숫자) => 숫자번쨰 요소이면서 선택자와 매칭되는 요소
+                                                단위 - (1 이상의)정수
+                                                       even(짝), odd(홀)
+                                                       2n, 2n+1
+    
+                    ***8) 선택자:nth-of-type(숫자) => 선택자와 매칭되는 요소들 중ㅈ에서 태그의 타입이 숫자번째 요소인것
+                                                단위 - (1 이상의)정수
+                                                       even(짝), odd(홀)
+                                                       2n, 2n+1
+    
+    
+        */ 
+            input.rd:checked ~ label {
+                background-color: red;
+            }
+            input:focus {
+                background: blue;
+            }
+    
+            /* 클래스가 tmp 인 요소들 중에 span이 아닌것 한테 분홍색 적용 */
+            .tmp:not(span) {
+                background-color: pink;
+            }
+    
+            .menu {
+                overflow: hidden;
+                border: 5px solid;
+    
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            li {
+                border: 1px solid;
+                box-sizing: border-box;
+    
+                width: calc((100% - (10px * 2)) / 3);
+                height: 100px;
+                margin-right: 10px;
+                /* margin-left: 10px; */
+    
+                float: left;
+            }
+            /* li:last-child { margin-right: 0;} */
+            li:nth-child(3n) { margin-right: 0;}
+    
+            
+            li:nth-child(even) {
+                /* background-color: pink; */
+            }
+    
+            
+            /* 선택자:nth-of-type(숫자) => 선택자와 매칭되는 요소들 중ㅈ에서 태그의 타입이 숫자번째 요소인것 */
+            
+            p:nth-of-type(1) { /* p 들 중에 1번째꺼(부모 형제 관계 생각해야함) */
+                /* background: red; */
+            }
+            p:nth-child(1) { /* 1번째 요소들 중에 p 인거 */
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>  
+        <p class="txt">헬로월드0</p>
+        <div>헬로월드1</div>
+        <span>헬로월드2</span>
+        <div>
+            <p class="txt">헬로월드3</p>
+        </div>
+        <a href="#">헬로월드4</a>
+        <div>헬로월드5</div>
+        <p class="txt">헬로월드6</p>
+        <div>헬로월드7</div>
+    
+    
+    <!-- 
+        <hr>
+        <span>
+            <input type="radio" name="rd" class="rd" id="rd1" checked>
+            <label for="rd1">강남점</label>
+        </span>
+    
+        
+        <span>
+            <input type="radio" name="rd" class="rd" id="rd2">
+            <label for="rd2">종로점</label>
+        </span>
+    
+        <label>
+            <input type="radio" name="rd" class="rd">
+            <span>종로점</span>
+        </label>
+        <span>
+            <input type="radio" name="rd" class="rd" id="rd3">
+            <label for="rd3">일산점</label>
+        </span>
+        <br>
+        <input type="checkbox" class="chk">웹1
+        <input type="checkbox" class="chk">웹2
+        <input type="checkbox" class="chk">웹3
+    
+        <input type="text" autofocus>
+        <input type="password">
+        <input type="text">
+    
+        <hr>
+        
+        <div class="tmp">:not</div>
+        <span class="tmp">:not</span>
+        <div class="tmp">:not</div>
+    
+        <hr>
+        
+        <ul class="menu">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li> 
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li> 
+            <li>9</li>
+            <li>10</li> 
+        </ul> -->
+    
+    </body>
+    </html>

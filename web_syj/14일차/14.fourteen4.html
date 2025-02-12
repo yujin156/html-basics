@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소</title>
+    <style>
+    /* - 가상 요소
+            가상으로 요소처럼 들어가는것
+            inline 으로 인식
+
+
+        - 종류 -
+            1) 선택자::before => 선택자 요소의 내부 영역의 첫번째 자식처럼 나타남
+            2) 선택자::after => 선택자 요소의 내부 영역의 마지막번째 자식처럼 나타남
+            
+            *필수: 필요 없어도 content:"" 속성 무조건 사용해야함
+            * 최신 브라우저에서는 :: 두개 사용
+    */
+
+        p::before {
+            content: "";
+
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: red url(./img/tick.png) center / contain;
+        }
+
+        p::after {
+            content: "=";
+        }
+        p { 
+            background-color: pink;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <!-- <div>asdfs</div> -->
+        비트스터디
+
+    </p>
+    <p>비트스터디</p>
+    <p>비트스터디</p>
+</body>
+</html>

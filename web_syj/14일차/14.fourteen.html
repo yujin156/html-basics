@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web2 선택자</title>
+    <style>
+        body { height: 5000px;}
+    /* 
+        - 선택자
+            ***1) 아이디 - #
+            ***2) 클래스 - .
+            *3) 태그 - 태그명
+            (1,2,3 만 우선순위를 따짐)
+            -----------------------------------------
+            4) 전체 - *
+                     body태그를 포함한 모든 태그를 선택
+            5) 그룹 - ,
+                     똑같은 css를 여러 요소에 적용시킬때 , 로 구문하면서 한번에 명시
+                     
+
+        - 복합선택자(두개 이상의 선택자로 요소를 선택)
+            (기준선택자, 적용선택자 로 구분)
+            *선택자 우선순위 무시하는 경우도 있음
+
+            **6) 자손 - 빈칸
+                    기준선택자   적용선택자 { }
+            **7) 자식 - > 
+                    기준선택자 > 적용선택자 { }
+            8) 인접 - +
+                     (바로 밑 동생 요소)
+            9) 형제 - ~
+                     (동생들 전부 다)
+            10) 속성 - 선택자[속성="속성명"]
+                    input[type="text"]
+                    .클래스[name="이름"]
+                    .클래스[id="이름"]
+
+
+    */ 
+    h1,span,p {
+        font-size: 32px;
+        font-weight: 900;        
+        /* color: blue; */
+    }
+
+    .outer {}
+    .inner {
+        /* background: pink; */
+    }
+    .blue {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        border: 1px solid;
+        color: red;
+    }
+    .outer > .blue {
+        color: #fff;
+    }
+
+    .outer + p {
+        background: orange;
+    }
+    input[type="text"] {
+        background-color: red;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <h1>헬로월드</h1>    
+    <span>헬로월드</span>    
+    <p>헬로월드</p>    
+
+    <div class="outer">
+        <div class="inner">
+            <div class="blue">blue</div>
+        </div>
+        <div class="inner">
+            <div class="blue">blue</div>
+        </div>
+    </div>
+
+
+    <style>
+        p.txt ~ p.txt{
+            color: red;
+        }
+    </style>
+
+    <p class="txt">동생1</p>
+    <span class="txt">동생2</span>
+    <div class="txt">동생3</div>
+    <p class="txt">동생4</p>
+    <p>동생5</p>
+ 
+    <div>
+        <input type="text">
+        <input type="password">
+        <input type="text">
+        <input type="password">
+        <input type="radio">
+        <input type="checkbox">
+    </div>
+
+    <div class="blue">blue</div>
+</body>
+</html>

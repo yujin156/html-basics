@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스 예제</title>
+    <style> 
+        .ex1 {
+            width: 100%;
+            border: 3px solid red;
+        }
+        .outer > .ex1 > label {
+            width: 50px;
+            height: 50px;
+            border: 1px solid;
+            display: inline-block;
+
+            text-align: center;
+            line-height: 50px;
+        }
+        input { display: none}
+
+        /* #rd1 체크했을때 바로 밑 동생 label 배경색 변경 */
+        #rd1:checked + label {
+            background: skyblue;
+            color: #fff;
+        }
+        #rd2:checked + label {
+            background: pink;
+            color: #fff;
+        }
+        
+        .ex2 {
+            width: 100%;
+            border: 3px solid blue;
+
+            display: flex;
+            gap: 10px;
+        }
+
+        #rd3:checked + div {
+            background: skyblue;
+            color: #fff;
+        }
+        #rd4:checked + div {
+            background: hotpink;
+            color: #fff;
+        }
+
+        .ex2 > label > div {
+            width: 50px;
+            height: 50px;
+            border: 1px solid;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="ex1">
+            <input type="radio" name="rd" id="rd1">
+            <label for="rd1">남</label>
+
+            <input type="radio" name="rd" id="rd2">
+            <label for="rd2">여</label>
+        </div> 
+
+
+        <div class="ex2">
+            <label for="rd3">
+                <input type="radio" name="rd" id="rd3">
+                <div>남</div>
+            </label>
+            <label for="rd4">
+                <input type="radio" name="rd" id="rd4">
+                <div>여</div>
+            </label>
+        </div>
+    </div>
+</body>
+</html>
