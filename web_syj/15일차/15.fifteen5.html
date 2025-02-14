@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <style>
+        body { height: 5000px;}
+    /* 
+        transform - 요소(자기자신)의 위치, 크기, 각도, 모양을 '임시'로 바꾸는거
+                    변화가 생길때 자기 자신을 기준으로 변함
+
+        **1) translate: 위치 이동
+                    단위 - px, %, vw, vh....
+                    *translateX() - 가로방향 이동
+                    *translateY() - 세로방향 이동
+                    translateZ() - 높이 이동
+                    translate(x축,y축)
+                    translate3d(x축,y축,z축)
+
+        ** 2) scale: 크기
+                 단위 - 실수
+                        1 (기본값)
+
+                scale() : (값 한개만 쓰면)x,y축 다 건드릴수 있다
+                          값 두개 쓰면 각각 x,y축 따로 건드릴수 있다.
+                scaleX(): 가로 크기만
+                scaleY(): 세로 크기만
+
+        **3) rotate: 각도
+                기준점- 기본 가로 세로 가운데
+                단위 - deg
+                rotateX() - 가로 방향 각도 변경
+                rotateY() - 세로 방향 각도 변경
+                rotateZ() - Z축에 핀 꽂아서 돌리면 rotate() 랑 똑같이 보임
+                rotate() - 기준점을 기준으로 바람개비 돌듯이 돔
+                rotate3d(x축,y축,z축)
+        
+        4) skey(각도)
+                *안씀(웹표준에서 빠짐)
+                *단지 호환성을 위해서 살려놨을뿐 모던 웹에서는 사용하지 않음(유지보수 할때 있으면 알아볼 용도 정도로만 공부하기)
+
+
+                skeyX()
+                skeyY()
+                skey()
+                
+
+
+
+        * 기준점 바꿔주는 속성
+            transform-origin: 사방값, px, %
+    */  
+    .box {
+        
+            width:  200px;
+            height: 200px;
+            border: 1px solid;
+            margin: 50px auto;
+
+            position: relative;
+            /* overflow: hidden;; */
+        }
+        .translate {
+            width: 30%;
+            height: 100%;
+            background-color: orange;
+
+            position: absolute;
+            top: 0;
+            left: 100%;
+
+            transform: translate(50px, -100px);
+        }
+        .box:hover > .translate {
+            /* left: 70%; */
+            /* transform: translateX(-100%); */
+        }
+
+        .scale {
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+
+            
+            transform: scale(1);
+            transition: all 0.5s;
+
+            transform-origin: bottom right;
+        }
+        .box:hover > .scale {
+            transform: scale(0.5);
+        }
+
+        .rotate {
+            width: 100%;
+            height: 100%;
+            background-color: skyblue;
+
+            transform: rotateX(0deg);
+
+            font-size: 50px;
+            text-align: center;
+            transition: all 0.5s;
+            transform-origin: top ;
+        }
+        .box:hover > .rotate {
+            transform: rotateX(90deg);
+            
+        } 
+
+        .skew {
+            width: 100%;
+            height: 100%;
+            background-color: green;
+
+            transform: skew(40deg, 0deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="translate"></div>
+    </div>
+    <div class="box">
+        <div class="scale"></div>
+    </div>
+    <div class="box">
+        <div class="rotate">1</div>
+    </div>
+    <div class="box">
+        <div class="skew">1</div>
+    </div>
+</body>
+</html>

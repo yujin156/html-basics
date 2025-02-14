@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에제3</title>
+    <style>
+        body { margin: 0;}
+        .weab{
+            width: 1000px;
+            height: 600px;
+            background-color: grey;
+        }
+        .nav {
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: skyblue;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: orange;
+            
+            
+            /* transform: scale(1,0);
+            transform-origin: top; */
+
+            height: 0;
+            overflow: hidden;
+
+            transition: all 1s;/*hover에 주면 탁 들어가고 기본에주면 들어갈때도 스스륵 들어감*/
+        }
+        li:hover {
+            background-color: red;
+        }
+        .nav:hover > ul {
+            /* transform: scale(1); */
+            height: 150px;
+        }
+        .manu{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="weab">
+        <div class="nav manu">
+            menu
+            <ul>
+                <li>sec1</li>
+                <li>sec2</li>
+                <li>sec3</li>
+            </ul>
+        </div>
+        <div class="nav manu">
+            menu
+            <ul>
+                <li>sec1</li>
+                <li>sec2</li>
+                <li>sec3</li>
+            </ul>
+        </div>
+        <div class="nav manu">
+            menu
+            <ul>
+                <li>sec1</li>
+                <li>sec2</li>
+                <li>sec3</li>
+            </ul>
+        </div>
+        <div class="nav manu">
+            menu
+            <ul>
+                <li>sec1</li>
+                <li>sec2</li>
+                <li>sec3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

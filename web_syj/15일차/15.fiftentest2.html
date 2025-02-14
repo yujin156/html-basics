@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제 문제1</title>
+    <style>
+        body { margin: 0; background: #ddd;}
+        .outer {   /* 아웃터가 없으면 호버할때 어느 순간 돌다 호버가 풀려서 다시 돌아올수도 있음*/
+            
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            perspective: 400px;
+
+            position: relative; 
+
+        }
+        .green {
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            transform-style: preserve-3d;
+            transition: all 2s;
+
+            position: absolute; 
+            backface-visibility: hidden;
+        }
+        .white{
+            width: 150px;
+            height: 150px; 
+            background: rgba(255,255,255,0.5);
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) translateZ(100px); 
+            backface-visibility: hidden;
+
+        }
+        .green1 {
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            transform-style: preserve-3d;
+            transition: all 2s;
+            top: 0; 
+            left: 0;
+
+            position: absolute; 
+            transform: rotateY(-360deg);
+            backface-visibility: hidden;
+
+            backface-visibility: hidden;
+        }
+        .white1{
+            width: 150px;
+            height: 150px; 
+            background: rgba(255,255,255,0.5);
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) translateZ(100px); 
+
+            backface-visibility: hidden;
+
+        }
+
+        .outer:hover > .green {
+            transform: rotateY(360deg);
+        }
+        .outer:hover > .green1 {
+            transform: rotateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="green">
+            <div class="white"></div>
+        </div>
+        <div class="green1">
+            <div class="white1"></div>
+        </div>
+    </div>
+</body>
+</html>

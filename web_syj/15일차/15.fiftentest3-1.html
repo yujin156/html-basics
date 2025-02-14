@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강사님 답</title>
+    <style>
+        body { margin: 0;}
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .outer {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+
+            display: flex;
+            
+            background-color: yellowgreen;
+
+        }
+        .outer > li {
+            width: calc(100% / 4);
+            border: 1px solid;
+        }
+
+        ul.skyblue {
+            background-color: skyblue;
+
+            height: 0;
+            overflow: hidden;
+
+            transition: all 0.5s;
+        }
+        li:hover > .skyblue {
+            height: 150px;
+        }
+
+        .main_banner {
+            width: 100%;
+            height: 400px;
+            background-color: rgb(78, 78, 78);
+        }
+    </style>
+</head>
+<body>
+    <ul class="outer">
+        <li>
+            <span>menu</span>
+            <ul class="skyblue">
+                <li>sec</li>
+                <li>sec</li>
+                <li>sec</li>
+            </ul>
+        </li>
+        <li>
+            <span>menu</span>
+            <ul class="skyblue">
+                <li>sec</li>
+                <li>sec</li>
+                <li>sec</li>
+            </ul>
+        </li>
+        <li>
+            <span>menu</span>
+            <ul class="skyblue">
+                <li>sec</li>
+                <li>sec</li>
+                <li>sec</li>
+            </ul>
+        </li>
+        <li>
+            <span>menu</span>
+            <ul class="skyblue">
+                <li>sec</li>
+                <li>sec</li>
+                <li>sec</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="main_banner"></div>
+</body>
+</html>

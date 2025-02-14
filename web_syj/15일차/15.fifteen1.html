@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* 저작권 주의
+
+        - 내폰트: 내 서버상의(워크스페이스)에 업로드 되어 있는 외부파일 같은 끌어다 쓸 수 있는 폰트 파일
+                 방문자의 기기에 해당 폰트가 설치되어 있지 않아도 서버에서 폰트 파일을 (임시로) 다운받아서 화면에서 나타나도록 하는 폰트
+
+            *필수
+                @font-face: 내가 사용할 폰트명을 지정할수 있고, 해당 웹폰트 파일을 연결
+
+            *주의: 한글 지원되는지 확인할것
+    */
+
+        @font-face {
+            font-family: 'trana';
+
+            src: /*local('fonts/trana'), */
+                url('./fonts/trana.eot?iefix') format('embeded-opentype'),
+                url("./fonts/trana.ttf") format('truetype'),
+                url(./fonts/trana.woff) format('woff');
+
+            /* 확장자
+                eot - 옛날 익스(6~8)
+                ttf - 크롬, 파폭, 사파리(otf), 엣지
+                woff - 익스, 요즘 브라우저
+                       ttf 를 압축한거라서 파일 크기가 작다.
+                       (다른 폰트들보다 빠르게 다운로드 된다. 안드로이드에서 지원하지 않는 버전들도 있음)
+            
+            */
+ 
+        }
+
+        @font-face {
+            font-family: 'NotoSansKR';
+            src: url(./fonts/Noto_Sans_KR/NotoSansKR-Thin.otf);
+            font-weight: 100;
+        }
+        @font-face {
+            font-family: 'NotoSansKR';
+            src: url(./fonts/Noto_Sans_KR/NotoSansKR-Light.otf);
+            font-weight: 300;
+        }
+        @font-face {
+            font-family: 'NotoSansKR';
+            src: url(./fonts/Noto_Sans_KR/NotoSansKR-Regular.otf);
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'NotoSansKR';
+            src: url(./fonts/Noto_Sans_KR/NotoSansKR-Medium.otf);
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'NotoSansKR';
+            src: url(./fonts/Noto_Sans_KR/NotoSansKR-Bold.otf);
+            font-weight: 700;
+        }
+        @font-face {
+            font-family: 'NotoSansKR';
+            src: url(./fonts/Noto_Sans_KR/NotoSansKR-Black.otf);
+            font-weight: 900;
+        }
+
+
+        .p1 {
+            font-family: trana;
+            font-weight: 100;
+        }
+        .p2 {
+            font-family: 'NotoSansKR';
+            font-weight: 700;
+        }
+    </style>
+
+</head>
+<body>
+    <p>Bitstudy 비트스터디</p>
+    <p class="p1">Bitstudy 비트스터디</p>
+    <p class="p2">Bitstudy 비트스터디</p>
+</body>
+</html>

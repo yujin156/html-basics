@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선형 그라디언트</title>
+    <style>
+        
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+
+            /* background-image: linear-gradient(red, blue); */
+
+            /* background-image: -webkit-linear-gradient(left, red, blue);
+            background-image: -moz-linear-gradient(right, red, blue);
+            background-image: -ms-linear-gradient(right, red, blue);
+            background-image: -o-linear-gradient(right, red, blue);
+            background-image: linear-gradient(to right, red, blue); */
+            /* background-image: linear-gradient(-45deg, red, blue); */
+
+            background-image: linear-gradient(to right, red, green 70%, blue);
+             
+            /* background-image: linear-gradient(red, green, orange, pink, blue); */
+
+
+        }
+    /* 
+        선형 그라디언트: 직선방향 으로 색 변하는거
+                background-image 에 속함
+                    linear-gradient(방향, 시작색,[색, 색,색,] 끝색);
+                        1) 방향:기본(위->아래) 
+                                단위 - 사방값, deg  
+                                    *주의: prefix 랑 쓸때는 방향이 다들 다름
+
+
+                        2) 색: 기본 두개(시작색, 끝색)
+                                중간에 여러개의 색을 넣을수 있음
+                                각 색의 바로 뒤에 색 위치를 지정할 수 있다.
+
+    */
+        .box2 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+            background-image: repeating-linear-gradient(to right, red, green 10%, blue 30%);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+</body>
+</html>

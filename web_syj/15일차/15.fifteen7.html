@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d - 원근감</title>
+    <style>
+        .outer {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+
+            margin: 50px auto;
+
+            /* 1) 3d를 적용하려는 요소의 부모에 주는 방법 */
+            perspective: 400px;
+        }
+        .box {
+            width: 100%;
+            height: 100%;
+            background-color: hotpink;
+
+            transform: rotateX(0deg);
+
+            /* 2) 3d를 적용하려는 요소의 자체에 주는 방법 */
+            /* transform: perspective(400px) rotateX(45deg); */
+
+            /* 내 자식에 3d 기준을 상속해줄때 필요한 속성 */
+            /* transform-style: preserve-3d; */
+
+            
+            /* perspective: 400px; */
+        }
+    /* 3d - 원근감
+            rotateX,Y 랑 친함
+
+            perspective
+                단위 - px 
+                특이점 - 자손한테까지 상속 안됨
+                         
+            사용법
+                1) 3d를 적용하려는 요소의 부모에 주는 방법
+                        일반 속성처럼 perspective: 400px 방식으로 줌
+
+                2) 3d를 적용하려는 요소의 자체에 주는 방법
+                        transform의 첫번째 값으로 줌
+                            ex) transform: perspective(400px)
+
+
+        *내 자식에 3d 기준을 상속해줄때 필요한 속성
+            transform-style: preserve-3d;
+    */
+
+        .blue {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transform: rotateX(20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box">
+            <div class="blue"></div>
+        </div>
+    </div>
+</body>
+</html>

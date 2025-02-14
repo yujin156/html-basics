@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+            margin: 100px auto;
+        }
+    /*  transition: 요소의 변화를 일정시간동안 진행되도록 하는것
+                    hover와 transform 랑 궁합이 좋다
+                    (display 랑은 사용 못함)
+    
+        *1) transition-property: 트랜지션을 적용할 속성명
+                                - 특정속성: width, height 같은 속성명
+                                           여러 속성 적용시 , 로 구분
+                                - all: 해당 요소에 변화되는 모든 속성 뜻함
+                                - none: 해당 요소의 시간 없애기
+
+        *2) transition-duration: 진행시간
+                                 단위 - 초(s)
+                                        여러 속성 적용시 , 로 구분
+
+        3) transition-timing-function: 속도
+                                ease: 기본값
+                                      처음 천천히, 점점 빨라짐, 마지막 천천히
+                                *linear: 처음붙어 끝까지 일정한 속도
+                                ease-in: 처음 천천히, 점점 빨라짐
+                                ease-out:처음 빨라짐, 마지막 천천히
+                                ease-in-out: 처음 천천히, 점점 빨라짐, 마지막 천천히
+
+                                    
+        4) transition-delay: 지연
+                             단위 - 초(s)
+                                        여러 속성 적용시 , 로 구분
+
+        *한방
+            transition: property  duration  timing-function  delay
+    */  
+        .box1 {
+            width: 100%;
+            height: 100%;
+            background-color: hotpink;
+
+            /* 속성 하나하나씩 다 시간 처리 해줄때 */
+            /* transition-property: width, height, background-color; */
+            /* transition-duration: 1s, 3s; */
+
+            /* 모든 속성에 같은 시간 처리 해줄때 */
+            /* transition-property: all;
+            transition-duration: 5s;
+            transition-timing-function: linear;
+            transition-delay: 3s; */
+
+            /* transition: all 5s linear 3s; */
+
+            transition: all 5s linear;
+
+            /* transition-property: width, height, border;
+            transition-duration: 1s, 1s, 5s; */
+
+
+
+            /* transition-timing-function: ; */
+            /* transition-delay: ; */
+        }
+        .outer:hover .box1 {
+            /* width: 200%;
+            height: 200%;
+            background-color: blue;
+
+            border: 10px solid red; */
+
+            transform: rotate(1080deg);
+        }   
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box1"></div>
+    </div>
+</body>
+</html>

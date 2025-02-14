@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prefix</title>
+    <style>
+    /* 
+        prefix - 브라우저 접두사
+                구버전 브라우저들에서는 다른 방식으로 css 속성이 지원되기 때문에 통일시키려고 만든거
+
+        종류
+            -webkit-: 크롬, 엣지, 사파리
+            -moz-: 모질라, 파이어폭스
+            -ms-: 익스
+            -o-: 오페라
+
+        사용법
+            1) 속성명 앞에 붙이기
+            2) 선택자 영역에 붙이기
+
+            *사용할거면 4종류 다 세트로 사용하기
+            *요즘 방식꺼는 맨 아래 배치하기
+    */
+
+        div {
+            /* 1)번 방법 */
+            -webkit-background-color: red;
+            -moz-background-color: red;
+            -ms-background-color: red;
+            -o-background-color: red;
+            background-color: red;
+        }
+
+        /* 2)번 방법 */
+        @-webkit-keyframe tmp {}
+        @-moz-keyframe tmp {}
+        @-ms-keyframe tmp {}
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
