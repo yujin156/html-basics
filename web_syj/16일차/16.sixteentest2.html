@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜지션 예2</title>
+    <style>
+        body { margin: 0;}
+        .outer{
+            width: 640px;
+            height: 425px;
+
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        img{
+            
+            width: calc(100% + 50px);
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(-50px);
+            transition: all .3s;
+        }
+        .outline_box{
+            position: absolute;
+            top: 30px;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            border: 1px solid white;
+            transition: all .3s;
+
+            opacity: 0;
+        }
+        .txt_box{
+            color: #fff;
+            position: absolute;
+            left: 60px;
+            top: 40%;
+        }
+        .txt_box > p{
+            color: #fff;
+
+            position: absolute;
+            left: 0;
+            top: 60%;
+            transform: translateX(-50%);
+            opacity: 0;
+
+            transition: all 0.3s;
+        }
+        .outer:hover img,
+        .outer:hover .txt_box > p{
+            transform: translate(0);
+        }
+        .outer:hover .outline_box,
+        .outer:hover p {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <img src="../img/트랜지션/books.jpg" alt="books">
+        <div class="outline_box"></div>
+        <div class="txt_box">
+            <h1>Charming Roxy</h1>
+            <p>Roxy was my best friend She'd coss any border for me.</p>
+        </div>
+    </div>
+</body>
+</html>

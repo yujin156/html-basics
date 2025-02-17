@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{ margin: 0;}
+        .ham_btn {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: gray;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .line {
+            width: 100%;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 3px;
+        }
+        .line:nth-child(2) {
+            margin: 6px 0;
+        }
+        /* #chk {display: none;} */
+        .top {
+            transition: top 0.5s 0.5s, transform 0.5s ;
+            position: relative;
+            top: 0;
+        }
+        #chk:checked ~ .ham_btn > .top {
+            top: 12px;
+            transform:  rotate(45deg);
+            transition: top 0.5s 0s, transform 0.5s 0.5s;
+        }
+        .mid {
+            transition: all 0s 0.5s;
+        }
+        #chk:checked ~ .ham_btn > .mid {
+            /* transform: scale(0); */
+            opacity: 0;
+            transition: all 0s 0.5s;
+        }
+
+        .bot {
+            transition: top 0.5s  0.5s, transform 0.5s;
+            position: relative;
+            top: 0;
+        }
+        #chk:checked ~ .ham_btn > .bot {
+            top: -12px;
+            transform:  rotate(-45deg);
+            transition: top 0.5s 0s, transform 0.5s 0.5s;
+        }
+        
+        .nav {
+            width: 300px;
+            height: calc(100vh - 50px);
+            background-color: skyblue;
+
+            transform: translateX(-100%);
+            transition: transform 0.5s;
+        }
+        #chk:checked ~ .nav {
+            transform: translateX(0%);
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="chk">
+    <label for="chk" class="ham_btn">
+        <div class="line top"></div>
+        <div class="line mid"></div>
+        <div class="line bot"></div>
+    </label>
+    <div class="nav"></div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜지션 예3</title>
+    <style>
+        body { margin: 0;}
+        .outer{
+            width: 640px;
+            height: 425px;
+
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .color_box{
+            width: 100%;
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.6);
+
+            /* 판 자체가 움직여서 글씨가 안찌부 되는건데 
+            만약 
+            transform:scaleY(0); 
+            transform-origin: bottom;
+            쓰게된다면 글씨가 짜부 된다 */
+            position: absolute;
+            left: 0;
+            top: 100%;
+            transition: all ,0.5s;            
+
+        }
+        .outer:hover .color_box {
+            top:0;
+        }
+        h1{
+            position: absolute;
+            color: black;
+            margin: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+<body>
+    <div class="outer">
+        <img src="../img/트랜지션/heart.jpg" alt="heart">
+        <div class="color_box"></div>
+        <h1>HOLY MOLY</h1>
+        <div class="w_pan">
+            <p>Roxy was my best friend. She'd cross any border for me.</p> 
+        </div>
+</body>
+</html>

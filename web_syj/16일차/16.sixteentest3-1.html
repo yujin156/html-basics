@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜지션 예3</title>
+    <style>
+        body { margin: 0;}
+        .outer {
+            width: 640px;
+            height: 425px;
+
+            border: 10px solid red;
+            position: relative;
+            overflow: hidden;
+        }
+        .b_pan,
+        .outer::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+
+            pointer-events: none;
+            
+
+            /* 방법1 */
+            position: absolute;
+            left: 0;
+            top: 100%;
+
+            /* 방법2 */
+            /* position: absolute;
+            left: 0;
+            top: 0;
+            transform: scaleY(0);
+            transform-origin: bottom; */
+
+            /* 방법3 */
+            /* position: absolute;
+            left: 0;
+            bottom: 0; 
+            height: 0; */
+
+            transition: all 0.3s;
+        }
+        .outer:hover .b_pan,
+        .outer:hover::before {
+            top: 0; /* 방법1 */
+            /* transform: scaleY(1); */ /* 방법2 */
+            /* height: 100%; */ /* 방법3 */
+            
+        }
+        h1 {
+            margin: 0;
+
+            position: absolute;
+            left: 50%;
+            top: calc(50% + 30px);
+            transform: translate(-50%, -50%);
+            
+            /* position: absolute;
+            left: 0%;
+            right: 0;
+            top: 50%;
+            transform: translate(0%, -50%); 
+            text-align: center; */ 
+
+            transition: all 0.3s;
+        }
+        .outer:hover h1 {
+            top: 50%;
+            color: #fff; 
+        }
+        .txt_box { 
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            color: #fff;
+            text-align: center;
+            opacity: 0;
+
+            transition: all 0.3s;
+        }
+        .outer:hover .txt_box {
+            bottom: 30px;
+            opacity: 1;
+        }
+        .outer h1:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <!-- <div class="b_pan"></div> -->
+
+        <img src="./img/트랜지션/heart.jpg" alt="">
+
+        
+        <h1>Holy Sadie</h1>
+
+        <div class="txt_box">
+            <div>Sadie never took her eyes off me.</div>
+            <div>She had a dark soul.</div> 
+        </div>
+
+    </div>
+</body>
+</html>

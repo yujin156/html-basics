@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거</title>
+    <style>
+        body{margin: 0;}
+        .chk_box{
+            display: block;
+
+            width: 50px;
+            height: 50px;
+            background-color: gray; 
+            padding:10px;
+            box-sizing: border-box;
+        }
+        .line{
+            width: 100%;
+            height: 6px;
+            background-color: white;
+            border-radius: 3px; 
+        }
+
+        .line:nth-child(2){
+            margin: 6px 0;
+        }
+        .top {
+            transition: top 0.5s 0.5s, transform 0.5s ;
+            position: relative;
+            top: 0;
+        }
+        #chk:checked ~ .chk_box > .top {
+            top: 12px;
+            transform:  rotate(45deg);
+            transition: top 0.5s 0s, transform 0.5s 0.5s;
+        }
+        .mid {
+            transition: all 0s 0.5s;
+        }
+        #chk:checked ~ .chk_box > .mid {
+            opacity: 0;
+            transition: all 0s 0.5s;
+        }
+
+        .bot {
+            transition: top 0.5s  0.5s, transform 0.5s;
+            position: relative;
+            top: 0;
+        }
+        #chk:checked ~ .chk_box > .bot {
+            top: -12px;
+            transform:  rotate(-45deg);
+            transition: top 0.5s 0s, transform 0.5s 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="chk">
+    <label for="chk" class="chk_box">
+            <div class="line top"></div>
+            <div class="line mid"></div>
+            <div class="line bot"></div>
+    </label>
+</body>
+</html>

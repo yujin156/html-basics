@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pointer-events</title>
+    <style>
+    /*
+        pointer-events: 마우스로 동작하는 이벤트 관련 속성
+                    auto - 기본값
+                    none - 모든 이벤트 무시
+
+        user-select: 마우스 클릭 할때의 동작
+                auto - 기본값
+                       텍서트 선택 가능
+                all - 클릭하면 전체 컨텐츠 선택
+                none - 컨텐츠 선택 불가
+                text - 컨텐츠 선택 가능
+
+    
+    */
+        .box {
+            /* width: 300px;
+            height: 300px; */
+            border: 1px solid;
+
+            /* pointer-events: none; */
+
+            user-select: all;
+        }
+        .box:hover {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="./img/1.jpg" alt="">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam praesentium saepe incidunt error mollitia, sint temporibus labore, dolor pariatur rerum magni suscipit quam cumque obcaecati neque aspernatur illum architecto maiores.
+    </div>
+</body>
+</html>

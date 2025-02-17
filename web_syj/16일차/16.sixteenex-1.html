@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스벅 배너 강사님 답</title>
+    <style>
+         body { margin: 0;}
+        .main_banner {
+            width: 100%;
+            height: 620px;
+            background: url(./img/starbucks/bg_img.jpg) no-repeat center / cover;
+
+            position: relative;
+        }
+        .slogan_box {
+            position: absolute;
+            left: 13%;
+            top: 50%;
+            transform: translateY(-50%);
+
+            width: 25%;
+        }
+        .slogan {
+            width: 100%;
+        }
+        
+        .btn_detail { 
+            width: 150px;
+            height: 30px;
+
+            margin: 50px auto 0;
+
+            /* line-height: 26px;
+            text-align: center; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 14px;
+            border: 2px solid red;
+            color: red;
+            border-radius: 5px;
+        }
+        .drink01 {
+            position: absolute;
+            top: 20%;
+            left: 58%;
+        }
+        .drink02 {
+            position: absolute;
+            top: 20%;
+            left: 43%;
+        }
+        .drink03 {
+            position: absolute;
+            top: 20%;
+            left: 73%;
+        }
+
+        img, .btn_detail {
+            opacity: 0;
+            transition: all 0.5s;
+        }
+ 
+        .main_banner:hover .slogan {
+            opacity: 1;
+        }
+        .main_banner:hover .drink01 {
+            opacity: 1;
+            transition-delay: 0.5s;
+        }
+        .main_banner:hover .drink02 {
+            opacity: 1;
+            transition-delay: 1s;
+        }
+        .main_banner:hover .drink03 {
+            opacity: 1;
+            transition-delay: 1.5s;
+        }
+        .main_banner:hover .btn_detail {
+            opacity: 1;
+            transition-delay: 2s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main_banner">
+        <div class="slogan_box">
+            <img src="./img/starbucks/slogan.png" alt="" class="slogan">
+            <div class="btn_detail">자세히보기</div>
+        </div>
+
+        <img src="./img/starbucks/drink02.png" alt="" class="drink drink02">
+        <img src="./img/starbucks/drink01.png" alt="" class="drink drink01">
+        <img src="./img/starbucks/drink03.png" alt="" class="drink drink03">
+    </div>
+</body>
+</html>

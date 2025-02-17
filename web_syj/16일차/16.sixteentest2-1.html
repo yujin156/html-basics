@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        .outer {
+            width: 640px;
+            height: 425px;
+
+            border: 10px solid red;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .outer > * { 
+            transition: all 0.3s;
+        }
+        img {
+            width: calc(100% + 50px);
+            height: 100%;
+            transform: translateX(-50px);
+            transition: all 0.3s;
+        }
+        .outer:hover > img {
+            transform: translateX(0);
+        }
+
+
+        h1 {
+            position: absolute;
+            left: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0;
+            color: #fff;
+        }
+
+        .w_pan {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            bottom: 30px;
+            right: 30px;
+
+            border: 1px solid #fff;
+            transition: all 0.3s;
+            opacity: 0;
+            
+        }
+        .outer:hover .w_pan {
+            opacity: 1;
+        }
+        p {
+            /* width: calc(100% - 60px); */
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 50%;
+            transform: translateX(-30px);
+            transition: all 0.3s;
+
+            color: #fff;
+            font-size: 20px; 
+        }
+        .outer:hover p {
+            transform: translateX(0px);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <img src="../img/트랜지션/books.jpg" alt="">
+
+        <h1>Charming Roxy</h1>
+        
+        <div class="w_pan">
+            <p>Roxy was my best friend. She'd cross any border for me.</p> 
+        </div>
+    </div>
+</body>
+</html>

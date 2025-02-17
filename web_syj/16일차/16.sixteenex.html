@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스벅 배너</title>
+    <style>
+        body { margin: 0;}
+        ul { 
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        /* ------------------------------------------------- */
+        .main_back_img{
+            width: 1000PX;
+            height: 100%;
+            position: relative;
+
+        }
+        .main_title{
+            position: absolute;
+            top: 230px;
+            left: 200px;
+        }
+        .img_C{
+            position: absolute;
+            top: 100px;
+            right: -121px;
+        }
+        .img_L{
+            position: absolute;
+            top: 112px;
+            right: 200px;
+        }
+        .img_R{
+            position: absolute;
+            top: 112px;
+            right: -400px;
+        }
+        .main_btn{
+            width: 100px;
+            height: 50px;
+            border: 1px solid hotpink;
+            text-align: center;
+            line-height: 25PX;
+            color: hotpink;
+
+            position: absolute;
+            top: 230px;
+            left: 200px;
+
+        }
+        .main_btn > a :hover {
+            text-decoration-color: hotpink;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap"></div>
+        <div class="main_back_img"> <img src="../img/starbucks/bg_img.jpg" alt="스벅 뒷배경">
+            <div class="main_title"><img src="../img/starbucks/slogan.png" alt="스벅 타이틀"></div>
+            <ul>
+                <li class="img_C"><a href="#"><img src="../img/starbucks/drink01.png" alt="스벅 음료이미지"></a></li>
+                <li class="img_L"><a href="#"><img src="../img/starbucks/drink02.png" alt="스벅 음료이미지"></a></li>
+                <li class="img_R"><a href="#"><img src="../img/starbucks/drink03.png" alt="스벅 음료이미지"></a></li>
+
+            </ul>
+            <div class="main_btn"><a href="#">자세히 보기</a></div>
+        </div>
+</body>
+</html>

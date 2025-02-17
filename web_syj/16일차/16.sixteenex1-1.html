@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>던킨 강사님 답</title>
+    <style>
+        body { margin: 0; height: 5000px;}
+        .box {
+            width: 100%;
+            height: 600px;
+
+            position: relative;
+            overflow: hidden;
+
+            /* background-color: purple;
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: cover;
+            background-attachment: fixed; */
+        }
+        .box1 {
+            margin: 400px 0 200px;
+            /* background-image: url(https://www.dunkindonuts.co.kr/storage/mainpage/2Y947xgxKWONegeqKQ1OfktnuQAdUIJHSWb2TDoP.png)  */
+
+            background: url(https://www.dunkindonuts.co.kr/storage/mainpage/2Y947xgxKWONegeqKQ1OfktnuQAdUIJHSWb2TDoP.png) no-repeat fixed left / cover
+        }
+        .box2 {
+            /* background-image: url(https://www.dunkindonuts.co.kr/storage/mainpage/Esbf6cVx7esPC4djTQEvfneImo0Z7OlvEiq1ODMA.png)  */
+
+            background: url(https://www.dunkindonuts.co.kr/storage/mainpage/Esbf6cVx7esPC4djTQEvfneImo0Z7OlvEiq1ODMA.png) no-repeat fixed left / cover
+        }
+
+        .txt {
+            font-size: 40px;
+            color: #fff;
+        }
+        .txt1 { 
+            text-align: right;
+
+            position: absolute; 
+            top: 200px;
+            /* left: -100%; */
+            /* left: 0;
+            transform: translateX(-100%); */
+
+            right: 100%;
+
+            transition: all 1s;
+            white-space: nowrap;
+        }
+        .box:hover .txt1 {
+            /* left: 50%;
+            transform: translateX(-100%); */
+            right: 50%;
+        }
+        .txt2 {
+            text-align: left;
+
+            position: absolute;
+            bottom: 200px;
+            left: 100%;
+            transition: all 1s ;
+            white-space: nowrap;
+        }
+        .box:hover .txt2 {
+            left: 50%;
+            transition-delay: 0.5s;
+        }
+        .innerTxt {
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            /* display: inline-block; */
+            transition: all 1s 1.5s;
+        }
+        .box:hover .innerTxt {
+            transform: scale(2);
+            opacity: 0;
+        } 
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        <div class="txt txt1">
+            잠깐의 여유와<br>
+            달콤한 행복
+        </div>
+
+        <div class="txt txt2">
+            <div class="innerTxt">제발</div>
+            제발 복습좀 합시다!!<br>
+            주말에 놀지마!!!
+        </div>
+
+    </div>
+    <div class="box box2"></div>
+</body>
+</html>
