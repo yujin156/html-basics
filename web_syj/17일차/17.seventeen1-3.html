@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선 박스로 만들기 </title>
+    <style>
+        body { margin: 0;}
+        .outer {
+            width: 640px;
+            height: 425px;
+  
+            position: relative;
+            overflow: hidden;
+        }
+        .outer > * { 
+            transition: all 0.3s;
+        }
+
+        img {
+            transform: scale(1.2);
+        }
+        .outer:hover img {
+            transform: scale(1);
+        }
+        h2 {
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 35%;
+            transform: translateY(-30px);
+            text-align: center;
+            color: #fff;
+        }
+
+        .txt {
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            bottom: 35%;
+            transform: translateY(30px);
+            text-align: center;
+            color: #fff;
+
+        }
+        .outer:hover h2,
+        .outer:hover .txt {
+            transform: translateY(0px);
+        }
+
+        .w_border {
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 0;
+            height: 50%;
+            border-bottom: 1px solid #fff;
+            box-sizing: border-box;
+            transform-origin: bottom;
+
+            /* background-color: pink; */
+        }
+        .outer:hover .border1 {
+            transform: rotate(45deg);
+        } 
+        .outer:hover .border2 {
+            transform: rotate(-45deg);
+        } 
+    </style>
+</head>
+<body>
+    <div class="outer">
+
+        <img src="./img/트랜지션/coffee.jpg" alt="">
+
+        <h2>Wild Romeo</h2>
+        
+        <div class="txt">Romeo never knows what he wants. He seemed to be very cross about something.</div>
+
+        <div class="w_border border1"></div>
+        <div class="w_border border2"></div>
+        
+    </div>
+</body>
+</html>

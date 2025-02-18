@@ -1,0 +1,87 @@
+94.transition_실습5-1.html<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>before/after 사용한 가상요소</title>
+    <style>
+        body { margin: 0;}
+        .outer {
+            width: 640px;
+            height: 425px;
+  
+            position: relative;
+            overflow: hidden;
+        }
+        .outer > * { 
+            transition: all 0.3s;
+        }
+
+        img {
+            transform: scale(1.2);
+        }
+        .outer:hover img {
+            transform: scale(1);
+        }
+        h2 {
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 35%;
+            transform: translateY(-30px);
+            text-align: center;
+            color: #fff;
+        }
+
+        .txt {
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            bottom: 35%;
+            transform: translateY(30px);
+            text-align: center;
+            color: #fff;
+
+        }
+        .outer:hover h2,
+        .outer:hover .txt {
+            transform: translateY(0px);
+        }
+
+        .w_border,
+        .outer::before,
+        .outer::after {
+            content: "";
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%); 
+            transition: all 0.3s;
+            z-index: 999;
+
+            height: 1px;
+            background-color: #fff;
+        }
+        .outer:hover::before {
+            transform: translateY(-50%) rotate(45deg);
+        } 
+        .outer:hover::after {
+            transform: translateY(-50%) rotate(-45deg);
+        } 
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <!-- <div class="w_border border1"></div> -->
+
+        <img src="./img/트랜지션/coffee.jpg" alt="">
+
+        <h2>Wild Romeo</h2>
+        
+        <div class="txt">Romeo never knows what he wants. He seemed to be very cross about something.</div>
+
+        <!-- <div class="w_border border2"></div> -->
+    </div>
+</body>
+</html>

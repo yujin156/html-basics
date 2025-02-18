@@ -3,60 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>탭 예제</title>
+    <title>Document</title>
     <style>
         #wrap {
             width: 500px;
             border: 1px solid;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+
         .btn_box {
             width: 100%;
             height: 50px;
             background: pink; 
-        }
-        .btn_box ul {
+
             display: flex;
+            overflow: hidden;
         }
-        .btn_box li {
+        label {
+            display: block;
             width: calc(100% / 4);
             height: 50px;
             line-height: 50px;
             text-align: center;
-            border: 1px solid;
-            box-sizing: border-box;
+
+            /* border-right: 1px solid;
+            box-sizing: border-box; */
+
+            background: #fff;
+            box-shadow: -1px 0 0 0 #000;
         }
+        /* label:last-child {border: none} */
+
+        #rd1:checked ~ .btn_box > label:nth-child(1) {background: red; color:#fff}
+        #rd2:checked ~ .btn_box > label:nth-child(2) {background: green; color:#fff}
+        #rd3:checked ~ .btn_box > label:nth-child(3) {background: blue; color:#fff}
+        #rd4:checked ~ .btn_box > label:nth-child(4) {background: gray; color:#fff}
+        
         .pan_box {
             width: 100%;
             height: 400px;
-            background: skyblue;
+            background: skyblue;    /* position: relative; */
         }
         .pan {
             width: 100%;
             height: 100%;
+
+            /* position: absolute;
+            left: 0;
+            top: 0; */
+
+            display: none;
         }
         .red { background: red;}
         .green { background: green;}
         .blue { background: blue;}
         .gray { background: gray;}
 
-        /* 보더 줬을떄 마지막 나가면 마지막꺼에는 따로 해서 안보이게 하거낰
-        그림자를 이용해 줄 수 있다 */
+        #rd1:checked ~ .pan_box > .red {display: block;}
+        #rd2:checked ~ .pan_box > .green {display: block;}
+        #rd3:checked ~ .pan_box > .blue {display: block;}
+        #rd4:checked ~ .pan_box > .gray {display: block;}
+
+        input[name="rd"] { display: none;}
     </style>
 </head>
 <body>
     <div id="wrap">
+        <input type="radio" id="rd1" name="rd">
+        <input type="radio" id="rd2" name="rd">
+        <input type="radio" id="rd3" name="rd">
+        <input type="radio" id="rd4" name="rd">
+
         <div class="btn_box">
-            <ul>
-                <li>빨</li>
-                <li>초</li>
-                <li>파</li>
-                <li>회</li>
-            </ul>
+            <label for="rd1">빨</label>
+            <label for="rd2">초</label>
+            <label for="rd3">파</label>
+            <label for="rd4">회</label>
         </div>
         <div class="pan_box">
             <div class="pan red"></div>

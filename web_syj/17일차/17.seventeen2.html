@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition_실습2</title>
+    <style>
+        .outer {
+            width: 640px;
+            height: 425px;
+  
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .w_border {
+            position: absolute;
+            height: 1px;
+            background-color: #fff;
+        }
+        .border1{
+            left: 30px;
+            right: 30px;
+            top: 50px;
+            transform: translateY(-50%);
+        }
+        .outer:hover .border1 {
+            /* 선 배치 방법1 */
+            transform: translateY(-50%) rotate(45deg);
+        } 
+        .border2{
+            left: 30px;
+            right: 30px;
+            bottom: 50px;
+            transform: translateY(-50%);
+        }
+        .outer:hover .border2{
+            /* 선 배치 방법1 */
+            transform: translateY(-50%) rotate(-45deg);
+
+        }
+        .border3{
+            top: 30px;
+            bottom: 30px;
+            left: 50px;
+            transform: translateX(-50%);
+        }
+        .outer:hover .border3 {
+            /* 선 배치 방법1 */
+            transform: translateX(-50%) rotate(-45deg);
+
+        }
+        .border4{
+            top: 30px;
+            bottom: 30px;
+            right: 50px;
+            transform: translateX(-50%);
+        }
+        .outer:hover .border4{
+            /* 선 배치 방법1 */
+            transform: translateX(-50%) rotate(-45deg);
+
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="outer">
+        <img src="../img/트랜지션/books.jpg" alt="책들">
+        <div class="w_border border1"></div>
+        <div class="w_border border2"></div>
+        <div class="w_border border3"></div>
+        <div class="w_border border4"></div>
+        <h1>크레이지 릴리</h1>
+        <div class="text">긴글씨 을 쓸건대요 아마도 이정도로 길면 되지 얺을까 싶어요</div>
+    </div>
+</body>
+</html>

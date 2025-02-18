@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        .outer {
+            width: 640px;
+            height: 425px;
+  
+            position: relative;
+            overflow: hidden;
+        }
+        .outer > * { 
+            transition: all 0.3s;
+        }
+
+        img {
+            transform: scale(1.2);
+        }
+        .outer:hover img {
+            transform: scale(1);
+        }
+        h2 {
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 35%;
+            transform: translateY(-30px);
+            text-align: center;
+            color: #fff;
+        }
+
+        .txt {
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            bottom: 35%;
+            transform: translateY(30px);
+            text-align: center;
+            color: #fff;
+
+        }
+        .outer:hover h2,
+        .outer:hover .txt {
+            transform: translateY(0px);
+        }
+
+        .w_border {
+            /* 선 배치 방법1 */
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            /* 선 배치 방법2 */
+            /* position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: calc(100% - 60px); */
+
+            height: 1px;
+            background-color: #fff;
+        }
+        .outer:hover .border1 {
+            /* 선 배치 방법1 */
+            transform: translateY(-50%) rotate(45deg);
+
+            /* 선 배치 방법2 */
+            /* transform: translate(-50%, -50%) rotate(45deg); */
+        } 
+        .outer:hover .border2 {
+            /* 선 배치 방법1 */
+            transform: translateY(-50%) rotate(-45deg);
+
+            /* 선 배치 방법2 */
+            /* transform: translate(-50%, -50%) rotate(-45deg); */
+        } 
+    </style>
+</head>
+<body>
+    <div class="outer">
+
+        <img src="./img/트랜지션/coffee.jpg" alt="">
+
+        <h2>Wild Romeo</h2>
+        
+        <div class="txt">Romeo never knows what he wants. He seemed to be very cross about something.</div>
+
+        <div class="w_border border1"></div>
+        <div class="w_border border2"></div>
+        
+    </div>
+</body>
+</html>

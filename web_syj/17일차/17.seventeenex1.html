@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: #ddd;
+
+        }
+        #wrap {
+            width: 750px;
+            border: 1px solid;
+        }
+         
+        .btn_box {
+            width: 480px;
+
+            display: flex;
+            overflow: hidden;
+        }
+       label {
+            display: block;
+            width: calc(100% / 4);
+            height: 40px;
+            line-height: 50px;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 900;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+            box-shadow: 2px 0 2px 0 ;
+            border-radius: 20PX 20PX 0 0 ;
+            background-image: linear-gradient( #5ba4a4, #4e8c8a 70%);
+            color:#3d3d3d
+
+        }
+        #rd1:hover ~ .btn_box > label:nth-child(1) {
+            background: #5ba4a4; color:#3d3d3d
+        }
+        #rd2:hover ~ .btn_box > label:nth-child(2) {
+            background: #5ba4a4; color:#3d3d3d       
+        }
+        #rd3:hover ~ .btn_box > label:nth-child(3) {
+            background: #5ba4a4; color:#3d3d3d 
+        }
+        #rd4:hover ~ .btn_box > label:nth-child(4) {
+            background: #5ba4a4; color:#3d3d3d 
+        }
+
+        #rd1:checked ~ .btn_box > label:nth-child(1) {
+            background: white; color:#5ba4a4
+        }
+        #rd2:checked ~ .btn_box > label:nth-child(2) {
+            background: white; color:#5ba4a4       
+        }
+        #rd3:checked ~ .btn_box > label:nth-child(3) {
+            background: white; color:#5ba4a4 
+        }
+        #rd4:checked ~ .btn_box > label:nth-child(4) {
+            background: white; color:#5ba4a4 
+        }
+/* 
+        
+        .pan_box {
+            width: 100%;
+            height: 400px;
+            background-color: white;  
+        }
+        .pan {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        #rd1:checked ~ .pan_box > .red {display: block;}
+        #rd2:checked ~ .pan_box > .green {display: block;}
+        #rd3:checked ~ .pan_box > .blue {display: block;}
+        #rd4:checked ~ .pan_box > .gray {display: block;}
+        input[name="rd"] { display: none;} */
+    </style></head>
+<body>
+    <div id="wrap">
+        <input type="radio" id="rd1" name="rd">
+        <input type="radio" id="rd2" name="rd">
+        <input type="radio" id="rd3" name="rd">
+        <input type="radio" id="rd4" name="rd">
+
+        <div class="btn_box">
+            <label for="rd1"><b>ABOUT</b></label>
+            <label for="rd2"><b>SERVICES</b></label>
+            <label for="rd3"><b>WORK</b></label>
+            <label for="rd4"><b>CONTACT</b></label>
+        </div>
+        <div class="pan_box">
+            <div class="pan ABOUT">
+                <div class="title box"></div>
+                <div class="text box"></div>
+            </div>
+            <div class="pan SERVICES">
+                <div class="title box"></div>
+                <div class="text box"></div>
+            </div>
+            <div class="pan WORK">
+                <div class="title box"></div>
+                <div class="text box"></div>
+            </div>
+            <div class="pan CONTACT">
+                <div class="title box"></div>
+                <div class="text box"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

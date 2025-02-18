@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습</title>
+    <style>
+        body { margin: 0;}
+        #wrap {
+
+            perspective: 400px;
+        }
+        .outer {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+
+            margin: 200px auto;
+
+            position: relative; 
+
+            transform-style: preserve-3d;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+        .red { 
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+        .green { 
+            background-color: green;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 1s linear 0s;
+        }
+        /* outer에 hover 하면 green에 Z 축 기준으로 올리기 */
+        .outer:hover > .green {
+            transform: translate(-50%, -50%) translateZ(100px);
+            transition: all 1s linear 1s;
+        }
+        .blue { 
+            background-color: blue;
+
+            position: absolute;
+            bottom: 0;
+            right: 100%;
+        }
+        * { transition: all 1s linear;}
+        .outer:hover {
+            transform: rotateY(60deg);
+        } 
+        /* outer에 hover 하면 red, blue 를 Y축 기준으로 돌리기 */
+        .outer:hover > .red,
+        .outer:hover > .blue {
+            transform: rotateY(1080deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="outer">
+            <div class="box red"></div>
+            <div class="box green"></div>
+            <div class="box blue"></div>
+        </div>
+    </div>
+</body>
+</html>

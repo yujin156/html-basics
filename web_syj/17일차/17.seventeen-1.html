@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #22682a 0%, #9b4a1b 40%, #3a342a 100% */
+        body { margin: 0;}
+        .outer * { transition: all 1s;}
+        .outer {
+            width: 640px;
+            height: 425px;
+            
+            position: relative;
+            /* overflow: hidden; */
+
+            background: linear-gradient(45deg, #22682a 0%, #9b4a1b 40%, #3a342a 100%);
+        }  
+        .outer:hover img {
+            opacity: 0.5;
+        }
+
+        .b_pan {
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .outer:hover > .b_pan {
+            opacity: 0;
+        }
+        h2 {
+            color: #fff;
+
+            position: absolute;
+            left: 50%;
+            top: 25%;
+            transform: translate(-50%, 30px); 
+        }
+        .outer:hover h2 {
+            transform: translate(-50%, 0px);
+        }
+        .border_box {
+
+            /* position: absolute;
+            left: 30px;
+            top: 30px;
+            box-sizing: border-box;
+            width: calc(100% - 60px);
+            height: calc(100% - 60px); */
+
+            border: 5px solid #fff;
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            bottom: 30px;
+            right: 30px;
+            
+        }
+        .txt {
+            color: #fff;
+            text-align: center;
+            
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+        /* 글자가 길고 크기를 모를때  가운대 정렬을 하고 싶은면
+        lfte, right 0; 주던지 width:100%; */
+            transform: translateY(-50%);
+        }
+
+        .border_box {
+            transform: scale(0);
+        }
+        .outer:hover > .border_box {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+
+        <img src="../img/트랜지션/heart.jpg" alt="">
+        
+        <div class="b_pan"></div>
+
+        <h2>Warm Oscar</h2>
+        
+        <div class="border_box">
+            <div class="txt">Oscar is a decet man. He used to clean porches with pleasure</div>
+        </div>
+    </div>
+</body>
+</html>

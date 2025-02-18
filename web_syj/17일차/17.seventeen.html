@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트렌지션 예제4</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .outer{
+            width: 640px;
+            height: 425px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        h1{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+
+            transition: all 0.5s;
+        }
+        .outer:hover h1{
+            transform: translate(-50%, -50%), translateY(0);
+        }
+        .b_pan{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .L_pan {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            bottom: 30px;
+            right: 30px;
+
+            border: 1px solid #fff;
+            transition: all 0.3s;
+            opacity: 0;
+            
+        }
+        .outer:hover .w_pan {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <img src="../img/트랜지션/heart.jpg" alt="">
+        <div class="b_pan"></div>
+        <h1>Warm Oscar</h1>
+        <div class="L_pan">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p> 
+        </div>
+    </div>
+</body>
+</html>

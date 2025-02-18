@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제5</title>
+    <style>
+        body{margin: 0;}
+        .outer {
+            width: 640px;
+            height: 425px;
+            position: relative;
+            overflow: hidden;
+
+        }  
+        img {
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            transform: scale(1.2);
+
+            transition: all 0.2s linear;
+
+        }
+        .outer:hover img {
+            transform: scale(1);
+        }
+        h1{
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 30%;
+             transform: translate(-30px);/* 원래 위치 주고 호버하면 0으로*/
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <img src="../img/트랜지션/coffee.jpg" alt="커피사진">
+
+        <div class="border1"></div>
+        <div class="border"2></div>
+
+        <h1>마초 디카프리오</h1>
+        <div class="text">
+            오늘 왜이리 피곤합니까 진짜로 죽을거 같아요 진짜로 아니그리고 보더로 하면 어떻게 움직여야하는데
+        </div>
+    </div>
+</body>
+</html>
