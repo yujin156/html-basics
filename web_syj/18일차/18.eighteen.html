@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+    <style>
+        /* 
+            애니메이션: 트랜스폼, 트랜지션을 이용한 움직임과 비슷
+                        차이점은 특정 조건동안 혼자 계속 움짐임
+        
+            - 필수 - 
+                1. @keyframes: 애니메이션이 시간대에 맞춰서 바뀌는 지점을 설정
+                                프레임의 개수가 많을수록 부드러운 움직임 가능
+                                재사용 가능
+                    - 사용법
+                        @keyframes 이름 { 
+                            프레임 {}
+                            프레임 {}
+                            ...
+                            프레임 {}
+                        }
+                        
+                    -프레임
+                        *1) 0% ~ 100%
+                        2) from ~ to
+        
+        
+                2. animation
+                    1) animation-name: keyframes로 지정해놓은 애니메이션을 해당 요소에 삽입(콜)
+                    2) animation-duration: 애니메이션을 동작시킬 시간
+                                            단위-초(s)
+                    3) animation-timing-function: 속도
+                                            ease, linear, ease-in, ease-out, ease-in-out 
+                    4) animation-delay: 딜레이
+                                        최초의 (애니메이션이 시작하기 전) 딜레이
+                    5) animation-iteration-count: 반복횟수
+                                            단위 - 정수, infinite
+                    6) animation-direction: 방향성 지정 
+                                            normal: 기본값. 0% -> 100%
+                                            alternate
+                                    *주의: iteration-count 와 함께 사용시 짝수로 사용해야함
+        
+                    7) animation-fill-mode: 애니메이션이 끝나는 지점 설정
+                                        none: 기본값. 100% 가 끝나면 기본 css로 돌아가지만
+                                        forwards: 끝나는 %(프레임) 에서 멈춰있음
+        
+                                        *iteration-count: infinite 랑은 같이 못씀
+        
+                *한방
+                animation: name duration timing-function delay iteration-count direction fill-mode;
+                (적용할 키프레임이 여러개일때는 , 로 구분해가면서 쓰기)
+        */
+                .box {
+                    width: 200px;
+                    height: 200px;
+                    border: 1px solid;
+                    
+                    /* animation-name: bg_color, chg_size;
+                    animation-duration: 2s, 5s; */
+                    /* animation-timing-function: linear; */
+                    /* animation-delay: 3s; */
+                    /* animation-iteration-count: 3; */
+                    /* animation-direction: alternate; */
+                    /* animation-fill-mode: forwards; */
+                    
+                    animation: bg_color 1s linear infinite, chg_size 5s
+                }
+                @keyframes bg_color {
+                    0% { background: red;}
+                    50% { background: green;}
+                    100% { background: blue;}
+        
+                    /* from { background: red;}
+                    50% { background: orange; width: 300px;}
+                    to { background: blue;} */
+                }
+                @keyframes chg_size {
+                    0% { width: 100px;}
+                    100% { width: 300px;}
+        
+                    /* from { background: red;}
+                    50% { background: orange; width: 300px;}
+                    to { background: blue;} */
+                }
+        
+                .box2 {
+                    width: 200px;
+                    height: 200px;
+                    border: 1px solid;
+        
+                    animation: bg_color 1s;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="box"></div>
+            <div class="box2"></div>
+        </body>
+        </html>

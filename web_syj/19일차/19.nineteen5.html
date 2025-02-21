@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appearance</title>
+    <style>
+    /* 
+        appearance: 요소의 기본 css 구성 없앰
+                *prefix와 함께 사용해야함
+
+            ex) ios 계열에서 input type="button" 이 다른 모양으로 나오기 때문에 
+                appearance를 이용해서 싹 다 초기화 시킨다
+    */
+
+        .btn {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="확인1" class="btn">
+    <input type="button" value="확인2">
+    <button>확인3</button>
+</body>
+</html>

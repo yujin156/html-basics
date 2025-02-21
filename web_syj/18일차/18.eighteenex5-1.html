@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        .sec1 {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .txt_container {
+            font-size: 80px;
+            /* color: pink; */
+            color: #fff;  
+            /* text-shadow: 0 0 2px red; */ 
+
+            position: absolute;
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .circle {
+            border-radius: 50%;
+            background: #000;
+            position: absolute; 
+            
+            opacity: 0;
+            animation: flicker 0.5s forwards linear;
+        }
+        .circle1 {
+            top: -100px;
+            left: -20px;
+
+            width: 400px;
+            height: 400px;
+            animation-delay: 0s;
+        }
+        .circle2 {
+            bottom: 100px;
+            right: -20px;
+
+            width: 200px;
+            height: 200px;
+            animation-delay: 0.1s;
+        }
+        .circle3 {
+            top: 20px;
+            left: 500px;
+
+            width: 200px;
+            height: 200px;
+            animation-delay: 0.2s;
+            
+        }
+        .circle4 {
+            top: -60px;
+            right: 300px;
+
+            width: 300px;
+            height: 300px;
+            animation-delay: 0.3s;
+            
+        }
+        .circle5 {
+            bottom: -100px;
+            left: 200px;
+
+            width: 300px;
+            height: 300px;
+            animation-delay: 0.4s;
+            
+        }
+        .circle6 {
+            bottom: -50px;
+            right: 400px;
+
+            width: 300px;
+            height: 300px;
+            animation-delay: 0.5s;
+            
+        }
+        @keyframes flicker {
+            0%{opacity: 1;}
+            20%{opacity: 1;}
+            30%{transform: scale(1);}
+            100%{transform: scale(0.5); opacity: 0;}
+        }
+        .big_circle {
+            width: 100vw;
+            height: 100vw;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)  scale(0);
+            background-color: #000;
+            border-radius: 50%;
+
+            animation: big_flicker 0.6s 1s forwards;
+        }
+        @keyframes big_flicker {
+            0%{transform:  translate(-50%, -50%) scale(0);}
+            100%{transform:  translate(-50%, -50%) scale(3);}
+        }
+
+        .title {
+            position: relative;
+            z-index: 99;
+
+            white-space: nowrap;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="sec1">
+        <div class="big_circle"></div>
+        <div class="txt_container">
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
+            <div class="circle circle4"></div>
+            <div class="circle circle5"></div>
+            <div class="circle circle6"></div>
+            <div class="title">Web Publisher</div>
+            <div class="title">Web Publisher</div>
+        </div>
+    </div>
+</body>
+</html>

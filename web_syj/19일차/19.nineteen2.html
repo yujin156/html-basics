@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe 유튜브</title>
+    <style>
+        body{ margin: 0;}
+        iframe {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<!-- 
+    = iframe 으로 유튜브 영상 부분만 가져오기 =
+        1) 가져올 영상 선택
+        2) '공유' 클릭
+        3) '동영상 퍼가기' 탭에서 iframe 코드 다 복사해오기
+
+
+    - 유튜브 속성 -
+        * src 에 get 방식으로 속성 추가할거임 (url에 ?뒤에 & 이용해가면서 붙인다는 말임)
+
+        1) rel: 재생 종료 후 관련영상 표시 여부
+            0 - 안보여줌
+            1 - 보여줌(기본값)
+
+        2) fs: 풀스크린 여부 결정
+            *(allowfullscreen 속성 자체가 없으면 fs=1 줘도 풀스크린 버튼 자체가 비활성화 되서 안됨)
+            0 - 풀스크린 버튼 없어짐
+            1 - 보여줌(기본값)
+
+        3) controls: 컨트롤패널 여부 결정
+            0 - 컨트롤패널 버튼 없어짐
+            1 - 보여줌(기본값)
+
+        4) disablekb: 키보드 조작 여부 결정
+            0 - 키보드 조작 가능 (기본값)
+            1 - 조작 불가
+
+        5) modestbranding: youtube 로고 없앰(25.2.20 기준 안됨)
+            0 - 나타남(기본값)
+            1 - 안나옴
+        
+        6) loop: 반복 재생
+                ( *주의: 7) playlist 속성이랑 같이 써야함 )
+                 
+            0 - 반복 안됨(기본값)
+            1 - 반복
+
+        7) playlist: 이어서 나올 영상의 id 를 나열
+                playlist=영상id, 영상id, 영상id, ...
+
+        8) autoplay: 자동재생(유튜브 정책상 막힘)
+            0 - 자동 안됨(기본값)
+            1 - 됨
+
+
+-->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/gRpBZn9uxdc?rel=0&fs=1&controls=1&disablekb=1&loop=1&playlist=gRpBZn9uxdc,eBqd1nCrfEE,U7GHmma6mus&autoplay=1" allowfullscreen></iframe>
+
+    <!-- gRpBZn9uxdc -->
+</body>
+</html>

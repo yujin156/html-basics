@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=99.아코디언2, initial-scale=1.0">
+    <title>아코디언2 예시2 flex 사용</title>
+    <style>
+        body { margin: 0; background: #e74c3c; height: 5000px;}
+        #wrap {
+            background: #3d4642;
+            margin-top: 300px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            width: 600px;
+            height: 177px;
+            margin: 0 auto;
+
+            display: flex;
+        }
+        li {
+            width: 72px;
+            height: 100%;
+            overflow: hidden;
+
+            /* border: 5px solid aqua; */
+            box-shadow: 0 0 0 1px #3d4642;
+
+            display: flex;
+
+            transition: all 0.5s;
+        }
+        li:hover {
+            width: 300px;
+        }
+
+        .img_box {
+            width: 72px;
+            height: 100%;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        img { transition: all 0.5s;}
+        li:hover img {
+            transform: translateX(-50%);
+        }
+        .txt_box {
+            width: 228px;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+
+            flex-shrink: 0;
+            background: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <ul>
+        <li>
+            <div class="img_box">
+                <img src="./img/아코디언/behance_btn.gif" alt="">
+            </div>
+            <div class="txt_box">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+        </li>
+        <li>
+            <div class="img_box">
+                <img src="./img/아코디언/flickr_btn.gif" alt="">
+            </div>
+            <div class="txt_box">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+        </li>
+        <li>
+            <div class="img_box">
+                <img src="./img/아코디언/linkedin_btn.gif" alt="">
+            </div>
+            <div class="txt_box">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+        </li>
+        <li>
+            <div class="img_box">
+                <img src="./img/아코디언/facebook_btn.gif" alt="">
+            </div>
+            <div class="txt_box">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+        </li>
+        <li>
+            <div class="img_box">
+                <img src="./img/아코디언/twitter_btn.gif" alt="">
+            </div>
+            <div class="txt_box">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+        </li>
+    </ul>
+
+
+</div>
+</body>
+</html>

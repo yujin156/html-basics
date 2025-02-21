@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {}
+        .car {
+            width: 800px;
+            height: 400px; 
+            background: url(../img/car_지프.png) no-repeat center / contain;
+
+            position: absolute;
+            /* left: 100%; */
+            top: 0;
+            animation: car_move 2s infinite;
+        }
+        @keyframes car_move {
+            0% {left: 100%}
+            100% { left: 50%; transform: translateX(-50%);}
+        }
+        .tire {
+            width: 125px;
+            height: 125px;
+            background:  url(../img/tire_싼타페.png) no-repeat center / contain;
+
+            animation: rotate 2s infinite;
+        }
+        .tire_f {
+            position: absolute;
+            left: 107px;
+            bottom: 61px;
+        }
+        .tire_b {
+            position: absolute;
+            right: 130px;
+            bottom: 54px;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg);}
+            100% { transform: rotate(-1080deg);}
+        }
+        
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+    <div class="car">
+        <div class="tire tire_f"></div>
+        <div class="tire tire_b"></div>
+    </div>
+
+</div>
+</body>
+</html>

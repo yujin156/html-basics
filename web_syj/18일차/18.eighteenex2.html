@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션2</title>
+    <head>
+        <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            
+
+        }
+        .box1{
+            position: absolute;
+            top:0;
+            left: 0;
+            animation: bg_color 2s infinite, rotate 3s infinite;
+        }
+        .box2{
+            position: absolute;
+            top:400px;
+            left: 0;
+            animation: bg_color 2s infinite, rotate1 3s infinite;
+        }
+        .box2{
+            position: absolute;
+            top:0;
+            left: 0;
+            animation: bg_color 2s infinite, rotate2 3s infinite;
+        }
+        @keyframes rotate {  /*box1 움직임 */
+            0% {left: 0; top: 0;}
+            25%{left: 200px; top: 0;}
+            50%{left: 200px; top: 200px;}
+            75%{left: 0; top: 200px;}
+            100%{left: 0; top: 0;}
+        }
+        @keyframes rotate1 {  /*box2 움직임 */
+            0% {left: 0; top: 400px;}
+            25%{left: 200px; top: 400px;}
+            50%{left: 200px; top: 600px;}
+            75%{left: 0; top: 600px;}
+            100%{left: 0; top: 0;}
+
+        }
+       /* @keyframes rotate3 {  box3 움직임 
+            0% {left: 0; top: 0;}
+            25%{left: 200px; top: 0;}
+            50%{left: 200px; top: 200px;}
+            75%{left: 0; top: 200px;}
+            100%{left: 0; top: 0;}
+        }*/
+        @keyframes bg_color {
+                    0% { background: red;}
+                    50% { background: green;}
+                    100% { background: blue;}
+                }
+        </style>
+    </head>
+    <body>
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+    </body>
+    </html>

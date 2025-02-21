@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형</title>
+    <head>
+        <style>
+        /* 
+            - 데스크탑용 웹: 모든 정보 다 보여주면 됨
+              모바일 웹: 작은 화면에 데탑에서 보여주던 정보들을 압축해서 보여줘야함
+                        *주의사항: 레이아웃이 깨지지 않고 나와야 함
+    
+            - 반응형웹: 모든 크기의 화면에 데탑에서 보여주던 정보들을 압축해서 보여줘야함
+                        *주의사항: 레이아웃이 깨지지 않고 나와야 함
+                (유사품)적응형웹: 특정한 사이즈에서만 돌아가는것
+    
+    
+            ---------------------------------------------------------
+            - 분기점: 기기 화면의 크기를 일반화 시켜놓은 수치
+                     *무조건 지켜야 하는건 아님(필요한 크기마다 분기점 생성 가능)
+    
+                *1920: 일반 데스크탑 모니터
+                1600: 큰 노트북, 작은 모니터
+                1440: 큰 노트북, 작은 모니터
+                1200: 노트북, 작은 모니터
+                *1024: 아이패드 프로
+                960: 옛날 모니터
+                *768: 태블릿
+                *480: 핸드폰
+                320: 아이폰3, 4
+                280: 갤러시폴드 접힌상태
+    
+            - 반응형 필수
+                1) <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                2) 미디어쿼리
+                    @media screen and (min-width:최소영역) and (max-width:최대영역) and (orientation:화면 형태) {
+                        - min-width / max-width : 미디어쿼리를 적용할 뷰포트 범위
+                                                   최소 둘중 하나는 필수로 사용
+    
+                        - orientation: 옵션속성(없어도 됨)
+                                portrait - 뷰포트가 세로가 긴 화면
+                                landscape - 뷰포트가 가로가 긴 화면
+                    }
+    
+        */
+            body {
+                margin: 0;
+                background: gray;
+            }
+            /* 적응형 - 특정 사이즈만 커버 */
+            @media screen and (min-width: 300px) and (max-width: 600px) /* and (orientation: portrait) */ {
+                body {
+                    background: hotpink;
+                }
+            }
+            @media screen and (min-width: 600px) and (max-width: 900px) /* and (orientation: portrait) */ {
+                body {
+                    background: greenyellow;
+                }
+            }
+            @media screen and (min-width: 900px) and (max-width: 1200px) /* and (orientation: portrait) */ {
+                body {
+                    background: skyblue;
+                }
+            }
+    
+            /* 반응형 - 모든 사이즈를 다 커버 */
+            /* @media screen and (max-width: 1000px) and (orientation: portrait) {
+                body {
+                    background: pink;
+                }
+            } */
+        </style>
+    </head>
+    <body>
+        
+    </body>
+    </html>

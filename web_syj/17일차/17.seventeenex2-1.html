@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 400px;
+            margin: 0 auto;
+            /* box-shadow: 0 0 0 1px rgba(155,155,155,0.3); */
+        }
+        label {
+            display: block;
+            /* width: calc(100% - 40px); */
+            height: 30px;
+            line-height: 30px;
+            padding: 5px 20px;
+            /* box-sizing: border-box; */
+
+            font-size: 20px;
+            color: #777;
+            background: linear-gradient(#fff, #eaeaea);
+         
+            /* border: 1px solid ; */
+            box-shadow: 0 0 0 1px rgba(155,155,155,0.3);
+        }
+
+        label:hover {
+            background: #fff;
+            cursor: pointer;
+        } 
+
+        /* #rd1:checked ~ label:nth-of-type(1),
+        #rd2:checked ~ label:nth-of-type(2),
+        #rd3:checked ~ label:nth-of-type(3),
+        #rd4:checked ~ label:nth-of-type(4) { */
+        input[name="rd"]:checked ~ label {
+            background: #c6e1ec;
+        }
+
+        .txt_box {
+            font-style: italic;
+            font-size: 14px;
+            color: #777;
+
+            background-color: #fff; 
+
+            /* padding: 20px; */
+
+            height: 0;
+            overflow: hidden;
+
+            transition: all 0.5s;
+
+            /* border-left: 1px solid rgba(155,155,155,0.3);
+            border-right: 1px solid rgba(155,155,155,0.3);
+            border-bottom: 1px solid rgba(155,155,155,0.3); */
+            box-shadow: 0 0 0 1px rgba(155,155,155,0.3);
+        }
+        p {
+            margin: 0;
+            padding: 20px; 
+        }
+
+        /* #rd1:checked ~ .txt_box:nth-of-type(1),
+        #rd2:checked ~ .txt_box:nth-of-type(2),
+        #rd3:checked ~ .txt_box:nth-of-type(3),
+        #rd4:checked ~ .txt_box:nth-of-type(4) { */
+        input[name="rd"]:checked ~ .txt_box {
+            height: 200px;
+        }
+
+        input {display: none;}
+/*    
+= 작은 글자 =
+글자 기울이게.
+글씨크기: 14px
+글자색: #777;
+여백: 20px */
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+    <div>
+        <input type="radio" name="rd" id="rd1">
+        <label for="rd1">About us</label>
+        <div class="txt_box">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </div>
+
+    <div>
+        <input type="radio" name="rd" id="rd2">
+        <label for="rd2">How we work</label>
+        <div class="txt_box">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos pariatur cumque voluptate, quis, nisi a dolores cupiditate illo animi quisquam</p>
+        </div>
+    </div> 
+
+    <div>
+        <input type="radio" name="rd" id="rd3">
+        <label for="rd3">Reference</label>
+        <div class="txt_box">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos pariatur cumque voluptate, quis, nisi a dolores cupiditate illo animi quisquam, natus harum inventore non eos eaque libero commodi. Magnam, nisi.</p>
+        </div>
+    </div> 
+
+    <div>
+        <input type="radio" name="rd" id="rd4">
+        <label for="rd4">Contact us</label>
+        <div class="txt_box">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos pariatur cumque voluptate, quis, nisi a dolores cupiditate illo animi quisquam, natus harum inventore non eos eaque libero commodi. Magnam, nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos pariatur cumque voluptate, quis, nisi a dolores cupiditate illo animi quisquam, natus harum inventore non eos eaque libero commodi. Magnam, nisi.</p>
+        </div>
+    </div> 
+
+
+</div>
+
+
+</body>
+</html>

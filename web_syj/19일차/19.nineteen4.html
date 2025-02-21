@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멀티미디어</title>
+    <style>
+    /* 
+        - 멀티미디어-
+            옛날에는 플러그인 프로그램들을 이용해서 오디오/비디오 파일을 재생했었음
+            현재는 웹표준이 적용되면서 점점 사라지고 있음
+            (* video, audio, iframe 으로 대체)
+
+        - 플러그인 방식 -
+            <embed src="경로" type="유형">
+            <object data="경로" type="유형"></object>
+
+            =type=
+                1) HTML 삽입시: text/html
+                2) pdf 삽입시: application/pdf
+                3) mp3: audio/x-mpeg
+
+        - 브라우저별 지원하는 오디오/비디오 확장자
+            1) 비디오
+                - mp4: 모든 브라우저에서 지원
+                       고화질 지원
+                       웹용도 외는 라이센스 필요
+                - webm: 크롬, 파이어폭스, 오페라, 엣지, 사파리(14버전부터 지원)
+                        화질우수
+                        무료
+                - ogv: 크롬, 파이어폭스, 오페라
+                       화질 별로
+                       무료
+
+            2) 오디오
+                - mp3: 모든 브라우저에서 지원
+                - ogg: 크롬, 파이어폭스, 오페라, 안드로이드
+      
+    --------------------------------------------------------------
+        - 오디오&비디오
+            inline레벨(inline-block)
+
+            <video src="경로" [속성="속성값"...]></video>
+            <audio src="경로" [속성="속성값"...] controls></audio>
+
+        -속성
+            1) controls: 컨트롤 바
+                         audio 에서는 필수(안주면 화면에 아예 안나옴)
+                         video 에서는 없으면 이미지 처럼이라도 나오긴 함
+            2) autoplay: 자동재생
+                         웹 정책에 의해서 자동이 막힘
+                         muted(음소거)속성 같이 사용하면 동작하는 브라우저도 있음
+            3) muted: 음소거
+            4) loop: 반복
+            5) poster: 썸네일 이미지
+    */
+        video {
+            /* width: 700px; */
+        }
+        audio {
+            /* width: 100px; */
+            /* height: 20px; */
+        }
+    </style>
+</head>
+<body>
+    <img src="./img/1.jpg" alt="" width="200">
+
+
+    <!-- <video src="./media/내 손으로 내 숨을 막는일 - 전상근 (인디고플레이스 live).mp4" controls autoplay muted loop poster="./img/1.jpg"></video> -->
+
+    <video controls autoplay muted  width="200">
+        <source src="./media/Painting.mp4" type="video/mp4">
+        <source src="./media/Painting.webm" type="video/webm">
+        <source src="./media/Painting.ogv" type="video/ogv">
+
+        <object data="./media/Painting.swf" type="application/x-shocwave-flash"></object>
+        영상을 지원하지 않는 브라우저 입니다.
+    </video>
+
+
+    <!-- <audio src="./media/bgsound.mp3" controls></audio> -->
+    <audio controls>
+        <source src="./media/bgsound.mp3" type="audio/mp3">
+        <source src="./media/bgsound.ogg" type="audio/ogg">
+        오디오를 지원하지 않는 브라우저 입니다.
+    </audio>
+</body>
+</html>

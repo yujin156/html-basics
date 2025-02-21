@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문휘준</title>
+    <style>
+        .man{
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border: 1px solid black;
+            position: relative;
+        }
+        .head{
+            width: 50px;
+            height: 50px;
+            border: 1px solid;
+            border-radius: 25px ;
+            position: absolute;
+            top: calc(50% - 25px);
+            left: 0;
+
+            animation: bg_color 1s linear infinite, chg_size 1s infinite;
+        }
+        .body{
+            width: 100px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: black;
+            border-radius: 25px;
+            position: absolute;
+            margin: 0 auto;
+
+            top: 50px;
+            left: 0;
+        }
+        @keyframes bg_color {
+            0% { background: red;}
+            50% { background: green;}
+            100% { background: blue;}
+        }
+        @keyframes chg_size {
+            0% { top:0; left: 0;}
+            100% { top:0; left: 50px;}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="man">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="arm_L"></div>
+        <div class="arm_R">
+            <div class="hand"></div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 500px; 
+            position: relative;
+
+            margin: 100px auto;
+
+            position: relative;
+        }
+        .eyes {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            animation: bg_color 0.2s infinite, move 0.2s infinite alternate;
+        }
+        .eye_L {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .eye_R {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        
+        @keyframes bg_color {
+            0% {background: red}
+            25% {background: green}
+            50% {background: blue}
+            75% {background: yellow}
+            100% {background: hotpink}
+        }
+        @keyframes move {
+            0% { transform: translateX(-10px);}
+            100% { transform: translateX(10px);}
+        }
+
+        .lip {
+            width: 400px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #000;
+            
+            /* margin: 180px auto 0; */
+            position: absolute;
+            top: 190px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9;
+        }
+        .tongue {
+            width: 150px;
+            height: 270px;
+            background: crimson;
+            border-radius: 80px 80px 50% 50% ;
+            
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            transform-origin: top center;
+            animation: rotate 1s infinite;
+        }
+        @keyframes rotate {
+            0% { transform: translateX(-50%) rotate(0deg); }
+            10% { transform: translateX(-50%) rotate(20deg); }
+            20% { transform: translateX(-50%) rotate(-20deg); }
+            30% { transform: translateX(-50%) rotate(20deg); }
+            40% { transform: translateX(-50%) rotate(-20deg); }
+            60% { transform: translateX(-50%) rotate(0deg); }
+            100% { transform: translateX(-50%) rotate(0deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="eyes eye_L"></div>
+        <div class="eyes eye_R"></div>
+
+        <div>
+            <div class="lip"></div>
+            <div class="tongue"></div>
+        </div>
+
+
+    </div>
+</body>
+</html>
