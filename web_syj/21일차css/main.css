@@ -1,0 +1,79 @@
+.main_banner{
+    width: 1920px;
+    height: 750px;
+
+    background: url(../img/반응형/iDeco/main_banner1.jpg) no-repeat left center;
+}
+.content{
+    padding: 100px 0;
+    background-color: #f7f7f7; 
+}
+.content_title{
+    line-height: 40px;
+    display: flex;
+    margin-bottom: 10px;
+}
+.content_title > span{
+    width: 500px;
+    font-size: 20px;
+}
+.content_chk {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    width: 100%;
+}
+.content_title label {
+    width: 60px;
+    height: 40px;
+    display: inline-block;
+    font-size: 13px;
+    color: #414247;
+
+    text-align: center;
+    line-height: 40px;
+}
+input {display: none}
+#rd1:checked + label,
+#rd2:checked + label {
+    border-bottom: 3px solid #222;
+    color: #414247;
+    box-sizing: border-box;
+
+}
+#rd1:hover + label,
+#rd2:hover + label{
+    border-bottom: 3px solid #ddd;
+    color: #414247;
+    box-sizing: border-box;
+
+
+}
+.cotent_banner{
+    display: flex;
+    gap: 10px;
+    margin: 50px 0;
+    overflow: hidden;
+}
+.cotent_banner img{
+    width: 100%;
+    height: auto;
+}
+.content_manu  ul {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 5px;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.content_manu  li {
+    width: calc((100% - (10px*3) )/ 4);
+}
+
+.content_manu  img {
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,264 @@
+.content_box {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    height: 100%;
+    position: relative;
+}
+
+/* top_banner */
+.top_banner {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #414247;
+    color: #fff;
+} 
+.lbl_top_banner_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 10px;
+}
+
+#btn_top_banner_close,
+#btn_top_banner_close:checked + .top_banner {
+    display: none;
+}
+
+/* ******************************* */
+/* 헤더 */
+.header {
+
+}
+.h_top {
+    width: 100%;
+    height: 30px;
+}
+.h_top ul {
+    height: 100%;
+    font-size: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.h_top ul > li a {
+    padding: 0 10px;
+    font-weight: 900;
+}
+
+.h_top ul > li a:hover {
+    text-decoration: underline;
+}
+
+
+
+.h_bot {
+    width: 100%;
+    height: 100px;
+}
+
+.h_bot_flexbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 160px;
+    height: 100%;
+
+    background: url(../img/반응형/iDeco/logo.png) no-repeat left;
+}
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%; 
+}
+
+
+.h_menu {
+    display: flex;
+    height: 21px;
+    text-align: center;
+    overflow: hidden;
+}
+.h_menu > li {
+    height: 100%;
+    position: relative;
+    padding: 0px 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.h_menu > li > div {
+    height: 100%;
+    transition: all 0.5s;
+}
+.h_menu > li > div:nth-child(2) {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+}
+.h_menu > li:hover > div {
+    transform: translateY(-100%);
+}
+
+/* ************************* */
+.main {
+    background: #f7f7f7;
+}
+/* 메인배너 */
+.main_banner {
+    width: 100%;
+    /* height: ?; */
+    position: relative; 
+}
+
+/* 배너 img 태그 사용한거 */
+.banner {
+    width: 100%; 
+    
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    left: 100%;
+}
+.banner1 {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+.banner > img {
+    width: 100%;
+}
+.main_banner { display: none;}
+
+
+
+/* 배너 배경이미지 사용한거 */
+.main_banner2 {
+    position: relative;
+    padding-bottom: 39%;
+}
+.bg_banner {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+.bg_banner1 {
+    left: 0%;
+    background: url(../img/반응형/iDeco/main_banner1.jpg) no-repeat center / contain;
+}
+.bg_banner2 {
+    background: url(../img/반응형/iDeco/main_banner2.jpg) no-repeat center / contain;
+}
+.bg_banner3 {
+    background: url(../img/반응형/iDeco/main_banner3.jpg) no-repeat center / contain;
+}
+
+
+
+/* 인기상품 */
+.sec {
+    padding: 100px 0 150px;
+}
+.sec_header {
+    height: 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sec_title {
+    font-size: 28px;
+}
+.category_box > label {
+    /* border-bottom: 3px solid transparent; */
+    font-size: 15px;
+    padding: 10px 15px;
+}
+
+.category_box > label:hover {
+    border-bottom: 3px solid #ddd;
+}
+#rd_cate1:checked ~ .sec_header label[for="rd_cate1"],
+#rd_cate2:checked ~ .sec_header label[for="rd_cate2"] {
+    border-bottom: 3px solid #222;
+}
+
+
+.sec_body { 
+    margin-top: 50px; 
+    font-size: 0;
+}
+
+.tab,
+input[name="rd_cate"] {
+    display: none;
+}
+#rd_cate1:checked ~ .sec_body > .tab1, #rd_cate2:checked ~ .sec_body > .tab2 {
+    display: block;
+}
+
+
+
+.tab_box {
+    display: flex;
+    gap: 5px;
+    padding: 20px 10px;
+    background-color: #fff;
+}
+.tab_box > li {
+    width: calc((100% - (5px* 3)) / 4);
+}
+.tab_img {    
+    position: relative; 
+    overflow: hidden;
+}
+.tab_img img {
+    width: 100%;
+    transition: all 0.5s;
+}
+.tab_img:hover img {
+    transform: scale(1.2);
+}
+
+.sale_percent {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #000;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.5s;
+}
+.tab_img:hover .sale_percent {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+
+.footer {
+    width: 100%;
+    height: 400px;
+    background-color: #333;
+}

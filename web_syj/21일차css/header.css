@@ -1,0 +1,96 @@
+.lbl_top_banner_close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 10px;
+}
+.top_banner{
+    width: 100%;
+    height: 40px;
+    background-color: #414247;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+}
+#but_top_banner,
+#but_top_banner:checked + .top_banner {
+    display: none;
+}
+/* ----------------------------------------------------- */
+.header{
+    width: 100%;
+    height: 130px;
+
+}
+.h_top {
+    height: 100%;
+    display: flex;
+}
+.h_L {
+    width: 200px;
+    display: flex;
+    align-items: center;
+
+}
+.logo {
+    width:100%;
+    height: 100%;
+
+    background: url(../img/반응형/iDeco/logo.png) no-repeat left center;
+}
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+}
+.h_R {
+    width: calc(100% - 200px);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+
+}.manu1 {
+    display: flex;
+    justify-content: flex-end;    
+    align-items: center;
+
+    width: 100%;
+    height: 30px;
+
+}
+.h_menu_top{ 
+    display: flex;
+    
+}
+.h_menu_top li {
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 13px;
+    color: #595959;
+    
+    position: relative;
+}
+.manu2{
+    display: flex;
+    justify-content: flex-end;    
+    align-items: center;
+
+    width: 100%;
+    height: 100px;
+
+}
+.h_menu_bot { 
+    display: flex;
+    
+}
+.h_menu_bot li {
+    padding: 0px 15px;
+    font-weight: 900;
+    font-size: 13px;
+    color: #595959;
+
+    position: relative;
+
+}
