@@ -3,18 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iDeco</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../21일차css/common.css">
     <link rel="stylesheet" href="../21일차css/iDeco.css">
 </head>
 <body>
-    <input type="radio" id="btn_top_banner_close">
-    <div class="top_banner">
-        <div class="content_box">
-            <div>프론트엔드 과정에 오신걸 환영합니다.</div>
-            <label for="btn_top_banner_close" class="lbl_top_banner_close">X</label>
-        </div>
+
+<input type="radio" id="layer_popup_close">
+<div class="layer_popup">
+    <div class="big_img_box">
+
+        <input type="radio" name="big_img" id="big_img1" checked>
+        <div class="img_item1"></div>
+
+        <input type="radio" name="big_img" id="big_img2">
+        <div class="img_item2"></div>
+
+        <input type="radio" name="big_img" id="big_img3">
+        <div class="img_item3"></div>
+
+        <input type="radio" name="big_img" id="big_img4">
+        <div class="img_item4"></div>
+
+        <input type="radio" name="big_img" id="big_img5">
+        <div class="img_item5"></div>
+
+        <input type="radio" name="big_img" id="big_img6">
+        <div class="img_item6"></div>
+
+        <label for="layer_popup_close" id="btn_popup_close">닫기</label>
     </div>
+    <div class="btn_img_box">
+
+        <div class="img_item1">
+            <label for="big_img1"></label>
+        </div>
+        <div class="img_item2">
+            <label for="big_img2"></label>
+        </div>
+        <div class="img_item3">
+            <label for="big_img3"></label>
+        </div>
+        <div class="img_item4">
+            <label for="big_img4"></label>
+        </div>
+        <div class="img_item5">
+            <label for="big_img5"></label>
+        </div>
+        <div class="img_item6">
+            <label for="big_img6"></label>
+        </div>
+
+    </div>
+</div>
+
+
+<input type="radio" id="btn_top_banner_close">
+<div class="top_banner">
+    <div class="content_box">
+        <div>프론트엔드 과정에 오신걸 환영합니다.</div>
+        <label for="btn_top_banner_close" class="lbl_top_banner_close">X</label>
+    </div>
+</div>
+
 <div id="wrap">
     <div class="header">
         <div class="h_top">
@@ -31,7 +82,7 @@
                     <a href="#"><h1 class="blind">로고</h1></a>
                 </div>
 
-                <ul class="h_menu">
+                <ul class="h_menu show_at_lg_flex">
                     <li>
                         <div>회사소개</div>
                         <div>ABOUT US</div>
@@ -49,6 +100,36 @@
                         <div>REVIEW </div>
                     </li>
                 </ul>
+
+                
+                <div class="hamberg show_at_sm">
+                    <input type="checkbox" id="hamchk">
+                    <label for="hamchk" >
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </label>
+                    <div class="side_menu ">
+                        <ul class="h_menu">
+                            <li>
+                                <div>회사소개</div>
+                                <div>ABOUT US</div>
+                            </li>
+                            <li>
+                                <div>포트폴리오</div>
+                                <div>PORTFOLIO</div>
+                            </li>
+                            <li>
+                                <div>커뮤니티</div>
+                                <div>COMMUNITY</div>
+                            </li>
+                            <li>
+                                <div>리뷰</div>
+                                <div>REVIEW </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -88,70 +169,74 @@
  
                 <div class="sec_body">
                     <div class="tab tab1">
-                        <img src="./img/반응형/iDeco/tab_1_1.jpg" alt="">
-                        <ul class="tab_box">
-                            <li>
-                                <div class="tab_img">
-                                    <img src="./img/반응형/iDeco/tab_1_2.jpg" alt="">
+                        <img src="../img/반응형/iDeco/tab_1_1.jpg" alt="" class="long_banner">
+                        <div class="tab_container">
+                            <ul class="tab_box">
+                                <li>
+                                    <div class="tab_img">
+                                        <img src="../img/반응형/iDeco/tab_1_2.jpg" alt="">
 
-                                    <div class="sale_percent">10%</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="tab_img">
-                                    <img src="./img/반응형/iDeco/tab_1_3.jpg" alt="">
+                                        <div class="sale_percent">10%</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tab_img">
+                                        <img src="../img/반응형/iDeco/tab_1_3.jpg" alt="">
 
-                                    <div class="sale_percent">20%</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="tab_img">
-                                    <img src="./img/반응형/iDeco/tab_1_4.jpg" alt="">
+                                        <div class="sale_percent">20%</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tab_img">
+                                        <img src="../img/반응형/iDeco/tab_1_4.jpg" alt="">
 
-                                    <div class="sale_percent">30%</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="tab_img">
-                                    <img src="./img/반응형/iDeco/tab_1_5.jpg" alt="">
+                                        <div class="sale_percent">30%</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tab_img">
+                                        <img src="../img/반응형/iDeco/tab_1_5.jpg" alt="">
 
-                                    <div class="sale_percent">40%</div>
-                                </div>
-                            </li>
-                        </ul>
+                                        <div class="sale_percent">40%</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="tab tab2">
-                        <img src="./img/반응형/iDeco/tab_2_1.jpg" alt="">
-                        <ul class="tab_box">
-                            <li>
-                                <div class="tab_img">
-                                    <img src="./img/반응형/iDeco/tab_2_2.jpg" alt="">
+                        <img src="../img/반응형/iDeco/tab_2_1.jpg" alt="" class="long_banner">
+                        <div class="tab_container">
+                            <ul class="tab_box">
+                                <li>
+                                    <div class="tab_img">
+                                        <img src="../img/반응형/iDeco/tab_2_2.jpg" alt="">
 
-                                    <div class="sale_percent">10%</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="tab_img">
-                                    <img src="./img/반응형/iDeco/tab_2_3.jpg" alt="">
+                                        <div class="sale_percent">10%</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tab_img">
+                                        <img src="../img/반응형/iDeco/tab_2_3.jpg" alt="">
 
-                                    <div class="sale_percent">20%</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="tab_img">
-                                    <img src="./img/반응형/iDeco/tab_2_4.jpg" alt="">
+                                        <div class="sale_percent">20%</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tab_img">
+                                        <img src="../img/반응형/iDeco/tab_2_4.jpg" alt="">
 
-                                    <div class="sale_percent">30%</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="tab_img">
-                                    <img src="./img/반응형/iDeco/tab_2_5.jpg" alt="">
+                                        <div class="sale_percent">30%</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tab_img">
+                                        <img src="../img/반응형/iDeco/tab_2_5.jpg" alt="">
 
-                                    <div class="sale_percent">40%</div>
-                                </div>
-                            </li>
-                        </ul>
+                                        <div class="sale_percent">40%</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -161,6 +246,5 @@
     </div>
     <div class="footer"></div>
 </div>
-
 </body>
 </html>

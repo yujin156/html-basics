@@ -1,0 +1,176 @@
+.header1{
+    border-bottom: 1px solid gray;
+    box-sizing: border-box;
+}
+.top_header{
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    /* background-color: pink; */
+    /* border: 1px solid red; */
+    display: flex;
+}
+.top_header_L,
+.R_manu,
+.L_manu_2{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.L_manu_1{
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    padding: 10px;
+
+}
+.L_manu_1 > sapn,
+.R_manu{
+    color: lightgray;
+}
+.ham{
+    display: block;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 5px 6px;
+}
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: lightgray;
+    border-radius: 3px;
+}
+.line:nth-child(2) {
+    margin: 5px 0;
+}
+.cart > span {
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    padding: 0px 5px;
+    line-height: 1;
+}
+
+/* ------------------------------------- */
+.bot_header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo1 {
+    width: 160px;
+    height: 100%;
+
+    background: url(../img/mumu/logo.png) no-repeat left;
+}
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%; 
+}
+.header_manu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.header_manu > ul{
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+}
+.header_manu > li {
+    padding: 20px;
+
+    position: relative;
+    cursor: pointer;
+    letter-spacing: 3px;
+}
+
+.shop_sub_menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    box-shadow: 0 0 1px 0 #555;
+    background: rgba(255, 255, 255, 0.5);
+
+    gap: 20px;
+    padding: 20px;
+    color: #a7a7a7;
+    
+    display: none;  
+}
+.header_manu > li:hover .shop_sub_menu {
+    display: flex; 
+}
+.header_manu > li::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    display: none;
+}
+.header_manu > li:hover::before {
+    display: block; 
+}
+
+.ssm_L {
+    font-weight: 100;
+    letter-spacing: 4px;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.coupon {
+    background: #000;
+    color: #fff;
+    height: 20px;
+    font-size: 12px;
+    padding: 5px 20px;
+    border-radius: 15px;
+}
+
+.coupon img {
+    padding-left: 5px;
+    width: 15px;
+}
+/* --------------------------------------------------- */
+.main_banner{
+    width: 100%;
+    height: 850px;
+    background: url(../img/mumu/main_banner/main_banner1.jpg) no-repeat center;
+}
+.main_section_comment{
+    width: 100%;
+    height: 650px;
+}    
+.main_section_comment > div{
+    text-align: center;
+}
+.main_section_comment > div:nth-of-type(1){
+    font-size: 12px;
+    font-weight: bolder;
+
+}
+.main_section_comment > div:nth-of-type(2){
+    font-weight: bolder;
+    font-size: 20px;
+}
+.main_section_comment > div:nth-of-type(3){
+    color: #555;
+    font-size: 12px;
+}
