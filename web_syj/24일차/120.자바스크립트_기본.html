@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 주석 */
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+    <script></script>
+</head>
+<body>
+    <script>
+
+
+    </script>
+
+    <!-- 주석 -->
+
+    <script async src="./js/120.자바스크립트_기본.js"></script>
+
+    <div class="box"></div>
+
+    <script>
+        // 한줄 주석
+        /* 블록 주석 */
+    /*
+        1) 내부 스크립트
+                <script> </scippt>  사이에 js 문법 명시
+
+        2) 외부 스크립트 
+                <script src="경로"><'/script>
+
+        *style 시트와는 다르게 scrpit 시트는 어디에 명시하던 상관 없음
+        *일반적인 경우 body의 맨 아래에 배치하는걸 추천함
+            
+        *주의: 모든 스크립트 구문은 끝날때 ; 끝내야함
+
+        =동작순서
+            - 기본
+                js를 읽고 실행하는 동안 HTML(dom) 이 멈춤
+                (만약 js에서 에러나면 아직 화면에 그리지 않은 dom 구조가 브라우저에 그려지지 않을수도 있음)
+
+            - async
+                HTML 코드를 읽다가 script 를 보면 병렬방식으로 DOM 도 그리면서 script를 읽기만 함. 
+                script를 다 읽으면 DOM을 잠시 멈추고 script를 실행함.
+                script가 다 실행 되면 DOM을 이어서 그린다
+                
+            - defer
+                HTML 코드를 읽다가 script 를 보면 병렬방식으로 DOM 도 그리면서 script를 읽기만 함. 
+                script를 다 읽으면 실행하지 않고 DOM을 끝까지 그림
+                DOM이 다 끝나면 script를 실행함
+                
+                head 안에 외부 script를 명시할거면 defer 쓰는걸 추천
+
+    */
+        window.alert("1");
+        // console.log("복습좀해라")
+
+    </script>
+</body>
+</html>

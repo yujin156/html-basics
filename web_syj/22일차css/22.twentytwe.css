@@ -157,6 +157,7 @@
 .main_section_comment{
     width: 100%;
     height: 650px;
+    margin: 50px;
 }    
 .main_section_comment > div{
     text-align: center;

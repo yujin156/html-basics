@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+/*
+    입력 - 사용자에게서 값을 입력 받는것
+           입력받는 값은 모두 "문자형"
+
+    prompt();
+    prompt("제목");
+    prompt("제목", "필드 값");
+*/
+    // prompt("제목", "안녕하세요");
+
+    let strName = "홍길동";  //prompt("학생이름");
+    let kor = +prompt("국어점수");
+    let eng = +prompt("영어점수");
+ 
+    // console.log(Number(kor) + Number(eng))
+    // console.log(+(kor) + +(eng))
+
+    console.log(strName+"님의 총점은 "+(kor+eng)+"점 입니다.");
+    console.log(`${strName}님의 총점은 ${(kor+eng)}점 입니다.`);
+
+</script>
+</body>
+</html>

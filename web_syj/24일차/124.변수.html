@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+<script>
+/*
+    - 변수(variable)
+        -가상의 공간에 박스를 만들어서 이름표를 붙인다.
+         (이름을 불러서 그 안에 있는 값을 가져다 쓴다.)
+        -기본적으로 변수는 자료형이 없다.
+         안에 들어있는 자료의 형을 따라간다
+        - 쌍따옴표로 감싸져 있지 않고 숫자도 아닌것
+
+        
+
+    - 변수 생성 규칙
+        키워드 변수명;
+        키워드 변수명 = 초기값;
+
+        - 키워드
+            var: 스코프 안에서 생성된 변수도 밖에서 알아볼수 있음.
+                 (전역변수 처럼 사용하긴 하지만 요즘은 let 으로 많이 씀)
+                 재사용 가능
+
+            let: 생성된 범위 내에서만 사용 가능
+                 (지역변수)
+                 재사용 가능
+
+            const: 재사용 금지. 상수
+                   (나머지는 let과 동일)
+                   대부분 대문자로만 변수명 생성
+
+
+    - 변수명 규칙
+        1) 변수명 중복안됨
+        2) 대소문자 구분
+            let tmp = 10;
+            let Tmp = 10;
+            let tMp = 10;
+            let tmP = 10;
+            let TMp;
+            let tMP;
+            let TMP
+            
+        3) 공백불가
+            let bit study (X)
+            let bit_study (O) 
+            let bitStudy  (O)
+
+        4) 첫번째 글자는 영문, $, _ 로만 생성 가능
+
+        5) 예약어 사용금지
+            let this; <= this 라는 이름 사용 못함
+
+    - 변수 종류
+        1) 전역변수: 한번이라도 선언한 이후부터 모든 영역에서 사용 가능한 변수
+        2) 지역변수: 특정 지역(스코프) 안에서만 사용할 수 있는 변수
+*/  
+ 
+
+
+
+    let txt="문자";
+    const NUM = 10;
+    let num = 100;
+
+    num = 20;
+    console.log(num)
+
+    const txt2 = "문자2";
+
+
+    if(1==1) {
+        txt = "헬로월드"
+        console.log(txt)
+    }
+
+</script>
+</body>
+</html>

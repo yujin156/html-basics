@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+        자료형 - 컴퓨터가 인식할수 있는 자료의 형태
+
+            1) 문자형 - String
+                        쌍따옴표나 따옴표로 감싸져 있는 자료
+
+            2) 숫자형 - Number
+                        쌍따옴표나 따옴표로 감싸져 있지 않는 숫자 형태의 자료
+
+            3) boolean형 - 참(true), 거짓(false)
+                          true=1, false=0 으로 자동 변환되는 경우도 있음
+                        
+            -------------------
+            4) undefined
+            5) Nan
+            6) Null
+
+
+        - 자료형 확인
+            typeof(자료)
+    */
+        // 문자형
+        console.log("== 문자형 ==");
+        console.log("<br>")
+        console.log("abcd")
+        console.log("100")
+        console.log("100+100")
+        console.log("100"+"100")
+        console.log(typeof("100"+"100") )
+        console.log("")
+
+ 
+        // 숫자형
+        console.log("== 숫자형 ==");
+        console.log(100) 
+        console.log(100 + 100)
+
+        
+        console.log(typeof(100) )
+        console.log(typeof(100 + 100))
+        console.log("")
+ 
+
+        // boolean
+        console.log("== boolean ==")
+        console.log(true)
+        console.log(false)
+ 
+        console.log(10 < 1)
+        console.log(10 > 1)
+        console.log("----------------------")
+        console.log(30 > 20 > 10) // false
+        console.log(30 > 20 && 20 > 10) // true
+ 
+    </script>
+</body>
+</html>
