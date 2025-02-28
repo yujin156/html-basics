@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+<body>
+    <script>
+        let name = prompt("이름을 입력하세요");
+        let height = +prompt("키를(cm) 입력하세요")*0.01;
+        let weight = +prompt("몸무게를 입력하세요");
+        let bmi = (w / (h*h)).toFixed(2); 
+        
+        if(bmi<0){
+            bmi="잘못된 값"
+        }
+        else if(bmi >= 25.00){
+            bmi="비만"
+        }
+        else if(bmi >= 23){
+            bmi="과체중"
+        }
+        else if(bmi >= 18.5){
+            bmi="정상"
+        }
+        else{
+            bmi="저체중"
+        }
+        console.log(name + "님의 BMI는" + bmi+ "입니다.")
+    </script>
+</body>
+</html>
