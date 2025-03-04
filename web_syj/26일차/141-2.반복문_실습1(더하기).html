@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    - 숫자 두개 입력받고 첫번쨰 수 부터, 두번째 수 까지의 합 구하기
+
+        
+*/
+    let input1 = +prompt(); // 5
+    let input2 = +prompt(); // 9
+    let sum = 0;
+
+    for(let i = input1; i <= input2; i++) {
+        console.log(`${sum} + ${i} = ${sum+i}`)
+
+        sum = sum+i
+    }
+
+</script>
+</body>
+</html>

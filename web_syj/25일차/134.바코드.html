@@ -3,25 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>불통이요</title>
+    <title>Document</title>
 </head>
 <body>
-    <script>
-        let kor = +prompt("국어 점수를 입력하세요");
-        let eng = +prompt("영어 점수를 입력하세요");
-        let math = +prompt("수학 점수를 입력하세요");
+<script>
+/*
+    숫자 세개 입력
+    총액이 10000 이상이면 10% 할인
+    총액이 50000 이상이면 20% 할인
 
-        let sum = kor + eng + math;
-        let avrg = ( sum / 3 ).toFixed(2);//toFixed(자리수)
-        let result;
+    (숫자).toLocaleString(국가코드) - 해당 국가의 통화(컴마) 위치 결정
+
+    - 출력 - 
+        전체 상품 금액: XXXX원
+        할인율: XX%
+        할인 금액: XXXX원
+        총액: XXXX원
+    ----------------
+        전체 상품 금액: 10,000원
+        할인율: 10%
+        할인 금액: 1,000원
+        총액: 9,000원
+    ----------------
+        전체 상품 금액: 100000원
+        할인율: 20%
+        할인 금액: 20000원
+        총액: 80000원
+*/
+
+    let total = +prompt("첫번째 금액");
+    total += +prompt("두번째 금액");
+    total += +prompt("세번째 금액");
+
+    let discount = 0;
+
+    if(total >= 0) {
+        if(total >= 50000) {
+            discount = 20;
+        }
+        else if(total >= 10000) {
+            discount = 10;
+        }
+
+        let discount_fee = total * (discount * 0.01);
         
-        if(avrg >=60 &&( kor < 40 && eng < 40 && math < 40)){
-            result = "통과"
-        }
-        else{
-            result = "탈락"
-        }
-        console.log(`${name}님의 평균:${avrg}국어:${kor}:영어:${eng}수학:${math} - ${result}입니다:`);
-    </script>
+        console.log(`전체 상품 금액: ${(total).toLocaleString('kr')}원`);
+        console.log(`할인율: ${discount}%`);
+        console.log(`할인 금액: ${(discount_fee).toLocaleString('kr')}원`);
+        console.log(`총액: ${(total - discount_fee).toLocaleString('kr')}원`);
+
+        
+        document.write(`전체 상품 금액: ${(total).toLocaleString('ko')}원<br>
+                        할인율: ${discount}%<br>
+                        할인 금액: ${(discount_fee).toLocaleString('ko')}원<br>
+                        총액: ${(total - discount_fee).toLocaleString('ko')}원<br>`);
+
+
+                        
+        document.write(`<div>전체 상품 금액: ${(total).toLocaleString('ko')}원</div>
+                        <div>할인율: ${discount}%</div>
+                        <div>할인 금액: ${(discount_fee).toLocaleString('ko')}원</div>
+                        <div>총액: ${(total - discount_fee).toLocaleString('ko')}원</div>`);
+
+    }
+    else {
+        alert("잘못된 입력")   
+    } 
+
+</script>
 </body>
 </html>

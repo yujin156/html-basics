@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    - break: 루프(스코프)를 멈춤
+    - continue: 해당 스코프를 다음 바퀴로 토스
+*/
+
+    for(let i=1; i<=5; i++) {
+        console.log(i);
+
+        if(i==3) {
+            // break;
+            continue;
+        }
+
+        console.log("여기")
+    }
+
+    console.log("끗!!")
+
+</script>
+</body>
+</html>
