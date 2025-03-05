@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+/*
+    숫자 -1 넣기 전까지 계속 입력 받기
+    10000원 이상 구매시 10%
+    50000원 이상 구매시 20%
+
+    - 출력 -
+        1번째 물품: 10000
+        2번째 물품: 1000
+        3번째 물품: 100
+        4번째 물품: 30000
+    --------------------------
+        상품 금액: XXXXX원
+        할인율: XX%
+        할인금액: XXXX원
+        결제금액: XXXX원
+
+        
+    - 순서
+        1) 무한히 입력받기 (while, prompt)
+            => -1 아니면 입력한 값 출력
+                => 저장(추가)
+            => -1 이면 while문 멈추기
+
+        2) 최종 토탈값 출력 (if - 10000, 50000)
+*/
+    
+    let input = +prompt("상품가격을 입력하시오");
+    let total = 0;
+    let count = 1;
+
+    while(input != -1) {  
+        total += input;
+        console.log(`${count++}번째 물품 가격: ${input}`)
+        input = +prompt("상품가격을 입력하시오");
+    }
+    console.log("--------------------------")
+
+    let discount = 0;
+    if(50000 <= total ) {
+        discount = 20;
+    }
+    else if(10000 <= total) {
+        discount = 10;
+    }
+
+    let s_price = total * (discount  / 100)
+    let f_price = total - s_price;
+
+    console.log(`상품 금액: ${total}원`);
+    console.log(`할인율: ${discount}%`);
+    console.log(`할인금액: ${s_price}원`);
+    console.log(`결제금액: ${f_price}원`);
+
+    
+    document.write(`상품 금액: ${total}원<br>`);
+    document.write(`할인율: ${discount}%<br>`);
+    document.write(`할인금액: ${s_price}원<br>`);
+    document.write(`결제금액: ${f_price}원<br>`);
+
+
+
+</script>
+</body>
+</html>

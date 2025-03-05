@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span { opacity: 0;}
+    </style>
+</head>
+<body>
+<script>
+/*
+
+*/
+    let input = +prompt();
+    for(let i=0; i<input; i++) {
+        // 빈칸 찍기 4, 3, 2, 1, 0
+        for(let j=0; j<input-1-i; j++) {
+            // document.write("<span>-</span>")
+            document.write("-");
+            // document.write("&nbsp;")
+        }
+        
+        // * 찍기   1, 2, 3, 4, 5
+        for(let j=0; j<(i*2+1); j++) {
+            document.write("*")
+        }
+        
+
+
+        document.write("<br>")
+    }
+
+
+</script>
+</body>
+</html>

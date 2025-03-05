@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    매개변수 - 함수에 값을 전달할때 사용되는 변수
+*/
+    function tmp(name, score) {
+        console.log(`${name} : ${score}점`)
+    }
+
+
+    const stu_name = ["안준성","홍길동","김철수"];
+    const stu_score = [100,80,60];
+
+    // console.log(`안준성 : 100점`)
+    // console.log(`홍길동 : 80점`)
+    // console.log(`김철수 : 60점`)
+
+    // tmp("안준성", 100);
+    // tmp("홍길동", 80);
+    // tmp("장만복", 60);
+
+    for(let i=0; i<stu_name.length; i++) {
+        tmp(stu_name[i], stu_score[i]);
+    } 
+
+</script>
+</body>
+</html>
