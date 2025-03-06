@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    -1 넣을때까지 숫자 입력 받아서 최소 두자리 이상 숫자로 출력
+    (매 턴당 0 붙일지 말지 결정)
+    ex) 
+
+*/
+function tmp(num1) {
+    if(num1 = 0 || num1 < 10){
+         zero = "0" + num1 ;
+    }
+    return num1;
+} 
+
+    let num = +prompt();
+    let zero =tmp(num);
+
+    console.log(zero + num)
+    /*
+    -1 넣을때까지 숫자 입력 받아서 최소 두자리 이상 숫자로 출력
+    (매 턴당 0 붙일지 말지 결정)
+    ex) 9 => 09
+        10 => 10
+        300 => 300
+        5 => 05
+        -1 => 끗!
+
+    1. 입력부 - prompt로 계속 입력받기
+    2. 처리부 - 입력 받은 숫자가 0이 필요한지 아닌지 판별/ 붙이기
+    3. 출력부 - 처리부에서 처리한 결과를 console.log에 출력하기
+*/
+function zero(num) {
+        if(num<10) {
+            num = "0"+num;
+        }
+        return num;
+    }
+
+
+    let input = +prompt();
+
+    while(input != -1) {
+        console.log(  zero(input)  )
+        input = +prompt();
+    }
+    console.log("끗!")
+</script>
+</body>
+</html>

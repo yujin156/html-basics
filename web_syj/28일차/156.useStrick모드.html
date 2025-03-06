@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    use strict - "엄격모드"
+        자바스크립트가 버전 업그레이드가 되면서 새로운 기능들이 많이 추가 됐지만 이전 기능들도 그대로 다 살아남았다. 문법적으로 발전이 있었어도 기존 기능들이 계속 동작할 수 있도록 문법상 간단한 오류가 나도 그냥 동작할 수 있도록 만들었다. 그래서 나중에 다른 애매한 곳에서 에러가 터지는 경우도 발생하기 때문에 use strict 모드를 사용해서 하나라도 틀리면 바로 에러 나도록 해주는 지시자.
+
+        - 사용법: 코드상 맨 위에 쓰면 문서 전체가 다 적용
+                 스코프 내부 최상단에 쓰면 해당 스코프만 적용
+                 한번이라도 엄격모드 되면 못품
+    
+*/
+    "use strict"
+
+    // num = 5; // let 안써도 "일반모드" 에서는 돌긴 돈다
+    // console.log(num+"10")
+
+    // 매개변수 이름이 실수로 같은게 들어가도 "일반모드" 에서는 에러 안남
+    // function tmp(num, num, num3) {
+    //     console.log(num, num, num3)
+    // }
+    // tmp(1,2,3)
+
+    // "일반모드" 에서는 줄바꿈시 에러 안남
+    // let num = 010 + 
+    //     1004 + 
+    //     1004;
+    // console.log(num)
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        li {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function tmp() {
+            alert("💔")
+        }
+
+        function tmp2() {
+            document.getElementsByClassName('ul')[0].style.background="red"
+        }
+    </script>
+    <div class="box" onclick=" alert('커신') "></div>
+    <button onmouseover="tmp()" onclick="tmp2()">확인</button>
+
+    <ul class="ul">
+        <li>tmp</li>
+        <li>tmp</li>
+    </ul>
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 5px;
+
+            font-size: 30px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1">box1</div>
+    <div class="box" id="box2">box2</div>
+    <div class="box" id="box3">box3</div>
+    <div class="box" id="box4">box4</div>
+    <div class="box" id="box5" style="background: blue;">box5</div> 
+
+
+<script>
+/*
+    - 요소잡기(js에서 제일 중요)
+        *스크립트 구문 한덩어리당 하나의 요소만 건드릴수 있다.(한번에 여러개 못건드림)
+        *클래스와 태그 로 요소를 잡으면 배열의 형식으로 가져온다.
+        *아이디는 한번에 한개씩만 잡을수 있다.
+        *js로 요소의 css 부분을 건드릴땐 '인라인 방식' 으로 건드림
+
+        **1) 아이디: document.getElementById('아이디값')
+        **2) 클래스: document.getElementsByClassName('아이디값')[방번호]
+        3) 태그: document.getElementsByTagName('아이디값')[방번호]
+        ---------------------------------------------------------------
+        4) querySelector(아이디|클래스): 해당 요소 하나
+                                        (1번 같은거)
+                                        여러개를 잡아도 첫번째꺼만 동작
+
+        5) querySelectorAll(아이디|클래스): 해당 요소 전체
+                                            (2번 같은거)
+                                            한개만 잡아도 방번호 무조건 필요
+
+
+*/ 
+
+    // 문서 전체 중에 id가 box3인 요소 하나를 잡고, 그 안의 style 속성의 background에 orange 값을 대입
+    // document.getElementById('box3').style.background = "skyblue";
+
+    // document.getElementsByTagName('div').style.background="orange"
+
+    // document.getElementsByTagName('div')[0].style.background="orange"
+    // document.getElementsByTagName('div')[1].style.background="orange"
+    // document.getElementsByTagName('div')[2].style.background="orange"
+    // document.getElementsByTagName('div')[3].style.background="orange"
+    // document.getElementsByTagName('div')[4].style.background="orange"
+
+    
+    // for(let i=0; i<document.getElementsByTagName('div').length; i++) {
+    //     document.getElementsByTagName('div')[i].style.background="purple"
+    // }
+    
+    // let box = document.getElementsByClassName('box');
+    // for(let i=0; i < box.length; i++) {
+    //     box[i].style.background="purple"
+    // }
+
+
+    console.log(document.querySelector('.box').style.background="green")
+
+    console.log(document.querySelectorAll('#box4')[0].style.background="green")
+    // document.querySelector('.box').style.background="green"
+    // document.querySelectorAll('#box3')[0].style.background="green"
+
+</script>
+</body>
+</html>

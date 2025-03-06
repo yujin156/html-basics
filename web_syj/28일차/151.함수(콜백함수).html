@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    콜백함수 - 익명함수
+              콜, 백
+              (함수에서 함수를 콜)
+
+            *함수를 부르는 곳에서는 선언적함수를 보낼수 없어서 무조건 익명함수를 사용해야함
+
+*/
+    let aaa = function() {
+        console.log("aaa 입니다요")
+    }
+    let bbb = function() {
+        console.log("bbb 인데열?")
+    } 
+    function test(type, f_aaa, f_bbb) {
+        if(type==0) f_aaa();
+        else if(type==1) f_bbb();
+    }
+
+    test(1, aaa, bbb)
+    test(0, aaa, bbb)
+    test(1, aaa, bbb)
+
+
+</script>
+</body>
+</html>
