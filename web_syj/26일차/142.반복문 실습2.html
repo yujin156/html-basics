@@ -21,18 +21,19 @@
 
 
         // // =============================================
-        let num = +prompt("시작단 입력");
-        let num2 = +prompt("끝단 입력");
-        
-        console.log(`==${num}단==`)
-        
-        for(let i = num; i <= num2; i++){
+    
+        let dan1 = prompt("시작단을 입력하시오");
+        let dan2 = prompt("끝단을 입력하시오");
 
-            for(let j = 1; j<10; j++ ){
-                console.log(`${i} x ${j} = ${i * j}`)
+
+        for(let i=dan1; i<=dan2; i++) {
+            console.log(`== ${i}단 ==`)
+
+            for(let j=1; j<=9; j++) {
+                console.log(`${i} X ${j} = ${i*j}`)
             }
+            console.log(``)
         }
-        
 
     </script>
     
