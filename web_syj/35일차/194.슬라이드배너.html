@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        .outer {
+            width: 600px;
+            height: 400px;
+            border: 10px solid;
+            margin: 0 auto;
+
+            position: relative;
+        }
+        .box {
+            width: 100%;
+            height: 100%;
+            font-size: 150px;
+            text-align: center;
+            color: #fff;
+
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+        .red { left: 0; background: red;}
+        .green { background: green;}
+        .blue { background: blue;}
+
+        .btn_slide {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="왼쪽" class="btn_slide btn_slide_L">
+    <input type="button" value="오른쪽" class="btn_slide btn_slide_R">
+
+    <div class="outer">
+        <div class="box red">0</div>
+        <div class="box green">1</div>
+        <div class="box blue">2</div>
+    </div>
+
+<script>
+    let btn_slide_L = document.getElementsByClassName('btn_slide_L')[0]
+    let btn_slide_R = document.getElementsByClassName('btn_slide_R')[0]
+
+    let box = document.getElementsByClassName('box')
+    let b_count = box.length
+    let idx = 0
+    let btn_chk = true;
+
+    btn_slide_R.addEventListener('click', function(){
+        // 방법1 - 버튼을 눌러도 동작 하거나 안하거나 선택할수 있게 하기
+        if(btn_chk) {
+            btn_chk = false;
+        // 방법2 - 아예 이벤트를 못알아보게 하기
+            // btn_slide_R.style.pointerEvents = "none"
+
+            let posX = 0;
+
+            let interval = setInterval(function(){
+                // 현재 보고있는 판 - 내보내기
+                box[idx % b_count].style.left = `-${posX}%`;
+                
+                // 들어볼 판 - 우측에서 들어오기
+                box[(idx+1)% b_count].style.left = `${100 - posX}%`
+                
+                posX+=1;
+                if(posX > 100) {
+                    console.log("다 왔음")
+                    btn_chk = true;
+                    // btn_slide_R.style.pointerEvents = "auto"
+                    clearInterval(interval)
+                    idx=(idx+1)% b_count; // 다음 들어올 방 잡기
+                }
+            }, 10)
+        }
+    })
+
+
+    btn_slide_L.addEventListener('click', function(){
+        // 방법1 - 버튼을 눌러도 동작 하거나 안하거나 선택할수 있게 하기
+        if(btn_chk) { 
+            btn_chk = false;
+        // 방법2 - 아예 이벤트를 못알아보게 하기
+            // btn_slide_R.style.pointerEvents = "none"
+
+            let posX = 0;
+
+            let interval = setInterval(function(){
+                // 현재 보고있는 판 - 내보내기
+                box[idx % b_count].style.left = `${posX}%`;
+                
+                // 들어볼 판 - 우측에서 들어오기
+                box[(idx+(b_count - 1)) % b_count].style.left = `-${100 - posX}%`
+                
+                posX+=1;
+                if(posX > 100) {
+                    console.log("다 왔음")
+                    btn_chk = true;
+                    // btn_slide_R.style.pointerEvents = "auto"
+                    clearInterval(interval)
+                    idx=(idx+(b_count - 1)) % b_count; // 다음 들어올 방 잡기
+                }
+            }, 10)
+        }
+    })
+</script>
+</body>
+</html>

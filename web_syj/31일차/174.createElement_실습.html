@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        ul {
+            background-color: pink;
+            margin: 0;
+        }
+        .red { color: red;}
+        .green { color: green;}
+        .blue { color: blue;}
+    </style>
+</head>
+<body>
+    <div id="wrap"></div>
+    
+<script>
+    let tmp_ul = document.createElement("ul");
+    tmp_ul.setAttribute("class", "outer_ul")
+
+    let arr = ['red','green','blue']
+
+    for(let i=0; i<10; i++) {
+        let tmp_li = document.createElement("li")
+
+        // if(i%3 == 0) {tmp_li.setAttribute('class', 'red')}
+        // else if(i%3 == 1) {tmp_li.setAttribute('class', 'green')}
+        // else if(i%3 == 2 ){tmp_li.setAttribute('class', 'blue')}
+        
+        tmp_li.setAttribute('class', arr[i%3]) // 배열에 클래스 이름 넣어놨을때 사용
+
+        let tmp_txt = document.createTextNode(`menu${i+1}`);
+
+        tmp_li.append(tmp_txt)
+        
+        tmp_ul.append(tmp_li)
+
+        document.getElementById('wrap').append(tmp_ul)
+    }
+
+</script>
+
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .wrep{
+            width: 100%;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrep">
+        <ul>
+            <li>manu</li>
+            <li>manu</li>
+            <li>manu</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
+-->

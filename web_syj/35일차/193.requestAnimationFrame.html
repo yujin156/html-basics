@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="AnimationFrame " onclick="tmp()">
+    <input type="button" value="AnimationFrameStop" onclick="tmp_Stop()"> 
+<script>
+/*
+    requestAnimationFrame 
+        setInterval과 비슷하지만
+        차이점은 setInterval 화면을 보고있지 않아도 뒤에서 계속 동작하고 있음
+        requestAnimationFrame은 해당 브라우저을 보고 있지 않을때는 멈춰있음
+        (백그라운드에서 정지되어 있기 때문에 리소스를 적게 씀)
+        1초에 60번 동작하는걸 목표로 함
+        *(재귀 방식으로 계속 호출해야함)
+
+    cancelAnimationFrame(프레임 이름)
+*/
+    let count = 0;
+    let interval="";
+
+    let num=0;
+
+    function tmp() { 
+
+        if(count % 60 == 0) {
+            // console.log(num++)
+            console.log(count / 60)
+        }
+        count++
+        interval=window.requestAnimationFrame(tmp);
+
+
+        // if(count >= 60) {
+        //     console.log("**********************")
+        //     // tmp_Stop()
+        //     cancelAnimationFrame(interval)
+        // }
+        // else {
+        //     count++
+        //     interval=window.requestAnimationFrame(tmp);
+        // }
+    }
+    function tmp_Stop() {
+        cancelAnimationFrame(interval)
+    }
+
+    // window.requestAnimationFrame(tmp);
+    tmp()
+    
+    // 밀리초 기준 멈춤
+    // setTimeout(() => {
+    //     cancelAnimationFrame(interval) 
+    // }, 1000);
+</script>
+</body>
+</html>

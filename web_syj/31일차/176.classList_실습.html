@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            background: transparent;
+        }
+
+        .red { background: red !important;}
+        .green { background: green !important;}
+        .blue { background: blue !important;}
+    </style>
+</head>
+<body>
+    <div id="box">헬로월드</div>
+    <input type="button" value="확인" id="btn">
+    <hr>
+
+    <div id="box2">헬로월드</div>
+    <input type="button" value="확인" id="btn2">
+<script>
+/*
+    1. '확인'버튼 누르면 box 영역에 배경색 변경
+            - 기존 빨간색이면 기본색으로
+            - 기본색이면 빨간색으로
+*/
+    let box = document.getElementById('box')
+    let btn = document.getElementById('btn')
+    let count = 0; 
+    let arr = ["red","skyblue"] // 방법2 용
+    btn.addEventListener('click', function(){
+        // 방법1 - 홀짝으로 스위칭 하기
+        // if(count % 2 == 0) {
+        //     box.style.background="red";
+        // }
+        // else {
+        //     box.style.background="skyblue";
+        // }
+        // count++
+
+        // 방법2 - 배열에 넣어놓고 돌려쓰기
+        // box.style.background=arr[count++ % 2];
+
+        // 방법3 - toggle 사용
+        box.classList.toggle('red')
+    });
+
+/*
+    2-1. '확인'버튼 누르면 box 영역에 배경색 변경
+            기본,빨,초,파 순으로 변경
+
+    2-2. '확인' 누르면 box 영역의 문구 변경
+            - '헬로월드' 를 '안녕하세요' 문구로 변경
+            - 다시 '헬로월드'로 변경
+
+*/
+    let box2 = document.getElementById('box2');
+    let btn2 = document.getElementById('btn2');
+    let count2 = 1;
+    let arr2 = ["transparent", "red","green","blue", "orange"] // 방법2 용
+
+    btn2.addEventListener('click', function(){
+        box2.style.background=arr2[count2++ % arr2.length];
+
+        if(count2 % 2 == 1) box2.innerHTML = "안녕하세요"
+        else box2.innerHTML = "헬로월드"
+    })
+
+
+
+
+
+</script>
+</body>
+</html>

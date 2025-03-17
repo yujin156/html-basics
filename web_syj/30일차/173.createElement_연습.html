@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        #App {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .item {
+            width: calc(100% / 3);
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="App"> 
+    </div>
+
+<script>
+    
+    for(let i=1; i<=3; i++) {
+        // let div = document.createElement("div");
+        // div.setAttribute("class","item")
+        // let txt = document.createTextNode(`item${i}`);
+        // div.append(txt)
+        // document.getElementById('App').append(div)  
+
+
+        document.getElementById('App').innerHTML += `<div class="item">item10</div>`
+    }
+
+
+</script>
+</body>
+</html>

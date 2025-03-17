@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+        }
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer" onmouseover="p_m_over()" onmouseout="p_m_out()">
+        <div class="inner" onmouseover="c_m_over()" onmouseout="c_m_out()"></div>
+    </div>
+    
+    <div class="outer" onmouseenter="p_m_enter()" onmouseleave="p_m_leave()">
+        <div class="inner" onmouseenter="c_m_enter()" onmouseleave="c_m_leave()"></div>
+    </div>
+
+    <script>
+
+    /* 
+        1) onclick: 클릭
+        2) ondblclick: 더블클릭
+
+        3) onmouseover: 마우스가 해당 요소에 올라갔을때(hover)
+           onmouseout: 마우스가 해당 요소에서 나왔을때
+        4) onmouseenter: onmouseover와 비슷하지만 버블링 처리
+           onmouseleave: onmouseout와 비슷하지만 버블링 처리
+        *over/out 과 enter/leave는 비슷함
+         enter/leave는 버블링효과를 처리했음
+        *버블링효과란: 자식에 마우스가 들어갈때 부모가 놓쳤다가 다시 잡는 현상
+        *event.stopPropagation(): 버블링 효과를 그나마 자식에서 끝나게(확산방지) 해주는 함수
+
+        5) onmousemove: 마우스가 해당 요소에서 움직일때
+    */
+
+
+        function p_m_over() {
+            console.log("부모에 마우스 오버")
+        }
+        function p_m_out() {
+            console.log("부모에 마우스 아웃")
+        }
+
+        function c_m_over() {
+            // event.stopPropagation()
+            console.log("자식에 마우스 오버")
+        }
+        function c_m_out() {
+            // event.stopPropagation()
+            console.log("자식에 마우스 아웃")
+        }
+///////////////////////////////////////////
+        
+        function p_m_enter() {
+            console.log("부모에 마우스 엔터")
+        }
+        function p_m_leave() {
+            console.log("부모에 마우스 리브")
+        }
+
+        function c_m_enter() {
+            event.stopPropagation()
+            console.log("자식에 마우스 엔터")
+        }
+        function c_m_leave() {
+            event.stopPropagation()
+            console.log("자식에 마우스 리브")
+        }
+/////////////////////////////////////////////////
+
+    </script>
+</body>
+</html>

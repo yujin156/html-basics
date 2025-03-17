@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { user-select: none;}
+        .red { background: red;}
+        .green { background: green;}
+        .blue { background: blue;}
+        .boxCount { pointer-events: none;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box" id="box0">box0 - <span class="boxCount">0</span></div>
+        <div class="box" id="box1">box1 - <span class="boxCount">0</span></div>
+        <div class="box" id="box2">box2 - <span class="boxCount">0</span></div>
+        <div class="box" id="box3">box3 - <span class="boxCount">0</span></div>
+        <div class="box" id="box4">box4 - <span class="boxCount">0</span></div>
+    </div>
+
+<script>
+/*
+    각각의 box들마다 클릭할때마다 빨초파 순으로 나오기
+*/
+    let box = document.getElementsByClassName('box'); 
+    let boxCount = document.getElementsByClassName('boxCount');
+
+    let arrColor = ['red','green','blue'];
+
+    for(let i=0; i<box.length; i++) {
+        box[i].addEventListener('click', function(){
+            console.log(event.target)
+            console.log(event.target.children[0])
+            console.log(+event.target.children[0].innerText + 1)
+
+            let idx = +event.target.children[0].innerText + 1;
+            event.target.children[0].innerText = idx
+            
+            event.target.classList.remove('red','green','blue')
+            // event.target.classList.remove('red')
+            // event.target.classList.remove('green')
+            // event.target.classList.remove('blue')
+            event.target.classList.add(arrColor[(idx-1) % arrColor.length])
+
+        })
+    }
+
+</script>
+</body>
+</html>

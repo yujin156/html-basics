@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    - 문자열 찾기
+        1) 특정 문자열에서 필요한 위치에 있는 문자 또는 찾으려는 문자가 몇번째에 있는지 찾을수 있음.
+        2) 특정 위치부터 특정 위치까지 잘라낼수 있음
+        3) 특정 위치의 문자를 다른 문자로 치환
+        *카운트는 0부터
+*/
+let str = "ABCDEFGHIJKLMNOPQRSTUVWXYDZ";
+    document.write(str+"<br>")
+    document.write("length: " + str.length+"<br>")
+
+    // 특정 문자의 위치 찾기 - 0부터 카운트
+    document.write("첫번째 D의 위치: " + str.indexOf("D")+"<br>")
+    document.write("마지막 D의 위치: " + str.lastIndexOf("D")+"<br>")
+
+    // 특정 번째의 문자가 뭔지 찾기
+    document.write("3번째 문자: " + str.charAt(3)+"<br>")
+    document.write("<br>")
+
+    // 3번째 부터 잘라내기
+    // slice(숫자): 숫자번째(포함) 부터 끝까지 
+    // substring(숫자): 숫자번째(포함) 부터 끝까지 
+    // substr(숫자): 숫자번째(포함) 부터 끝까지 
+    document.write("3번째 문자부터: " + str.slice(3)+"<br>")
+    document.write("3번째 문자부터: " + str.substring(3)+"<br>")
+    document.write("3번째 문자부터: " + str.substr(3)+"<br>")
+    document.write("<br>")
+
+    // n번째 부터 n번째 까지 잘라내기
+    // slice(숫자1, 숫자2): 숫자1 번째(포함) 숫자2(미포함) 끝까지 
+    // substring(숫자1, 숫자2): 숫자1 번째(포함) 숫자2(미포함) 끝까지 
+    //      *slice와 substring의 차이: slice는 배열도 잘라낼수 있음
+    // substr(숫자1, 숫자2): 숫자1 번째(포함) 숫자2 개수까지
+    document.write("3~5번째 문자: " + str.slice(3, 5)+"<br>")
+    document.write("3~5번째 문자: " + str.substring(3, 5)+"<br>")
+    document.write("3번째부터 5개: " + str.substr(3, 5)+"<br>")
+
+    let arr = ["가","나","다","라","마"];
+    document.write(arr.slice(1, 3 )+"<br>")
+    // document.write(arr.substring(1, 3 )) // 에러
+
+    
+    str = "ABCDEFGHIDJKLMNDOPQRSDTUVWXYDZ.jpg";
+
+    document.write(str+"<br>")
+    document.write(str.split("D")+"<br>")
+    // console.log(str.split("D"))
+
+
+    let tmp = "alskdjfvoliwn.vf.png";
+
+    console.log(tmp.split("."))
+    console.log(tmp.split(".").length - 1)
+
+    let 마지막방번호 = tmp.split(".").length - 1;
+    console.log(tmp.split(".")[tmp.split(".").length - 1])
+
+    if(tmp.split(".")[tmp.split(".").length - 1] == "png") {
+        console.log("저장완료")
+    }
+    else {
+        console.log("업로드 할 수 없는 확장자 입니다.")
+    }
+    document.write("<br><br>")
+
+    // 특정 문자를 치환하기
+    // 문자열.replace("원래 문자열", "바꿀 문자열")
+    document.write(str.replace("D","가나다")+"<br>")
+    document.write(str.replaceAll("D","가나다")+"<br>")
+    document.write("<br><br>")
+
+
+    // 대소문자 변경
+    str = "ABCdefGHIDJKLMNDOPQRSDTUVWxyDz";
+    document.write("소문자: "+ str.toLowerCase()+"<br>")
+    document.write("대문자: "+ str.toUpperCase()+"<br>")
+    document.write("<br><br>")
+
+    
+
+    /////////////////////////////////////////////////
+    // match(찾을 문자열) - 있으면 해당 문자열 출력. 없으면 null 나옴
+    let sp = ["android", "iphone", "ipad"]; 
+    let word = "ipad"
+    document.write(word.match(sp[2]))
+    
+
+</script>
+</body>
+</html>

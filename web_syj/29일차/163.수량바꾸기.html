@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- +1 버튼을 누르면 수량 증가시키기 -->
+
+    <input type="text" value="0" id="txt_qty">
+    <button id="btn_txt_qty" onclick="plus()">+1</button>
+
+    <hr>
+
+    <div id="box_qty">0</div>
+    <div id="btn_box_qty" onclick="plus2()">+1</div>
+
+<script>
+    function plus2() {
+        document.getElementById('box_qty').innerText = +document.getElementById('box_qty').innerText + 1
+    }
+
+    function plus() {
+        // document.getElementById('txt_qty').value = +(document.getElementById('txt_qty').value) + 1
+        // document.getElementById('txt_qty').value += 1 // <= 안됨
+
+        document.getElementById('txt_qty').value = document.getElementById('txt_qty').value++
+    }
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        .outer {
+            display: flex;
+            flex-wrap: wrap;
+
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .inner {
+            width: calc(100% / 4);
+            height: 200px;
+            border: 1px solid;
+            box-sizing: border-box;
+
+            font-size: 90px;
+            text-align: center;
+        }
+
+        .btn_showMore {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            margin: 20px auto;
+
+            border: 1px solid #a9a9a9;
+            border-radius: 15px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .inner {
+                width: calc(100% / 3); 
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .inner {
+                width: calc(100% / 2); 
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul class="outer"></ul>
+    <div class="btn_showMore" onclick="tmp()">더보기</div>
+<script>
+/* 
+    더보기 버튼 누르면 4칸씩 추가되게 하기
+    0~1024 4칸씩
+    0~768 3칸씩
+    0~480 2칸씩 여러줄 나오게 하기
+*/
+    function tmp() {
+        
+        let count = document.getElementsByClassName('inner').length;
+
+        for(let i=count; i<count+4; i++) {
+            document.getElementsByClassName('outer')[0].innerHTML += `<li class="inner">${i}</li>`
+        }
+
+    }
+
+    tmp() 
+// console.log(window.innerWidth)
+// console.log(window.innerHeight)
+</script>
+</body>
+</html>

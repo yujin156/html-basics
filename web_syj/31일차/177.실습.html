@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        #wrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .item {
+            width: calc(100% / 4);
+            height: 300px;
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+        .pink { background: pink;}
+        .skyblue { background: skyblue;}
+        .gray { background: gray;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- <div class="item pink">menu</div>
+        <div class="item skyblue">menu</div>
+        <div class="item pink">menu</div>
+        <div class="item skyblue">menu</div>
+        <div class="item pink">menu</div>
+        <div class="item skyblue">menu</div>
+        <div class="item pink">menu</div>
+        <div class="item skyblue">menu</div>  -->
+    </div>
+
+<script>
+/*
+    4칸씩 두줄 - menu1,menu2,menu3,menu4
+    분홍,하늘...
+    클릭 회색(기존 회색 칠해져있는게 있다면 원래 색으로 돌아가기)
+*/
+
+    let wrap = document.getElementById('wrap');
+    let bg_color = ["pink","skyblue"];
+    // for(let i=0; i<8; i++) {
+    //     // wrap.innerHTML += `<div class="item ${bg_color[i%2]}" onclick="tmp(${i})">menu${(i%4)+1}</div>`
+        
+    //     wrap.innerHTML += `<div class="item ${bg_color[i%2]}" onclick="tmp2(this)">menu${(i%4)+1}</div>`
+    // }
+
+    for(let i=0; i<2; i++) {
+        for(let j=0; j<4; j++) { 
+            wrap.innerHTML += `<div class="item ${bg_color[j%2]}" onclick="tmp2(this)">menu${j+1}</div>`
+        }
+    }
+
+
+    // 각 요소에 idx 없이 this 사용해서 el에 클릭된 요소 자체를 받아서 작업
+    function tmp2(el) {
+        // console.log(el)
+        let item = document.getElementsByClassName('item ');
+        for(let i=0; i<item.length; i++) {
+            item[i].classList.remove('gray')    
+        }       
+        el.classList.add('gray')
+    }
+
+    // 각 요소에 자체적으로 idx 번호를 걸어서 매개변수로 받아서 사용
+    function tmp(idx) {
+        let item = document.getElementsByClassName('item ');
+        
+        for(let i=0; i<item.length; i++) {
+            item[i].classList.remove('gray')    
+        }        
+        
+        item[idx].classList.add('gray')
+    }
+</script>
+</body>
+</html>

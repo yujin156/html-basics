@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+
+                let dt = new Date();
+                let year = dt.getFullYear();
+                let month = dt.getMonth(); +1
+                let date = dt.getDate();
+                let day = dt.getDay();
+                let hour = dt.getHours();
+                let min = dt.getMinutes();
+                let sec = dt.getSeconds();
+
+            
+                console.log(`${year}-${month}-${date} ${day} ${getDayOfWeek()}요일`)
+                console.log(`${hour}:${min}:${sec} ${getDayOfTime()}`)
+                
+                function getDayOfWeek(){ 
+
+                    const week = ['일', '월', '화', '수', '목', '금', '토'];
+                    const dayOfWeek = week[dt.getDay()];
+                    return dayOfWeek;
+
+                    }
+                    function getDayOfTime(){ 
+
+                        const week = ['AM','PM'];
+                        const dayOfTime = week[dt.getHours()];
+                        if(dt.getHours() - 12 == 0 ){
+
+                        }
+                        return dayOfTime;
+
+                    }
+
+        </script>
+        
+    </body>
+    </html>
+</body>
+</html>

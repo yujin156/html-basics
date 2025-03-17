@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    Date객체 - 로컬시간을 나타낸다
+               자료형 - 숫자
+
+    dt.getFullYear(): 
+    dt.getMonth(): 
+    dt.getDate(): 
+    dt.getDay(): 
+    dt.getHours(): 
+    dt.getMinutes(): 
+    dt.getSeconds(): 
+    dt.getMilliseconds(): 
+
+*/  
+    let dt = new Date();
+    let year = dt.getFullYear();
+    let month = dt.getMonth();
+    let date = dt.getDate();
+    let day = dt.getDay();
+
+    let hour = dt.getHours();
+    let min = dt.getMinutes();
+    let sec = dt.getSeconds();
+    let m_sec = dt.getMilliseconds();
+
+    console.log(`${year}-${month}-${date} ${day} ${hour}:${min}:${sec}:${m_sec}`)
+
+</script>
+</body>
+</html>

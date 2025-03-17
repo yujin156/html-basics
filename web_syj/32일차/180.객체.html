@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    클래스 - 연관있는 데이터들을 한군데에 묶어놓은것
+            new 연산자를 이용해서 클래스를 흉내낼수 있음
+            클래스 자체에는 데이터를 직접 넣지 않고, 빈 변수나 함수들을 만들어서 어떤 데이터를 받을지 선언만 해 놓은 상태
+
+    객체 - object
+          클래스를 이용해서 만든것
+          {} 안에 키:값 으로 구성
+
+          ex) let obj = [
+            {item:1, itemName:"지갑"},
+            {item:2, itemName:"신발"},
+            {item:3, itemName:"바지"},
+          ]
+*/
+
+        let obj = [
+            {item:1, itemName:"지갑"},
+            {item:2, itemName:"신발"},
+            {item:3, itemName:"바지"},
+        ]
+        console.log(obj[0])
+        console.log(obj[0].itemName)
+
+
+        let obj2 = {
+            className: "디지털컨벌전스",
+            time: "9~18",
+            roomNo: "352",
+            subject: ["HTML","CSS","JS","React","Java","Spring"],
+
+            review:function() {
+                // alert("복습좀 해라!!!")
+            }
+        }
+
+        // 기존 객체 호출(사용)
+        console.log(obj2)
+        console.log(obj2.className)
+        console.log(obj2.review())
+
+        // 기존 객체 수정
+        obj2.roomNo = "1관 D 강의장";
+        console.log(obj2.roomNo)
+        console.log(obj2)
+
+        // 기존 객체에 없던걸 삽입
+        obj2.branch = "강남점"
+        console.log(obj2)
+
+        // 기존 객체의 속성 삭제
+        delete(obj2.subject)
+        console.log(obj2)
+</script>
+</body>
+</html>

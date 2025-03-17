@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        .item_list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .item {
+            width: calc(100% / 4);
+            height: 300px;
+            border: 1px solid;
+            box-sizing: border-box;
+
+            font-size: 80px;
+            text-align: center;
+        }
+        .btn_showMore {
+            background: skyblue;
+            text-align: center;
+            line-height: 40px;
+
+        }
+    </style>
+</head>
+<body>
+    <ul class="item_list">
+        <li class="item">0</li> 
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+        <li class="item">5</li>
+        <li class="item">6</li>
+        <li class="item">7</li>
+        
+    </ul>
+    <div class="btn_showMore" onclick="put_item()">더보기</div>
+
+    <script>
+        function put_item() {
+            let itemList = document.getElementsByClassName('item_list')[0];
+
+            let itemCount = document.getElementsByClassName('item').length;
+
+            for(let i=itemCount; i<itemCount+8; i++) {
+                itemList.innerHTML += `<li class="item">${i}</li> `
+            }
+        }
+    </script>
+</body>
+</html>

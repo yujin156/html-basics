@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    // for(let i=0; i<5; i++) {
+    //     setInterval(() => {
+    //         document.write(i+"<br>")
+    //     }, 1000); 
+    // }
+
+    let num = 1;
+    
+    let interval = setInterval(() => {
+        document.write(num +"<br>")
+        
+        if(num % 5 == 0) { 
+            clearInterval(interval)
+        }
+        num++;
+    }, 1000);
+
+    for(let i=0; i<5; i++) {
+        num += 1
+    }
+    console.log(num)
+
+</script>
+</body>
+</html>

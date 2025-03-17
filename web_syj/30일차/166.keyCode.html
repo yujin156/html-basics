@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input type="text" onkeydown="login()">
+    <input type="password" onkeydown="login()">
+    <input type="button" value="로그인" onclick="login()">
+
+    <script>
+    /*
+        keyCode - 키보드의 각 키마다 가지고 있는 고유값
+                event.keyCode
+    */
+
+        function chk() {
+            console.log(event.keyCode)
+            if(event.keyCode == 13) {
+                login()
+            }
+        }
+        function login() {
+            console.log("로그인 시도") 
+            // console.log("입력한 id: ??? , pw: ???")
+        }
+
+        // function login() {
+        //     console.log(event.keyCode)
+        //     if(event.keyCode == 13 || event.keyCode == undefined) {
+        //         alert("로그인 시도")
+        //     }
+        // }
+    </script>
+</body>
+</html>

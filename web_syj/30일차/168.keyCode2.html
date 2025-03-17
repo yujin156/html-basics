@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    onkeydown - <input type="text" id="keydown" onkeydown="keyDown()"> 
+
+    <hr>
+    
+    onkeyup - <input type="text" id="keyup" onkeyup="keyUp()">
+    <hr>
+
+    
+    <!-- keydown: 화면에 들어가기 전에 동작
+         keyup: 화면에 들어간 후에 동작
+    -->
+    tmp - <input type="text" id="tmp" onkeyup="tmp_keyUp()" onkeydown="tmp_keyDown()">
+
+<script>
+ 
+/*
+    각 input 에 글자 넣을때마다 글자수 체크
+    *주의사항: onkeydown 과 onkeyup 일때의 체크되는 글자수 확인
+ 
+*/  
+    function keyDown() { 
+        console.log(document.getElementById('keydown').value.length)
+
+        if(document.getElementById('keydown').value.length >= 4) {
+            // alert("장인혁!!! 현역!!!")
+            document.getElementById('tmp').focus()
+        }
+    }
+    function keyUp() { 
+        console.log(document.getElementById('keyup').value.length)
+        if(document.getElementById('keyup').value.length >= 5) {
+            // alert("장인혁!!! 현역!!!")
+            document.getElementById('tmp').focus()
+        }
+    }
+
+    
+    function tmp_keyDown() { 
+        console.log("down: "+document.getElementById('tmp').value)
+    }
+    function tmp_keyUp() { 
+        console.log("up: "+document.getElementById('tmp').value)
+    }
+ 
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box1 box2 box3" id="box"></div>
+
+<script>
+/*
+    - 클래스 추가,변경,삭제 
+
+    1) 클래스 확인
+        요소.classList: 배열로 가져옴
+                        (클래스가 하나만 있어도 0번방으로 가져온다)
+                        읽기 전용
+                        
+        요소.className: 문자열로 가져옴
+                        문자열 변경을 할때는 split(" ") 으로 분리해서 특정 클래스만 변경해야해서 힘듬
+
+    2) 추가
+        요소.classList.add('삽입할 클래스명')
+        요소.className +=" 삽입할 클래스명"
+        *주의: 문자열 방식으로 넣을때는 앞에 빈칸 필요
+
+    3) 수정
+        요소.classList.replace("없앨 문자열", '추가할 문자열')
+
+    4) 삭제
+        요소.classList.remove("삭제할 클래스")
+        요소.classList.remove("삭제할 클래스", "삭제할 클래스", "삭제할 클래스"...)
+
+    5) toggle
+        해당 요소에 클래스가 있으면 삭제, 
+        없으면 추가
+    
+    6) contains
+        해당 요소에 클래스 있는지 확인
+        있으면 true, 없으면 false
+
+*/
+    let box = document.getElementById('box')
+
+    console.log(box.classList)
+    console.log(box.className)
+
+    box.classList.add("box99")
+    // box.classList += " box9" // 주의: 문자열 방식으로 넣을때는 앞에 빈칸 필요
+    box.className +=" tmp"
+
+    box.classList.replace("box99", "box9")
+
+    // console.log(box.className)
+    // console.log(box.className.split(" "))
+    // let ttt = box.className.split(" ");
+    // let str = "";
+    // for(let i=0; i<ttt.length; i++) {
+    //     console.log(ttt[i])
+    //     if(ttt[i] == "box99") {
+    //         ttt[i] = "box9"
+    //     } 
+    //     str += ttt[i]+" "
+    // }
+    // box.className = str
+
+
+    box.classList.remove("tmp"); // 한개 없앨때
+    box.classList.remove("box2", "box3") // 한번에 여러개 없앨때
+
+    box.classList.toggle("box1")
+    box.classList.toggle("box2")
+
+    
+    console.log(box.classList.contains("tmp"))
+    console.log(box.classList.contains("box2"))
+</script>
+</body>
+</html>

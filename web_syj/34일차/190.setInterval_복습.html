@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock {
+            height: 50px; 
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="clock"></div><br>
+    <input type="button" value="시작" onclick="start()">
+    <input type="button" value="멈춤" onclick="stop()">
+    <br><br>
+    <input type="button" id="btn" value="24시간제로 변경" onclick="ttc()">
+
+<script>
+    function ttc() {
+        // idx = idx + 1
+        idx +=1;
+        // idx++
+    }
+    let interval = ""
+    function start() {
+        stop() 
+        interval = setInterval(() => {
+            timer();
+        }, 1000);
+    }
+    function stop() {
+        clearInterval(interval)
+    }
+ 
+    document.getElementById('btn').addEventListener('click', function(){
+        timer();
+    })
+
+    let btn = document.getElementById('btn');
+    let idx = 0;
+ 
+    timer();
+    start()
+
+    function timer() { 
+
+        let dt = new Date();
+        let hour=14;//dt.getHours()
+        let min=dt.getMinutes()
+        let sec=dt.getSeconds()
+
+        let ampm = "";
+        btn.value = "12시간제로 변경"
+        // 12시간제
+        if(idx % 2 == 0) {
+            ampm = "AM"
+            if(12 <= hour && hour < 24) {
+                ampm = "PM"
+            }
+            if(hour > 12) {
+                hour = hour - 12
+            }  
+            // hour=hour>12?hour-12:hour
+
+            btn.value = "24시간제로 변경"
+        } 
+ 
+        document.getElementById('clock').innerHTML = `${zero(hour)}:${zero(min)}:${zero(sec)} ${ampm}`
+
+        
+    }
+    
+
+    function zero(num) {
+        if(num<10) {
+            num = "0"+num;
+        }
+        return num;
+    }
+
+</script>
+</body>
+</html>

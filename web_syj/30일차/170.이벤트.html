@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid;
+            height: 200px;
+        }
+    </style>
+
+    <script>
+        window.onload = function() { 
+            console.log("DOM 구조가 다 로드된 이후 동작")
+        }
+    </script>
+</head>
+<body>
+    <!-- <div class="box" onclick="console.log('onclick')">1</div>
+    <div class="box" onclick="console.log('onclick')">2</div>
+    <div class="box" onclick="console.log('onclick')">3</div> -->
+
+    <div class="box" id="box0" onmouseenter="console.log(11)">0</div>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+
+    <div class="btn">버튼</div>
+<script>
+/*
+    이벤트 - 키보드가 눌리거나
+            마우스가 클릭/휠움직임이 생기거나 
+            한개의 요소에 여러개의 이벤트를 적용할 수 있다.
+
+    이벤트 리스너 등록 방법
+        1) 인라인 방식 - HTML 요소의 여는태그 안에 on을 붙여서 이벤트 등록
+                        ex) <div onclick="함수()"> </div>
+                    요소가 여러개일때 하나하나 건드려야 해서 유지보수시 좋지 않음.
+
+        2) addEventListener
+                    요소.addEventListener('이벤트',함수)
+                    *여러개의 요소에 적용하려면 반복문 이용해서 addEventListener를 준다
+            - 사용법-
+                요소.addEventListener('click', function(){
+                    실행할 코드
+                }) 
+                
+                *addEventListener에서 사용할 함수에 매개변수 없이 바로 돌릴거라면 () 빼고 함수명만 걸어도 된다.
+                btn.addEventListener('click', 함수명만)
+
+
+    - onload: DOM 구조가 다 로드된 이후 동작
+              defer랑 실행되는 순번은 같지만 동작 방식은 다름 
+              *예전에는 브라우저를 만든 회사마다 HTML 동작 순서가 달랐어서 onload를 여러군데 걸어두면 제대로 동작하지 않는 곳이 있을수 있음.
+
+    - 마우스 -
+        1) onclick: 클릭
+        2) ondblclick: 더블클릭
+        3) onmouseover: 마우스가 해당 요소에 올라갔을때(hover)
+           onmouseout: 마우스가 해당 요소에서 나왔을때
+        4) onmouseenter: onmouseover와 비슷하지만 버블링 처리
+           onmouseleave: onmouseout와 비슷하지만 버블링 처리
+        5) onmousemove: 마우스가 해당 요소에서 움직일때
+
+    - 키보드 -
+        1) onkeydown: 키를 누르는 순간 동작
+        2) onkeyup: 키를 떼는 순간 동작
+        3) onkeypress: 안씀
+                       한글, 특수문자 인지 안되는게 있다.
+        *event.keyCode
+*/
+
+    let box = document.getElementsByClassName('box');
+    console.log(box)
+    
+    for(let i=0; i<box.length; i++) {
+        box[i].addEventListener('click', function(){
+            console.log(`addEventListener${i}`)
+            tmp()
+        }) 
+    }
+
+    function tmp() {
+        console.log("tmp 함수")
+    } 
+
+    let btn = document.getElementsByClassName('btn')[0];
+    // btn.addEventListener('click', function(){
+    //     tmp()
+    // })
+
+    // addEventListener에서 사용할 함수에 매개변수 없이 바로 돌릴거라면 () 빼고 함수명만 걸어도 된다.
+    btn.addEventListener('click', tmp)
+
+    console.log("!!경!! 장인혁 현역노예 확정 !!축!!")
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock {
+            height: 50px;
+            line-height: 50px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="clock"></div>
+    <input type="button" value="12시간제로 변경">
+    <!-- <div class="btn">12시간제</div> -->
+
+<script>
+/*
+    년, 월, 일, 요일
+    시:분:초 출력하기
+    *최소 두자리로 출력
+    * 14시인 경우 -> 02시 pm
+
+    -출력-
+        =12시간제 일때 출력=
+            YYYY-MM-DD X요일
+            HH:ii:ss AM(PM)
+            
+            ex) 2025-03-12 수요일
+                02:27:03 PM
+
+        =24시간제 일때 출력=
+            YYYY-MM-DD X요일
+            HH:ii:ss
+
+            ex) 2025-03-12 수요일
+                14:27:03 
+*/
+
+    
+    let dt = new Date();
+    let year=dt.getFullYear()
+    let month=dt.getMonth()
+    let date=dt.getDate()
+    let day=dt.getDay()
+    let hour=dt.getHours()
+    let min=dt.getMinutes()
+    let sec=dt.getSeconds()
+
+    let yoil = ["일","월","화","수","목","금","토"]
+    day = yoil[day]
+
+function btn(){
+    
+    let ampm = "AM"
+    if(12 <= hour && hour < 24) {
+        ampm = "PM"
+    }
+
+    if(hour == 24) {
+        hour = 0;
+    }
+    else if(hour > 12) {
+        hour = hour - 12
+    }
+
+    let num = "10";
+    console.log(num)
+    num += "20";
+    console.log(num)
+
+
+    document.getElementById('clock').innerHTML = `${year}-${zero(month)}-${zero(date)} ${day}요일`
+    document.getElementById('clock').innerHTML += `${zero(hour)}:${zero(min)}:${zero(sec)} ${ampm}`
+ 
+    function zero(num) {
+        if(num<10) {
+            num = "0"+num;
+        }
+        return num;
+    }
+
+}
+</script>
+</body>
+</html>

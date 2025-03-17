@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box" id="box1">box1</div>
+        <div class="box" id="box2">box2</div>
+        <div class="box" id="box3">box3</div>
+        <div class="box" id="box4">box4</div>
+        <div class="box" id="box5">box5</div>
+    </div>
+<script>
+
+    console.log(document.getElementsByClassName('box').length)
+
+    for(let i=0; i<document.getElementsByClassName('box').length; i++) {
+        document.getElementsByClassName('box')[i].style.background="pink"
+    }
+
+    document.getElementsByClassName('box')[2].previousElementSibling.style.background = "orange"
+    document.getElementsByClassName('box')[2].nextElementSibling.style.background = "orange"
+
+    document.getElementById('wrap').firstElementChild.style.background="green"
+    document.getElementById('wrap').lastElementChild.style.background="green"
+
+
+    console.log(document.getElementById('wrap').children)
+
+    for(let i=0; i<document.getElementById('wrap').children.length; i++) {
+        document.getElementById('wrap').children[i].style.background="skyblue"
+    }
+
+
+ 
+
+</script>
+</body>
+</html>

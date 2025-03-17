@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            height: 40px;
+        }
+        .btn_updown {
+            width: 40px;
+            height: 40px;
+            border-radius: 0;
+            border: 1px solid #767676;
+        }
+        .txt_qty {
+            width: 50px;
+            border: 1px solid #767676;
+            border-right: none;
+            border-left: none;
+            padding: 0 5px;
+            box-sizing: border-box;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <body>
+
+        <div id="wrap">
+            <div class="box">
+                <input type="button" value="-" class="btn_updown">
+                <input type="text" value="0" class="txt_qty">
+                <input type="button" value="+" class="btn_updown">
+            </div>
+            <div>개당금액: 10,000원</div>
+            <hr>
+            <h3>최종금액: 0 원</h3>
+        </div>
+    <script>
+        function minus() {
+            document.getElementsByClassName('txt_num')[0].value = +document.getElementsByClassName('txt_num')[0].value - 1
+        }
+    
+        function plus() {
+
+            document.getElementsByClassName('txt_num')[0].value = +document.getElementsByClassName('txt_num')[0].value + 1 
+        }
+        
+            
+        
+    </script>
+</body>
+</html>
