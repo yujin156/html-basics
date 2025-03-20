@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        body { margin: 0;}
+        #wrap.active {
+            padding-top: 70px;
+        }
+        .header {
+            width: 100%; 
+        }
+        
+        .h_top {
+            width: 100%;
+            height: 100px;
+            background: tomato;
+        }
+        .nav {
+            width: 100%;
+            height: 70px;
+            background: yellowgreen;
+        }
+        .nav.active {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+        .main_banner {
+            width: 100%;
+            height: 500px;
+            background-color: wheat;
+        }
+        .sec {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: calc(100vh - 70px);
+            background: skyblue;
+            overflow: hidden;
+
+            position: relative;
+        }
+        .sec:nth-child(odd) {
+            background: steelblue;
+        }
+        
+        .txt_h1 {
+            width: 100%;
+            font-size: 90px;
+            font-weight: 900;
+            background-color: red;
+            text-align: center;
+
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(100px);
+            transition: all 0.5s;
+
+            opacity: 0;
+        }
+        .txt_h1.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .blue_box {
+            background: blue;
+            width: 300px;
+            height: 300px;
+
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translate(0%, -50%);
+            transition: all 0.5s;
+        }
+        .blue_box.active {
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        /* ///////////////////////// */
+        .sec3 {
+            display: flex;
+            flex-wrap: wrap;
+            height: auto;
+        }
+        .item {
+            width: calc(100%/3);
+            height: calc(100%/3);
+            border: 1px solid;
+            box-sizing: border-box;
+            font-size: 100px;
+            text-align: center;
+        }
+
+
+        .footer {
+            width: 100%;
+            height: 400px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <header class="header">
+        <div class="h_top"></div>
+        <nav class="nav "></nav>
+    </header>
+    <main class="main">
+        <div class="main_banner"></div>
+        <section class="sec sec1">
+            <div class="txt_h1">안녕하세요</div>
+        </section>
+        <section class="sec sec2">
+            <div class="blue_box"></div>
+        </section>
+        <section class="sec sec3">
+            
+        </section>
+    </main>
+    <footer class="footer"></footer>
+</div>
+
+<script>
+    $(document).ready(function(){
+        let w_height = $(window).height();
+        // nav 에 active 클래스 줬다 뺏다 하기
+        let nav_o_top = $('.nav').offset().top;
+        let nav_height = $('.nav').height();
+        let sec1_o_top = $('.sec1').offset().top;
+        let sec2_o_top = $('.sec2').offset().top;
+        let sec3_o_top = $('.sec3').offset().top;
+        
+        let f_o_top = $('.footer').offset().top;
+        let count = 0;
+
+        $(window).scroll(function(){
+            let s_top = $(window).scrollTop();
+
+            // nav바
+            if(s_top >= nav_o_top) { // 이거 쓸데없이 엄청 돔. true false 줘서 한번만 동작하게 하기
+                $('#wrap, .nav').addClass('active')
+            }
+            else {
+                $('#wrap, .nav').removeClass('active')
+            }
+
+            // sec1 - sec1 의 top 부분에 nav의 bot 부분이 닿으면 동작
+            let nav_o_bot = s_top + nav_height
+            if(sec1_o_top <= nav_o_bot) {
+                $('.txt_h1').addClass('active')
+            }
+            else {
+                $('.txt_h1').removeClass('active')
+            }
+
+            // sec2 - sec2 의 top 부분에 nav의 bot 부분이 닿으면 동작
+            if(sec2_o_top <= nav_o_bot) {
+                $('.blue_box').addClass('active')
+            }
+            else {
+                $('.blue_box').removeClass('active')
+            }
+
+            
+            // sec3 - sec3 의 top 부분에 nav의 bot 부분이 닿으면 동작
+            let s_bot = s_top + w_height
+            if(count <= 5 && f_o_top <= s_bot) {
+                // for(let i=0; i<6; i++) {
+                //     $('.sec3').append(`<div class="item">${count}</div>`)
+                // }
+                init(6)
+                
+                f_o_top = $('.footer').offset().top;
+            }
+        })
+
+        function init(qty) {
+            for(let i=0; i<qty; i++) {
+                $('.sec3').append(`<div class="item">${count}</div>`)
+            }
+            count++
+        }
+        init(9)
+
+        // let el="";
+        // for(let i=0; i<9; i++) {
+        //     // document.getElementsByClassName('sec3')[0].innerHTML += `<div class="item">0</div>`
+        //     // el+=`<div class="item">0</div>`
+
+        //     $('.sec3').append(`<div class="item">0</div>`)
+        // }
+        // // $('.sec3').html(``)
+
+    });
+</script>
+</body>
+</html>

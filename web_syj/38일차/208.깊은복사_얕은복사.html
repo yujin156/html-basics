@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    
+<script>
+/*
+    
+
+*/
+    let arr1 = ['a','b','c','d'];
+    let arr2 = arr1; // 얕은복사
+    let arr3 = [...arr1]; // 깊은복사
+    
+    console.log("1: " , arr1)
+    console.log("2: " , arr2)
+    console.log("3: " , arr3)
+
+    arr1[0] = 10
+    console.log("1: " , arr1)
+    console.log("2: " , arr2)
+    console.log("3: " , arr3)
+
+
+
+    $(document).ready(function(){
+    
+    });
+</script>
+</body>
+</html>

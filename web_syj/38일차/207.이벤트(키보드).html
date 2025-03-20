@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <input type="text" id="userId" class="userInfo">
+    <input type="password" id="userPw" class="userInfo">
+    <input type="button" value="로그인" id="btn_login">
+
+<script>
+    $(document).ready(function(){
+    /*
+        1) keydown - 키 누를때(화면에 뭔가 하기 전에) 동작
+        2) keyup - 키 뗄때(화면에 뭔가 하고 나서) 동작
+        3) keypress - 안씀
+                     한글, 특수문자(몇개) 안됨
+
+        *키보드 이벤트 사용 시 같이 쓸거: event.keyCode
+        
+    */
+
+        // id, pw 창에 엔터 치면 login 함수 호출, 
+        // 엔터 말고 다른 키 치면 아무것도 안함
+        $('.userInfo').keydown(function(){
+            if(event.keyCode == 13) {
+                login()
+            }
+        })
+
+
+        $(document).on('click', '#btn_login', function(){
+            login()
+        })
+
+        function login() { 
+            // id: abcd , pw: 1234 인 회원 있다고 가정
+            if($('#userId').val().length < 4 || $('#userPw').val().length < 4) {
+                alert("아이디와 비밀번호는 최소 4글자 이상이어야 함")
+            }
+            else if($('#userId').val() != "abcd" || $('#userPw').val() !="1234") {
+                alert("일치하는 회원이 없슈")
+            }  
+            else if($('#userId').val() == "abcd" && $('#userPw').val()=="1234")  {
+                alert("로그인 성공")
+            }
+            console.log($('#userId').val(), $('#userPw').val())
+        }
+    });
+</script>
+</body>
+</html>

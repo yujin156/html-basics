@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+        }
+        .red { background-color: red;}
+        .green { background-color: green;}
+        .blue { background-color: blue;}
+    </style>
+</head>
+<body>
+    <input type="button" value="빨" id="btn_red" class="btn">
+    <input type="button" value="초" id="btn_green" class="btn">
+    <input type="button" value="파" id="btn_blue" class="btn">
+
+    <div id="box"></div>
+<script>
+    $(document).ready(function(){
+    /*
+        클래스 변경 - 추가, 삭제
+
+        1) 추가 - $(선택자).addClass(삽입할 클래스 이름)
+        2) 삭제 - $(선택자).removeClass(삭제할 클래스 이름)
+                  $(선택자).removeClass() <= 해당 요소의 모든 클래스 삭제
+    */  
+        function ttt(color) {
+            $('#box').removeClass().addClass(color)
+        }
+
+        $('#btn_red').click(function(){
+            // $('#box').addClass('red')
+            // $('#box').removeClass('green');
+            // $('#box').removeClass('blue');
+            // $('#box').addClass('red').removeClass('green').removeClass('blue');
+
+            // $('#box').removeClass();
+            // $('#box').addClass('red')
+
+            // $('#box').removeClass().addClass('red')
+            ttt("red")
+        })
+        $('#btn_green').click(function(){
+            // $('#box').removeClass('red')
+            // $('#box').addClass('green');
+            // $('#box').removeClass('blue');
+
+            // $('#box').removeClass();
+            // $('#box').addClass('green')
+            
+            // $('#box').removeClass().addClass('green')
+            ttt("green")
+        })
+        $('#btn_blue').click(function(){
+            // $('#box').removeClass('red')
+            // $('#box').removeClass('green');
+            // $('#box').addClass('blue');
+
+            // $('#box').removeClass();
+            // $('#box').addClass('blue')
+
+            // $('#box').removeClass().addClass('blue')
+            ttt("blue")
+        })
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        #img_box {
+            width: 509px;
+            height: 400px;
+            /* border: 1px solid; */
+        }
+        .spring { background: url(./img/탭/spring.jpg)}
+        .summer { background: url(./img/탭/summer.jpg)}
+        .fall { background: url(./img/탭/fall.jpg)}
+        .winter { background: url(./img/탭/winter.jpg)}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div class="btn_box">
+        <img src="./img/탭/btn1.jpg" alt="" id="btn_spring" class="btn">
+        <img src="./img/탭/btn2.jpg" alt="" id="btn_summer" class="btn">
+        <img src="./img/탭/btn3.jpg" alt="" id="btn_fall" class="btn">
+        <img src="./img/탭/btn4.jpg" alt="" id="btn_winter" class="btn">
+    </div>
+    <div id="img_box" class="spring"></div>
+
+</div>
+
+    
+<script>
+    $(document).ready(function(){
+        let arr = ["spring","summer","fall","winter"]
+        $('.btn').click(function(){ 
+            $('#img_box').removeClass().addClass( arr[$(this).index()] )
+        })
+
+
+        // $('#btn_spring').click(function(){
+        //     $('#img_box').removeClass().addClass('spring')
+        // })
+        // $('#btn_summer').click(function(){
+        //     $('#img_box').removeClass().addClass('summer')
+        // })
+        // $('#btn_fall').click(function(){
+        //     $('#img_box').removeClass().addClass('fall')
+        // })
+        // $('#btn_winter').click(function(){
+        //     $('#img_box').removeClass().addClass('winter')
+        // })
+    });
+</script>
+</body>
+</html>

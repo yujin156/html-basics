@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <input type="button" value="attr" id="attr">
+    <input type="button" value="prop" id="prop">
+    <br>
+    <img src="./img/1.jpg" alt="">
+
+<script>
+/*
+    - 속성(Attribut)
+        1) $('선택자').attr('속성명') => 해당 속성값 가져오기
+           $('선택자').attr('속성명', '값') => 해당 속성의 값 변경
+           (HTML 의 속성값이나 정보를 취급)
+
+        2) $('선택자').prop('속성명') => 해당 속성값 가져오기
+           $('선택자').prop('속성명', '값') => 해당 속성의 값 변경
+           (HTML 의 속성을 제어)
+
+*/  
+    $('#attr').click(function(){
+        $('img').attr('src', './img/pf.png')
+    })
+    $('#prop').click(function(){
+        $('img').prop('src', './img/pf.png')
+    })
+</script>
+</body>
+</html>

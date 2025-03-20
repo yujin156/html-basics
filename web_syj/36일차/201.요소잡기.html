@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        .box {
+            /* width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 10px; */
+        }
+        .btn {
+            display: inline-block;
+            border: 1px solid;
+            padding: 10px 20px;
+        }
+        #box2 + #box3 {
+            background: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1">box1</div>
+    <div class="box" id="box2">box2</div>
+    <div class="box" id="box3">box3</div>
+    <div class="btn">버튼</div>
+<script>
+    $(document).ready(function(){
+    /*
+        요소 잡기
+            $('선택자') - 선택자는 css와 같다
+
+    */
+
+        $('.box').css({
+            width: '100px',
+            height: '100px',
+            backgroundColor: 'red',
+            margin: '10px',
+        })
+        $('#box2').css({
+            'background-color': 'orange'
+        })
+
+        // document.getElementById('box2').nextElementSibling 가 '#box2 +' 같은뜻임
+        $('#box2 + #box3').css({
+            background: 'purple'
+        })
+    });
+</script>
+</body>
+</html>

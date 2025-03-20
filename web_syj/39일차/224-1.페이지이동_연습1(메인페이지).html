@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/testData.js"></script>
+    <style>
+        body { margin: 0;}
+        .sec {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .item {
+            width: calc((100% - (10px * 3)) / 4);
+        }
+        
+        .item img {
+            width: 100%;
+        }
+        .s_price {
+            font-weight: 900;
+            font-size: 24px;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="header"></header>
+    <main class="main">
+        <div class="main_banner"></div>
+        <div class="sec" id="sec1"></div>
+        <div class="sec" id="sec2"></div>
+    </main>
+    <footer class="footer"></footer>
+</body>
+</html>

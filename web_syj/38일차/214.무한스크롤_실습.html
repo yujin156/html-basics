@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        body { margin: 0;}
+        .sec {
+            width: 100%;
+            height: 1000px;
+            background-color: pink;
+
+            font-size: 100px;
+            font-weight: 900;
+            
+        }
+        
+        .sec:nth-child(even) { background-color: yellowgreen;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="sec" id="best">sec1</div>
+        <div class="sec" id="new">sec2</div>
+    </div>
+    
+<script>
+    $(document).ready(function(){
+    /*
+        - 무한스크롤 
+            scroll 이벤트
+            문서의 높이 => $(document).height()
+            화면에 나타나는 부분의 scrollY 위치 => $(window).scrollTop()
+            화면의 세로 크기 => $(window).height()
+    */
+     
+        let d_height = $(document).height();
+        let w_height = $(window).height()
+
+        console.log("d_height: " , d_height)
+        console.log("w_height: " , w_height)
+
+        let count = 0;
+
+        $(window).scroll(function(){
+            let s_top = $(window).scrollTop()
+            let s_bot = s_top + w_height;
+            // console.log("s_top: " , s_top)
+
+            if(count <= 10 && s_bot >= d_height) {
+                // alert("닿았음")
+                // 아이디가 wrap 인 요소의 마지막 자식으로 sec 추가
+                $('#wrap').append(`<div class="sec">${count++}</div>`)
+                d_height = $(document).height();
+            }
+
+        })
+    });
+</script>
+</body>
+</html>

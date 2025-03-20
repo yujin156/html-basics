@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        body { margin: 0;}
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        a { text-decoration: none; color: inherit;}
+        #wrap {
+            padding-top: 50px;
+        }
+        .header {
+            width: 100%;
+            height: 50px;
+            background: skyblue;
+            opacity: 0.5;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .header > ul {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .header li {
+            padding: 8px 20px;
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+        .sec {
+            width: 100%;
+            height: 1000px;
+            background: gray;
+
+            font-size: 100px;
+        }
+        .sec:nth-child(odd) {
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="header">
+            <ul>
+                <li><a href="#sec1">menu1</a></li>
+                <li><a href="#sec2">menu2</a></li>
+                <li><a href="#sec3">menu3</a></li>
+            </ul>
+        </div>
+        <div class="sec" id="sec1">sec1</div>
+        <div class="sec" id="sec2">sec2</div>
+        <div class="sec" id="sec3">sec3</div>
+    </div>
+
+<script>
+    $(document).ready(function(){
+    /* 페이지 내부이동(애니메이션)
+        1. 클릭한 메뉴와 매칭되는 섹션의 offset().top 값 찾기
+        2. html, body에 scrollTop 값을 1번에서 찾은 값으로 덮어쓰기(애니메이션 사용)
+    */
+        // console.log($('#sec1').offset().top,$('#sec2').offset().top,$('#sec3').offset().top)
+
+        $('.header a').click(function(){
+            // 현재 클릭한 요소와 매칭되는 섹션 찾기
+            let href = $(this).attr('href'); 
+
+            $('html, body').animate({
+                scrollTop: $('#sec2').offset().top - 50
+            }, 1000)
+        })
+
+
+        
+
+    });
+</script>
+</body>
+</html>

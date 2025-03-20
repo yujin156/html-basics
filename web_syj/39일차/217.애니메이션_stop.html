@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 50px;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="시작" id="start">
+    <input type="button" value="멈춤" id="stop">
+    <div class="box"></div>
+<script>
+$(document).ready(function(){
+/*
+    stop() => 현재 실행되고 있는 애니메이션만 멈춤
+    stop(true) => 큐에 담겨있는 모든 애니메이션 멈춤
+*/
+
+    $('#start').click(function(){
+        $('.box').animate({
+            left: 200
+        }, 500, 'linear').animate({
+            top: 200
+        }, 500, 'linear').animate({
+            left: 0
+        }, 500, 'linear').animate({
+            top: 0
+        }, 500, 'linear')
+    })
+
+    $('#stop').click(function(){
+        $('.box').stop()
+        // $('.box').stop(true)
+    })
+});
+</script>
+</body>
+</html>

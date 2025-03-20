@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Demo styles -->
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper1 {
+      width: 100%;
+      height: 50%;
+    }
+
+    .swiper1 .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper1 .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper.swiper1  {
+      margin-left: auto;
+      margin-right: auto;
+    } 
+    /* ////////////////////////////// */
+
+    .swiper.swiper2 {
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -150px;
+      /* margin-top: -150px; */
+    }
+
+    .swiper2 .swiper-slide {
+      background-position: center;
+      background-size: cover;
+    }
+
+    .swiper2 .swiper-slide img {
+      display: block;
+      width: 100%;
+    }
+
+ 
+  </style>
+</head>
+
+<body>
+  <!-- Swiper -->
+    <div class="sec">
+        <div class="swiper mySwiper swiper1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./img/mumu/main_banner/main_banner1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/mumu/main_banner/main_banner2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/mumu/main_banner/main_banner3.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/Lezhin/main_banner_01.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/반응형/iDeco/main_banner1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/반응형/iDeco/main_banner2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/반응형/iDeco/main_banner3.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/Lezhin/main_banner_01.jpg" alt="">
+                </div> 
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+    </div>
+
+
+    <div class="sec">
+        <div class="swiper mySwiper swiper2">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+            </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        
+     </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper1 = new Swiper(".swiper1", {
+        // direction: 'vertical', // 'horizontal' | 'vertical'
+        effect: 'slide', // 'slide', 'fade', 'cube', 'coverflow', 'flip', 'creative' or 'cards'
+      slidesPerView: 1, // 한번에 몇개 판 보여줄지 결정. 1 이상의 정수
+      //slidesPerGroup: 1,// 한번에 몇개 판씩 넘길지 결정. 1 이상의 정수
+      spaceBetween: 10, // 판 사이사이의 걸리
+      loop: true, 
+      pagination: { 
+        el: ".swiper-pagination",
+        type: "bullets", // 'bullets', 'fraction', 'progressbar' or 'custom'
+        clickable: true, // 인디케이터/페이징 부분에 클릭 이벤트 달지 말지 결정
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      autoplay: {
+        delay: 2000 // 자동슬라이드 되서 가운데에 몇초동안 있을건지
+      },
+      speed: 1000 // 배너가 바깥에서 가운데로 출발해서 도착할때까지의 시간
+    });
+
+
+    document.getElementsByClassName('mySwiper')[0].addEventListener('mouseenter', function(){
+        swiper1.autoplay.stop()
+    })
+    document.getElementsByClassName('mySwiper')[0].addEventListener('mouseleave', function(){
+        swiper1.autoplay.start()	
+    })
+
+
+    var swiper2 = new Swiper(".swiper2", {
+      effect: "cube",
+      loop: true, 
+      grabCursor: true,
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      autoplay: {
+        delay: 0 // 자동슬라이드 되서 가운데에 몇초동안 있을건지
+      },
+      speed: 500
+    });
+  </script>
+</body>
+
+</html>

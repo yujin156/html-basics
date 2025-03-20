@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        ul { 
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header {
+            width: 100%;
+            height: 150px;
+            background-color: pink;
+        }
+        .h_top {
+            width: 100%;
+            height: 100px;
+            background-color: skyblue;
+        }
+        .h_bot {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            background-color: hotpink;
+        }
+        .nav {
+            width: 100%;
+            max-width: 800px;
+            height: 100%;
+            margin: 0 auto;
+            background-color: yellowgreen;
+
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+        }
+        .nav li {
+            height: 100%;
+            border: 1px solid;
+            padding: 0 20px;
+        }
+        .pan {
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            background-color: bisque;
+
+            position: relative;
+            transition: all 0.5s;
+        }
+        .pan.active {
+            height: 400px;
+        }
+        .pan_sub {
+            width: 800px;
+            height: 100%;
+            font-size: 100px;
+            text-align: center;
+
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+
+            display: none;
+            line-height: 1;
+        }
+        .pan_sub0 { background: pink;}
+        .pan_sub1 { background: skyblue;}
+        .pan_sub2 { background: orange;}
+        .pan_sub3 { background: yellowgreen;}
+        .pan_sub4 { background: salmon;}
+        .pan_sub.active {
+            display: block;
+        }
+        /* ////////////////*/
+        .main {}
+        .main_banner {
+            width: 100%;
+            height: 600px;
+            background-color: aquamarine;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="h_top"></div>
+        <div class="h_bot">
+            <ul class="nav">
+                <li>menu0</li> 
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
+            </ul>
+            <div class="pan">
+                <div class="pan_sub pan_sub0">0</div>
+                <div class="pan_sub pan_sub1">1</div>
+                <div class="pan_sub pan_sub2">2</div>
+                <div class="pan_sub pan_sub3">3</div>
+                <div class="pan_sub pan_sub4">4</div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main_banner"></div>
+    </div>
+    <div class="footer"></div>
+<script>
+    $(document).ready(function(){
+        $('.nav > li').mouseenter(function(){
+            // pan 에 active 주기
+            $('.pan').addClass('active')
+
+            // pan_sub 중에 하나에 active 주기
+            // li중에 몇번째에 마우스 올라갔는지 확인하고
+            // pan_sub 중에 위에서 확인한 번째꺼에 active 주기
+            $('.pan_sub').removeClass('active')
+            $('.pan_sub').eq($(this).index()).addClass('active')
+
+        })
+        $('.nav > li, .pan').mouseleave(function(){
+            // pan 에 active 빼기
+            $('.pan').removeClass('active')
+        })
+
+        $('.pan').mouseenter(function(){
+            $('.pan').addClass('active')
+        })
+    })
+</script>
+</body>
+</html>

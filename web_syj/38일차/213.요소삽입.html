@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        h1 {
+            /* color: red; */
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+        <h1>비트스터디</h1>
+    </div>
+
+<script>
+    $(document).ready(function(){
+    /*
+        
+            
+            화면에 섹션 추가(append, prepend)
+
+            1) prepend => $('선택자').prepend(삽입할요소)
+               prependTo => $(삽입할요소).prependTo('선택자')
+            2) append => $('선택자').append(삽입할요소)
+               appendTo => $(삽입할요소).appendTo('선택자')
+
+               *뒤에 별도의 css를 붙이면 append 는 맨 앞에 선택자로 잡아놓은 요소에 적용된다.
+    */
+        $('#wrap').prepend(`<h1>안녕하세요</h1>`)
+        $(`<h1>안녕하세요2</h1>`).prependTo('#wrap')
+        
+        $('#wrap').append(`<h1>헬로월드</h1>`).css({color: 'blue'});//#wrap에 css 적용되서 wrap의 모든 자손들에 color:blue가 적용된다.
+        $(`<h1>헬로월드2</h1>`).appendTo('#wrap').css({color: 'blue'})// <h1>헬로월드2</h1> 에만 css가 적용된다.
+        
+    });
+</script>
+</body>
+</html>

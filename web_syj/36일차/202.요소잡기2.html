@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="tmp">
+        <div id="wrap">
+            <h1>헬로월드</h1>
+            <ul id="item_list">
+                <li class="item" id="item0">item0</li>
+                <li class="item" id="item1">item1</li>
+                <li class="item" id="item2">item2</li>
+                <li class="item" id="item3">item3</li>
+                <li class="item" id="item4">item4</li>
+            </ul>
+            <h1>헬로월드</h1>
+        </div>
+    </div>
+<script>
+$(document).ready(function(){
+// 아이디가 item_list 인 요소의 4번째 자식에 글자색 노랑 적용
+    $('#item_list').children().eq(4).css({
+        color: 'yellow'
+    })
+    
+
+
+
+/* 
+    - 위 아래 요소 잡기 -
+        prev() - 선택한 요소의 바로 윗 요소 한개
+        prevAll() - 선택한 요소의 윗 요소들 전부 다
+        next() - 선택한 요소의 바로 아래 요소 한개
+        nextAll() - 선택한 요소의 아래 요소들 전부 다
+
+    - 요소 자체의 인덱스번호 찾기
+        index(): 몇번째 요소인지 확인(0번부터 시작)
+        eq(): 배열
+            js 에서는 document.getElementsByClassName('선택자')[방번호]
+            jq 에서는 $('선택자').eq(방번호)
+
+    - 부모 조상 자식 자손
+        parent(): 부모
+        parent('선택자'): 부모이면서 선택자인 요소만 잡기
+
+        parents('선택자'): 조상. ()안에 요소를 잡아주지 않으면 body까지 전부 다 잡음
+
+        children(): 자식들
+        children('선택자'): 자식들 중에서 선택한 것들만 잡음
+
+        find('선택자'): 자손
+*/
+    $('#item2').nextAll().css({
+        background: 'pink'
+    })
+
+    $('.item').click(function(){
+        console.log($(this).index() + "번째")
+    })
+
+    $('.item').eq(1).css({
+        background: 'skyblue'
+    })
+
+    console.log($('#item1').parent())
+    $('#item1').parent().css({
+        background: 'orange'
+    })
+
+    $('#item3').parents('#wrap').css({
+        background: 'red'
+    })
+
+    $('#item_list').children().css({
+        background: 'purple'
+    })
+    $('#item_list').children('#item0').css({
+        background: 'hotpink'
+    })
+
+    $('#wrap').find('#item3').css({
+        background: 'aqua'
+    })
+    $('#item0, #item2').css({
+        color: '#fff'
+    })
+});
+</script>
+</body>
+</html>

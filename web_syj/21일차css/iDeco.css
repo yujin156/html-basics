@@ -324,7 +324,63 @@ label[for="hamchk"] {
     background: url(../img/반응형/iDeco/main_banner3.jpg) no-repeat center / contain;
 }
 
+.btn_slide {
+    width: 100px;
+    height: 100%;
+    /* background-color: #333; */
+    background-repeat: no-repeat;
+    background-position: center;
+    user-select: none;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.btn_slide img {
+    /* width: 100%; */
+}
+#btn_slide_L {
+    left: 0;
+}
+#btn_slide_R {
+    right: 0;
+}
+.main_banner2:hover #btn_slide_L {
+    background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
+}
+.main_banner2:hover #btn_slide_R {
+    background: linear-gradient(to left, rgba(0,0,0,0.5), transparent);
+}
+.indi_box {
+    display: flex;
+    gap: 8px;
+
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+.indi {
+    width: 40px;
+    height: 5px;
+    background: #b5b5b5;
+    box-shadow: 0 0 3px 0 #333;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.indi:hover {
+    background: #8a8a8a;
+} 
+.indi.active {
+    width: 80px;
+    background: #545454;
+}
 
 /* 인기상품 */
 .sec {

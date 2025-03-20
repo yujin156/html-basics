@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        body { margin: 0;}
+        .main_banner {
+            width: 400px;
+            height: 300px;
+            border: 1px solid;
+            margin: 0 auto;
+
+            position: relative;
+        }
+        .box {
+            width: 100%;
+            height: 100%;
+
+            font-size: 100px;
+            color: #fff;
+            text-align: center;
+
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }   
+        .red { background: red;}
+        .green { background: green;}
+        .blue { background: blue;}
+    </style>
+</head>
+<body>
+    <input type="button" value="왼쪽" id="btn_L">
+    <input type="button" value="오른쪽" id="btn_R">
+    <div class="main_banner">
+        <div class="box red">0</div>
+        <div class="box green">1</div>
+        <div class="box blue">2</div>
+    </div>
+<script>
+    $(document).ready(function(){
+        // 0번째 판(red) 를 화면에 들어오게 셋팅
+        $('.box').eq(0).css({left: 0})
+
+        // '오른쪽'버튼 누르면 현재 보고있는방 왼쪽으로 빼고, 들어와야 할 방 가운데로 가지고 오기
+        let cBang = 0;
+        let chk = true
+
+        function slide(oPos, cIdx, cPos) {
+            if(chk) {
+                chk = false;
+                setTimeout(()=>{
+                    chk = true;
+                }, 1000)
+
+                // 현재 보고있는거(내보낼거)
+                $('.box').eq(cBang).animate({
+                    left: oPos
+                }, 1000, 'linear')
+
+                // 가지고 들어올거
+                $('.box').eq(cIdx).css({
+                    left: cPos
+                }).animate({
+                    left: '0'
+                }, 1000, 'linear');
+                cBang= cIdx; 
+            }
+        }
+        $('#btn_R').click(function(){
+            slide('-100%', (cBang+1)%3, '100%') 
+        });      
+        
+        $('#btn_L').click(function(){
+            slide('100%', (cBang-1)%3, '-100%')  
+        });      
+
+    });
+</script>
+</body>
+</html>
